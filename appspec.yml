@@ -7,6 +7,6 @@ hooks:
   ApplicationStop:
     # - location: scripts/elb/deregister_from_elb.sh
     - location: scripts/build.sh
-  ApplicationStart:
+  # ApplicationStart:
     # - location: scripts/elb/register_with_elb.sh
 
