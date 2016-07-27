@@ -4,8 +4,9 @@ files:
   - source: /
     destination: /www/votdiaspora.ro
 hooks:
-  ApplicationStop:
+  # ApplicationStop:
     # - location: scripts/elb/deregister_from_elb.sh
+  BeforeInstall:
     - location: scripts/build.sh
   # ApplicationStart:
     # - location: scripts/elb/register_with_elb.sh
