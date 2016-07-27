@@ -6,7 +6,7 @@ files:
 hooks:
   # ApplicationStop:
     # - location: scripts/elb/deregister_from_elb.sh
-  BeforeInstall:
+  AfterInstall:
     - location: scripts/build.sh
   # ApplicationStart:
     # - location: scripts/elb/register_with_elb.sh
