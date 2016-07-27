@@ -1,4 +1,2 @@
 #!/bin/bash
-cd /www/votdiaspora.ro
-npm install
-gulp
+( cd /www/votdiaspora.ro && npm install && gulp )
