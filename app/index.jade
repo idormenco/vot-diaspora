@@ -1,0 +1,35 @@
+doctype html
+html(lang='en' data-ng-app='votDiaspora')
+  head
+    title Vot Diaspora
+    meta(name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
+    |<!-- inject:head:js -->
+    |<!-- endinject -->
+    |<!-- inject:html -->
+    |<!-- endinject -->
+    |<!-- bower:css -->
+    |<!-- endbower -->
+    |<!-- inject:css -->
+    |<!-- endinject -->
+  body
+
+    div(data-top-bar)
+      ul.title-area
+        li.name
+          h1
+            a(href='#/') Vot Diaspora
+        li.menu-icon(data-toggle-top-bar)
+          a(href='#/')
+            span
+
+      div(data-top-bar-section)
+        ul.left
+          li(data-ui-sref-active='active')
+            a(data-ui-sref='home') Home
+
+    div(data-ui-view)
+
+    |<!-- bower:js -->
+    |<!-- endbower -->
+    |<!-- inject:js -->
+    |<!-- endinject -->
