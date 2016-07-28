@@ -1,7 +1,7 @@
 version: 0.0
 os: linux
 files:
-  - source: /dst
+  - source: /build/app
     destination: /www/votdiaspora.ro
 hooks:
   # ApplicationStop:
