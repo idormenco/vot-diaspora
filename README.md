@@ -10,6 +10,9 @@
 1. Run `npm install` to install this project's dependencies
 1. Run `bower install` to install client-side dependencies
 1. Use [generator-ng-poly](https://github.com/dustinspecker/generator-ng-poly) to create additional components
+=======
+# Kanban Dashboard
+ https://waffle.io/code4romania/diaspora-vote
 
 ## Gulp tasks
 - Run `gulp build` to compile assets
