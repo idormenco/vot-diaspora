@@ -1,0 +1,6 @@
+div
+    form(name="find", action="/search", method="post", onsubmit="return false;")
+      | Search
+      input(type="text", name="location", id="locate")
+      input(type="submit", value="Search")
+    ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
