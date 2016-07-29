@@ -1,5 +1,5 @@
 #!/bin/bash
 cd /www/votdiaspora.ro
-npm install bower
+[ -d /www/votdiaspora.ro/bower_components ] || mkdir -p /www/votdiaspora.ro/bower_components
 npm install && bower install
 gulp build
