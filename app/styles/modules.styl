@@ -1,0 +1,47 @@
+@import 'variables'
+
+.hero-info
+  background: color-primary;
+  color: color-secondary;
+  text-align: center;
+  padding: distance 0;
+  margin-bottom: (distance/2);
+
+  h1
+    color: color-secondary;
+    margin-bottom: (distance/2);
+
+  p
+    font-size: 18px;
+
+.step-title
+  text-align: center;
+
+  span
+    color: color-secondary;
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: color-primary;
+    text-align: center;
+
+    @media breakpoint-medium
+      margin-right: 20px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 36px;
+      font-size: 30px;
+
+.location
+  form
+    @media breakpoint-medium
+      width: 300px;
+
+.step-actions
+  text-align: center;
+  padding: distance 0;

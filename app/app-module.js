@@ -10,7 +10,7 @@
     .module('votDiaspora', [
       'ui.router',
       'mm.foundation',
-      'uiGmapgoogle-maps',
+      'uiGmapgoogle-maps'
       // 'ngStorage'
       // 'ngGeolocation'
       // 'angular-google-maps-geocoder'
