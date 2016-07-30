@@ -31,3 +31,8 @@ logs
 pids
 *.pid
 *.seed
+.idea
+
+# Lumen
+api/storage
+api/vendor
