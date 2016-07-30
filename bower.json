@@ -1,6 +1,6 @@
 {
-  "name": "Vot Diaspora",
-  "version": "0.0.0",
+  "name": "diaspora-vote",
+  "version": "0.0.1",
   "dependencies": {
     "angular": "~1.4.*",
     "angular-cookies": "~1.4.*",

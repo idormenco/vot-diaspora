@@ -23,7 +23,8 @@
     //   });
     // })
     .controller('DiasporaCtrl', function ($scope, $state, uiGmapGoogleMapApi, locationsService) {
-      var vm = this;
+      var onMarkerClicked,
+          vm = this;
       vm.state = $state;
       vm.markers = [];
 
@@ -37,13 +38,23 @@
           zoom: 3
         };
 
+        onMarkerClicked = function (marker) {
+          _.each(vm.markers, function (item) {
+            item.showWindow = item.id == marker.id ? true: false;
+          });
+          console.log(marker);
+          $scope.$apply();
+        };
+
         // Load markers
         locationsService.getData()
           .then(function (response) {
+            var temp = [];
             _.each(response, function (marker) {
               marker.id = marker.n;
+              marker.showWindow = false;
               marker.coords = {latitude: marker.la, longitude: marker.lo};
-              marker.templateUrl = 'marker.html';
+              marker.templateUrl = 'markerWindow.html';
               marker.texts = {
                 m: marker.m,
                 co: marker.co,
@@ -54,9 +65,16 @@
                 tel: marker.t,
                 email: marker.em
               };
-              console.log(marker);
-              vm.markers.push(marker);
+              marker.onClicked = function () {
+                onMarkerClicked(marker);
+              };
+              marker.closeClick = function () {
+                marker.showWindow = false;
+                $scope.$evalAsync();
+              };
+              temp.push(marker);
             });
+            vm.markers = temp;
           });
       });
     })

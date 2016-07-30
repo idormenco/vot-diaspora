@@ -1,0 +1,41 @@
+@import 'variables'
+
+body
+  font: 400 1rem/1.56 'Montserrat';
+  color: color-primary;
+
+h1, h2, h3, h4, h5, h6
+  color: color-primary;
+  font-family: 'Montserrat';
+
+h1
+  font-size: 30px;
+
+  @media breakpoint-medium
+    font-size: 40px;
+
+button, .button
+  background-color: color-primary;
+  color: color-secondary;
+  font-family: 'Montserrat';
+  font-weight: 700;
+
+  &:hover
+    background-color: color-primary;
+    color: #fff
+
+// TODO: design custom ones
+.field-input
+  display: block;
+  position: relative;
+
+  input[type="radio"]
+    margin: 0;
+    position: relative;
+    top: -4px;
+
+    + label
+      font-size: 22px;
+      color: color-primary;
+      margin: 0 16px;
+

@@ -1,0 +1,68 @@
+@import 'variables'
+
+.hero-info
+  background: color-primary;
+  color: color-secondary;
+  text-align: center;
+  padding: distance 0;
+  margin-bottom: (distance/2);
+
+  h1
+    color: color-secondary;
+    margin-bottom: (distance/2);
+
+  p
+    font-size: 18px;
+
+.step-title
+  text-align: center;
+
+  span
+    color: color-secondary;
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    border-radius: 50%;
+    background: color-primary;
+    text-align: center;
+
+    @media breakpoint-medium
+      margin-right: 20px;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 36px;
+      font-size: 30px;
+
+.location
+  form
+    @media breakpoint-medium
+      width: 300px;
+
+.step-actions
+  text-align: center;
+  padding: distance 0;
+
+.step-content
+  .field-input
+    margin: (distance/3) 0;
+
+.compare
+  margin: 0;
+  padding: 0;
+
+  li
+    position: relative;
+    list-style: inside none;
+    margin-bottom: (distance/4);
+
+  .material-icons
+    position: absolute;
+    top: 4px;
+    left: 0;
+
+  p
+    padding-left: (distance/2);

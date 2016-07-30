@@ -14,28 +14,128 @@ html(lang='en' data-ng-app='votDiaspora')
     |<!-- endinject -->
   body
 
-    div(data-top-bar)
-      ul.title-area
-        li.name
-          h1
-            a(href='#/') Vot Diaspora
-        li.menu-icon(data-toggle-top-bar)
-          a(href='#/')
-            span
+    section.hero-info
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1 Diaspora voteaza!
+          p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number one brain is the seed of intelligence, paroxysm of global death, take root and flourish, the ash of stellar alchem
 
-      div(data-top-bar-section)
-        ul.left
-          li(data-ui-sref-active='active')
-            a(data-ui-sref='home') Home
-          li(data-ui-sref-active='active')
-            a(data-ui-sref='test1') Test1
-          li(data-ui-sref-active='active')
-            a(data-ui-sref='test2') Test2
+    section.step.step-user-location
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 1
+            | Unde stai?
+          .step-content.location
+            div(data-ui-view)
+          .step-actions
+            a.button.large
+              | Inregistreaza-te la vot
 
-    div(data-ui-view)
+    section.step.step-user-type
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 2
+            | Esti rezident sau domicilat?
+          .step-content.row.content
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-rezident")
+                label(for="radio-rezident") Rezident
+              p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-domicilat")
+                label(for="radio-domicilat") Domicilat
+              p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+          .step-actions
+            a.button.large
+              | Urmatorul pas
 
-    script( type="text/ng-template" id="marker.html")
-      div(class="locationBox")
+    section.step.step-user-vote
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 3
+            | Prin corespondenta sau la o sectie?
+          .step-content.row.content
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-vote", require, id="radio-corespondenta")
+                label(for="radio-corespondenta") Prin corespondenta
+              ul.compare
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-vote", require, id="radio-sectie")
+                label(for="radio-sectie") La sectie
+              ul.compare
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE000;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                li
+                  i.material-icons &#xE86C;
+                  p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+
+          .step-actions
+            a.button.large
+              | Urmatorul pas
+
+    section.step.step-user-action
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 4
+            | Strange actele si depune-le
+          .step-content
+          .step-actions
+            a.button.large
+              | Afla mai multe
+
+    section.step.step-user-vote
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 5
+            | Pana sa ajungi la urne
+          .step-content
+
+
+    script( type="text/ng-template" id="markerWindow.html" ng-cloak)
+      div(class="locationBox" ng-cloak)
         h2( ng-if="parameter.m && parameter.co"  ) {{parameter.m}}, {{parameter.co}}
         div(class="box_info")
           p(class="address" ng-if="parameter.adr")
