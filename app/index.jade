@@ -16,13 +16,13 @@ html(lang='en' data-ng-app='votDiaspora')
 
     section.hero-info
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1 Diaspora voteaza!
           p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number one brain is the seed of intelligence, paroxysm of global death, take root and flourish, the ash of stellar alchem
 
     section.step.step-user-location
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1.step-title
             span 1
             | Unde stai?
@@ -34,18 +34,28 @@ html(lang='en' data-ng-app='votDiaspora')
 
     section.step.step-user-type
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1.step-title
             span 2
-            | Rezident sau domicilat?
-          .step-content
+            | Esti rezident sau domicilat?
+          .step-content.row.content
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-rezident")
+                label(for="radio-rezident") Rezident
+              p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            .small-12.medium-6.columns
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-domicilat")
+                label(for="radio-domicilat") Domicilat
+              p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
           .step-actions
             a.button.large
               | Urmatorul pas
 
     section.step.step-user-vote
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1.step-title
             span 3
             | Prin corespondenta sau la o sectie?
@@ -56,7 +66,7 @@ html(lang='en' data-ng-app='votDiaspora')
 
     section.step.step-user-action
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1.step-title
             span 4
             | Strange actele si depune-le
@@ -67,7 +77,7 @@ html(lang='en' data-ng-app='votDiaspora')
 
     section.step.step-user-vote
       .content.row
-        .small-12.medium-offset-1.medium-10
+        .small-12.medium-offset-1.medium-10.columns
           h1.step-title
             span 5
             | Pana sa ajungi la urne
