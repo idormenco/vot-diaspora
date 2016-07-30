@@ -3,7 +3,7 @@ html(lang='en' data-ng-app='votDiaspora')
   head
     title Vot Diaspora
     meta(name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
-    script(src='//maps.googleapis.com/maps/api/js?sensor=false')
+    script(src='//maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCmgEeIhijJe689d_bpjPX9Sf1Bsm5fidU')
     |<!-- inject:head:js -->
     |<!-- endinject -->
     |<!-- inject:html -->
@@ -33,6 +33,26 @@ html(lang='en' data-ng-app='votDiaspora')
             a(data-ui-sref='test2') Test2
 
     div(data-ui-view)
+
+    script( type="text/ng-template" id="marker.html")
+      div(class="locationBox")
+        h2( ng-if="parameter.m && parameter.co"  ) {{parameter.m}}, {{parameter.co}}
+        div(class="box_info")
+          p(class="address" ng-if="parameter.adr")
+            span(class="label") Adresa:
+            {{parameter.adr}}
+          p(class="phone_prefix" ng-if="parameter.prefix")
+            span(class="label") Prefix:
+            {{parameter.prefix}}
+          p(class="phone" ng-if="parameter.tel")
+            span(class="label") Telefon:
+            {{parameter.tel}}
+          p(class="fax" ng-if="parameter.fax")
+            span(class="label") Fax:
+            {{parameter.fax}}
+          p(class="email" ng-if="parameter.email")
+            span(class="label") Email:
+            {{parameter.email}}
 
     |<!-- bower:js -->
     |<!-- endbower -->

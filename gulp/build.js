@@ -214,6 +214,11 @@ module.exports = function (gulp, $, config) {
     return gulp.src(path.join(config.appDir, 'favicon.ico'))
       .pipe(gulp.dest(config.buildDir));
   });
+  // copy optional jsons in app directory
+  gulp.task('jsonFiles', ['clean'], function () {
+    return gulp.src(path.join(config.appDir, '*.json'))
+      .pipe(gulp.dest(config.buildDir));
+  });
 
   // copy and optimize images into build directory
   gulp.task('images', ['clean'], function () {
@@ -257,5 +262,5 @@ module.exports = function (gulp, $, config) {
       });
   });
 
-  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'fonts']);
+  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'favicon', 'jsonFiles', 'fonts']);
 };
