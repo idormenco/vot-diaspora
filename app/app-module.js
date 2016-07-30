@@ -11,21 +11,10 @@
       'ui.router',
       'mm.foundation',
       'uiGmapgoogle-maps'
-      // 'ngStorage'
-      // 'ngGeolocation'
-      // 'angular-google-maps-geocoder'
     ])
-    // .config(function (uiGmapGoogleMapApiProvider) {
-    //   uiGmapGoogleMapApiProvider.configure({
-    //     key: 'AIzaSyCmgEeIhijJe689d_bpjPX9Sf1Bsm5fidU',
-    //     v: '3.23',
-    //     libraries: 'weather,geometry,visualization'
-    //   });
-    // })
     .controller('DiasporaCtrl', function ($scope, $state, uiGmapGoogleMapApi, locationsService) {
-      var onMarkerClicked,
-          vm = this;
-      vm.state = $state;
+      var vm = this,
+          prepareMarkers;
       vm.markers = [];
 
       uiGmapGoogleMapApi.then(function (maps) {
@@ -38,43 +27,47 @@
           zoom: 3
         };
 
-        onMarkerClicked = function (marker) {
-          _.each(vm.markers, function (item) {
-            item.showWindow = item.id == marker.id ? true: false;
+        prepareMarkers = function (response) {
+          var temp = [];
+          _.each(response, function (marker) {
+            marker.id = marker.n;
+            marker.showWindow = false;
+            marker.coords = {latitude: marker.la, longitude: marker.lo};
+            marker.templateUrl = 'markerWindow.html';
+            marker.texts = {
+              m: marker.m,
+              co: marker.co,
+              description: marker.d,
+              prefix: marker.prefi,
+              adr: marker.a,
+              fax: marker.fax,
+              tel: marker.t,
+              email: marker.em
+            };
+            marker.onClicked = function () {
+              _.each(vm.markers, function (item) {
+                item.showWindow = item.id === marker.id ? true : false;
+              });
+              $scope.$apply();
+            };
+            marker.closeClick = function () {
+              marker.showWindow = false;
+              $scope.$evalAsync();
+            };
+            marker.onWindowClose = function () {
+              marker.showWindow = false;
+              $scope.$evalAsync();
+            };
+            temp.push(marker);
           });
-          console.log(marker);
-          $scope.$apply();
+          // vm.markers = temp.splice(0, 3);
+          vm.markers = temp;
         };
 
         // Load markers
         locationsService.getData()
           .then(function (response) {
-            var temp = [];
-            _.each(response, function (marker) {
-              marker.id = marker.n;
-              marker.showWindow = false;
-              marker.coords = {latitude: marker.la, longitude: marker.lo};
-              marker.templateUrl = 'markerWindow.html';
-              marker.texts = {
-                m: marker.m,
-                co: marker.co,
-                description: marker.d,
-                prefix: marker.prefi,
-                adr: marker.a,
-                fax: marker.fax,
-                tel: marker.t,
-                email: marker.em
-              };
-              marker.onClicked = function () {
-                onMarkerClicked(marker);
-              };
-              marker.closeClick = function () {
-                marker.showWindow = false;
-                $scope.$evalAsync();
-              };
-              temp.push(marker);
-            });
-            vm.markers = temp;
+            prepareMarkers(response);
           });
       });
     })
@@ -83,9 +76,8 @@
         return $http.get('locations.json')
           .then(function (response) {
             var filteredresponse = _.filter(response.data.markers, function (item) {
-              return !_.isNull(item.field_support_gps_value);
+              return !_.isNull(item.la) && !_.isNull(item.lo);
             });
-            console.log(filteredresponse);
             return filteredresponse;
           });
       };

@@ -4,5 +4,5 @@ div
       input(type="text", name="location", id="locate")
       input(type="submit", value="Search")
     ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
-        ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked()" )
-            ui-gmap-windows(show="'showWindow'" templateUrl="'templateUrl'" templateParameter="'texts'")
+        ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
+            ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')

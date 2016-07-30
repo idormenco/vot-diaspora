@@ -6,5 +6,8 @@
   "rules": {
     "angular/ng_controller_name": [2, "/[A-Z].*Ctrl$/"],
     "consistent-this": 0
+  },
+  "globals": {
+    "_": true
   }
 }
