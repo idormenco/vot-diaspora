@@ -161,7 +161,10 @@
             latitude: 16.943161,
             longitude: 24.96676
           },
-          zoom: 3
+          zoom: 3,
+          options: {
+            scrollwheel: false
+          }
         };
 
         // Load markers
