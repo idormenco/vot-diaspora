@@ -35,13 +35,26 @@ button, .button
     position: relative;
     top: -4px;
 
+    &:checked
+      + label
+        opacity 1
+        color color-primary
+
     + label
+      opacity .31
+      color: color-secondary;
       font-size: 22px;
-      color: color-primary;
       margin: 0 16px;
 
 .material-icons
   font-size: 32px;
+
+.faded
+  opacity .31
+  color: color-secondary;
+
+  h2
+    color: color-secondary;
 
 .fields
   text-align: center;

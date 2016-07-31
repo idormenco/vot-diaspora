@@ -1,15 +1,165 @@
-div
-    form(name="find", action="/search", method="post", onsubmit="return false;")
-        | Locuiesc in orasul ...
-        input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options")
-        input(type="button" value="Reset" ng-click="vm.cityReset()")
+section.step.step-user-location
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 1
+            | Unde stai?
+          .step-content.location
+            form(name="find", action="/search", method="post", onsubmit="return false;")
+              | Locuiesc in orasul ...
+              input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options")
+              input(type="button" value="Reset" ng-click="vm.cityReset()")
 
-    div(ng-if="vm.city.markers.length")
-        div(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
-            | Departare: {{parameter.distance}}Km
-            location-box
-    ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
-        ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
-            ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
-    div Sursa:
-        a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
+            div(ng-if="vm.city.markers.length")
+              div(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
+                | Departare: {{parameter.distance}}Km
+                location-box
+              ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
+                ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
+                  ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
+              div Sursa:
+                a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
+          .step-actions
+            a.button.large
+              | Inregistreaza-te la vot
+
+    section.step.step-user-type
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 2
+            | Esti rezident sau domicilat?
+          .step-content.row.content
+            .fields.small-12.medium-6.columns.show-for-small-only
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-rezident", checked="checked")
+                label(for="radio-rezident") Rezident
+              .field-input
+                input(type="radio", name="user-type", require, id="radio-domicilat")
+                label(for="radio-domicilat") Domicilat
+            .small-12.medium-6.columns
+              .field-input.hide-for-small-only
+                input(type="radio", name="user-type", require, id="radio-rezident", checked="checked")
+                label(for="radio-rezident") Rezident
+              .step-info.faded
+                h2.show-for-small-only Ca rezident
+                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            .small-12.medium-6.columns
+              .field-input.hide-for-small-only
+                input(type="radio", name="user-type", require, id="radio-domicilat")
+                label(for="radio-domicilat") Domicilat
+              .step-info
+                h2.show-for-small-only Ca domicilat
+                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+          .step-actions
+            a.button.large
+              | Urmatorul pas
+
+    section.step.step-user-vote
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 3
+            | Prin corespondenta sau la o sectie?
+          .step-content.row.content
+            .fields.small-12.medium-6.columns.show-for-small-only
+              .field-input
+                input(type="radio", name="user-vote", require, id="radio-corespondenta")
+                label(for="radio-corespondenta") Prin corespondenta
+              .field-input
+                input(type="radio", name="user-vote", require, id="radio-sectie")
+                label(for="radio-sectie") La sectie
+            .small-12.medium-6.columns
+              .field-input.hide-for-small-only
+                input(type="radio", name="user-vote", require, id="radio-corespondenta")
+                label(for="radio-corespondenta") Prin corespondenta
+              .step-info.faded
+                h2.show-for-small-only Prin corespondenta
+                ul.compare.listing
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+            .small-12.medium-6.columns
+              .field-input.hide-for-small-only
+                input(type="radio", name="user-vote", require, id="radio-sectie")
+                label(for="radio-sectie") La sectie
+              .step-info
+                h2.show-for-small-only La sectie
+                ul.compare.listing
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE000;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                  li
+                    i.material-icons &#xE86C;
+                    p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+
+          .step-actions
+            a.button.large
+              | Urmatorul pas
+
+    section.step.step-user-action
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 4
+            | Strange actele si depune-le
+          .step-content.row
+            ul.info.listing.medium-offset-2.medium-8.columns
+              li
+                i.material-icons &#xE88E;
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+              li
+                i.material-icons &#xE88E;
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+              li
+                i.material-icons &#xE88E;
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+              li
+                i.material-icons &#xE88E;
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+              li
+                i.material-icons &#xE88E;
+                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+          .step-actions
+            a.button.large
+              | Afla mai multe
+
+    section.step.step-user-vote
+      .content.row
+        .small-12.medium-offset-1.medium-10.columns
+          h1.step-title
+            span 5
+            | Pana sa ajungi la urne
+          .step-content
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
