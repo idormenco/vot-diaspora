@@ -34,25 +34,79 @@
       $scope.$watch(function () {
         return vm.city.details;
       }, function (details) {
-        var point;
+        var point,
+            pointBox,
+            bounds,
+            NE,
+            SW,
+            radius = 100;
         if (_.isNull(details)) {
           vm.city.markers = [];
           return;
         }
         point = new GeoPoint(details.geometry.location.lat(), details.geometry.location.lng(), false);
+        pointBox = point.boundingCoordinates(radius, null, true);
+        NE = pointBox.pop();
+        SW = pointBox.pop();
+        bounds = {
+          northeast: {
+            latitude: NE.latitude(),
+            longitude: NE.longitude()
+          },
+          southwest: {
+            latitude: SW.latitude(),
+            longitude: SW.longitude()
+          }
+        };
+        vm.map.bounds = bounds;
+
         _.each(vm.markers, function (marker) {
           var localPoint,
               distance,
               selected;
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
-          if (distance < 100) {
+          if (distance < radius) {
             selected = marker.texts;
             selected.distance = distance;
             vm.city.markers.push(selected);
           }
         });
       });
+
+      prepareMarkers = function (response) {
+        var temp = [];
+        _.each(response, function (marker) {
+          marker.id = marker.n;
+          marker.showWindow = false;
+          marker.coords = {latitude: marker.la, longitude: marker.lo};
+          marker.templateUrl = 'markerWindow.html';
+          marker.texts = {
+            title: marker.m,
+            country: marker.co,
+            adr: marker.a,
+            tel: marker.t,
+            email: marker.em
+          };
+          marker.onClicked = function () {
+            _.each(vm.markers, function (item) {
+              item.showWindow = item.id === marker.id ? true : false;
+            });
+            $scope.$apply();
+          };
+          marker.closeClick = function () {
+            marker.showWindow = false;
+            $scope.$evalAsync();
+          };
+          marker.onWindowClose = function () {
+            marker.showWindow = false;
+            $scope.$evalAsync();
+          };
+          temp.push(marker);
+        });
+        // vm.markers = temp.splice(0, 3);
+        vm.markers = temp;
+      };
 
       uiGmapGoogleMapApi.then(function (maps) {
         maps.visualRefresh = true;
@@ -62,40 +116,6 @@
             longitude: 24.96676
           },
           zoom: 3
-        };
-
-        prepareMarkers = function (response) {
-          var temp = [];
-          _.each(response, function (marker) {
-            marker.id = marker.n;
-            marker.showWindow = false;
-            marker.coords = {latitude: marker.la, longitude: marker.lo};
-            marker.templateUrl = 'markerWindow.html';
-            marker.texts = {
-              title: marker.m,
-              country: marker.co,
-              adr: marker.a,
-              tel: marker.t,
-              email: marker.em
-            };
-            marker.onClicked = function () {
-              _.each(vm.markers, function (item) {
-                item.showWindow = item.id === marker.id ? true : false;
-              });
-              $scope.$apply();
-            };
-            marker.closeClick = function () {
-              marker.showWindow = false;
-              $scope.$evalAsync();
-            };
-            marker.onWindowClose = function () {
-              marker.showWindow = false;
-              $scope.$evalAsync();
-            };
-            temp.push(marker);
-          });
-          // vm.markers = temp.splice(0, 3);
-          vm.markers = temp;
         };
 
         // Load markers

@@ -1,27 +1,30 @@
 section.step.step-user-location
-      .content.row
-        .small-12.medium-offset-1.medium-10.columns
-          h1.step-title
-            span 1
-            | Unde stai?
-          .step-content.location
-            form(name="find", action="/search", method="post", onsubmit="return false;")
-              | Locuiesc in orasul ...
-              input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options")
-              input(type="button" value="Reset" ng-click="vm.cityReset()")
+  .content.row
+    .small-12.medium-offset-1.medium-10.columns
+      h1.step-title
+        span 1
+        | Unde stai?
+      .step-content.location
+        form(name="find", action="/search", method="post", onsubmit="return false;")
+          | Locuiesc in orasul ...
+          input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options")
+          input(type="button" value="Reset" ng-click="vm.cityReset()")
 
-            div(ng-if="vm.city.markers.length")
-              div(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
-                | Departare: {{parameter.distance}}Km
-                location-box
-              ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
-                ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
-                  ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
-              div Sursa:
-                a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
-          .step-actions
-            a.button.large
-              | Inregistreaza-te la vot
+        div(ng-if="vm.city.details")
+          div(ng-if="!vm.city.markers.length")
+            | Pe o raza de 100KM nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
+          div(ng-if="vm.city.markers.length")
+            div(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
+              | Departare: {{parameter.distance}}Km
+              location-box
+        ui-gmap-google-map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom', ng-if='vm.map.center')
+          ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
+            ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
+        div Sursa:
+          a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
+      .step-actions
+        a.button.large
+          | Inregistreaza-te la vot
 
     section.step.step-user-type
       .content.row
