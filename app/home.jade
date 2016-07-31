@@ -84,16 +84,19 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input
-            input(type="radio", name="user-vote", require, id="radio-corespondenta")
-            label(for="radio-corespondenta") Prin corespondenta
+            a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
+              i.material-icons &#xE5CA;
+              | Prin corespondenta
           .field-input
-            input(type="radio", name="user-vote", require, id="radio-sectie")
-            label(for="radio-sectie") La sectie
+            a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
+              i.material-icons &#xE5CA;
+              | La sectie
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            input(type="radio", name="user-vote", require, id="radio-corespondenta")
-            label(for="radio-corespondenta") Prin corespondenta
-          .step-info.faded
+            a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
+              i.material-icons &#xE5CA;
+              | Prin corespondenta
+          .step-info(ng-class="vm.step['3'].firstChoice")
             h2.show-for-small-only Prin corespondenta
             ul.compare.listing
               li
@@ -116,9 +119,10 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
                 p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            input(type="radio", name="user-vote", require, id="radio-sectie")
-            label(for="radio-sectie") La sectie
-          .step-info
+            a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
+              i.material-icons &#xE5CA;
+              | La sectie
+          .step-info(ng-class="vm.step['3'].secondChoice")
             h2.show-for-small-only La sectie
             ul.compare.listing
               li
