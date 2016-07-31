@@ -12,9 +12,9 @@
           templateUrl: 'home.html',
           controller: 'DiasporaCtrl as vm'
         })
-        .state('test1', {
-          url: '/test1',
-          templateUrl: 'test1.html',
+        .state('community', {
+          url: '/community',
+          templateUrl: 'community.html',
           controller: 'DiasporaCtrl as vm'
         })
         .state('test2', {

@@ -49,7 +49,6 @@
   button, .button
     margin: 0;
 
-
 .step-content
   .field-input
     margin: (distance/3) 0;
@@ -74,3 +73,46 @@
 
   p
     padding-left: (distance * 2/3);
+
+.box
+  padding: (distance/2);
+  box-sizing: border-box;
+
+  .button
+    margin: 0;
+
+.box-light
+  background: color-secondary
+
+.box-dark
+  background: color-primary;
+  color: color-secondary;
+
+  h2
+    color: color-secondary;
+
+.share-actions
+  margin: (distance * 3 /4) 0 0;
+
+  .share-cta
+    margin: 0 10px 0 0;
+
+.share-cta
+  color: #fff;
+  padding: 20px;
+  font-size: 20px;
+  font-weight 700;
+  display inline-block;
+
+  &.fb
+    background #3b5998;
+
+  &.tw
+    background #1da1f2;
+
+  &.gp
+    background: #d73d32;
+
+  &:hover
+    background color-secondary
+    color #fff
