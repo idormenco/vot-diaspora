@@ -135,7 +135,7 @@
           distance = point.distanceTo(localPoint, true);
           if (distance < radius) {
             selected = marker.texts;
-            selected.distance = distance;
+            selected.distance = (Math.round(distance * 2) / 2).toFixed(1);
             vm.city.markers.push(selected);
           }
         });
@@ -148,7 +148,7 @@
           marker.showWindow = false;
           marker.coords = {latitude: marker.la, longitude: marker.lo};
           marker.templateUrl = 'markerWindow.html';
-          marker.icon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+          marker.icon = 'images/pin.png';
           marker.texts = {
             title: marker.m,
             country: marker.co,
