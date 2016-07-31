@@ -7,6 +7,7 @@ body
 h1, h2, h3, h4, h5, h6
   color: color-primary;
   font-family: 'Montserrat';
+  line-height 1.17
 
 h1
   font-size: 30px;
@@ -14,9 +15,6 @@ h1
 
   @media breakpoint-medium
     font-size: 40px;
-
-h2
-  line-height 1.1
 
 button, .button
   background-color: color-primary;
@@ -63,9 +61,15 @@ button, .button
   h2
     color: color-secondary;
 
+input[type="text"]
+  padding: 26px 13px;
+
 .fields
   text-align: center;
 
   .field-input
     display: inline-block;
     margin: (distance/6) 0;
+
+[data-ui-view]
+  min-height 600px;

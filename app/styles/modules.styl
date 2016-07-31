@@ -4,7 +4,7 @@
   background: color-primary;
   color: color-secondary;
   text-align: center;
-  padding: distance 0;
+  padding: (distance/2) 0 distance;
   margin-bottom: (distance/2);
 
   h1
@@ -13,6 +13,13 @@
 
   p
     font-size: 18px;
+
+.brand
+  max-width 200px;
+  margin 0 auto;
+
+.step
+  margin-bottom (distance/2);
 
 .step-title
   text-align: center;
@@ -36,6 +43,8 @@
       height: 40px;
       line-height: 38px;
       font-size: 26px;
+      position relative
+      top -5px
 
 .location
   form
@@ -57,6 +66,16 @@
     .field-input
       margin: (distance/6) 0;
 
+.search
+  max-width 400px;
+  margin 0 auto
+  position relative
+
+.reset
+  position absolute
+  top 0
+  right 0
+
 .listing
   margin: (distance/3) 0 0;
   padding: 0;
@@ -74,9 +93,13 @@
   p
     padding-left: (distance * 2/3);
 
+.eq
+  display flex
+
 .box
   padding: (distance/2);
   box-sizing: border-box;
+  flex: 1;
 
   .button
     margin: 0;
@@ -95,7 +118,7 @@
   margin: (distance * 3 /4) 0 0;
 
   .share-cta
-    margin: 0 10px 0 0;
+    margin: 0 10px 10px 0;
 
 .share-cta
   color: #fff;
@@ -116,3 +139,27 @@
   &:hover
     background color-secondary
     color #fff
+
+.places
+
+
+.place
+  background: color-primary;
+  color: #fff;
+  padding: (distance/3);
+
+  h3
+    color color-secondary;
+
+  p
+    margin-bottom 10px
+
+footer
+  margin: distance 0;
+  padding: distance 0;
+
+  .soruce
+    display block;
+    margin: 0 auto;
+    width: 40px;
+    height: 40px;

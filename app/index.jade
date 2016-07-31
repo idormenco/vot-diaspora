@@ -17,13 +17,15 @@ html(lang='en' data-ng-app='votDiaspora')
     section.hero-info
       .content.row
         .small-12.medium-offset-1.medium-10.columns
-          h1 Diaspora voteaza!
+          img.brand(src="images/brand.png")
           p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number one brain is the seed of intelligence, paroxysm of global death, take root and flourish, the ash of stellar alchem
+
+    div(data-ui-view)
 
     section.share
       .content.row
         .small-12.medium-offset-1.medium-10.columns
-          .row(data-equalizer, data-equalize-on="medium")
+          .row.eq
             .box.box-light.small-12.medium-6.columns
               h2 Ce pot face in comunitatea mea?
               p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
@@ -38,11 +40,13 @@ html(lang='en' data-ng-app='votDiaspora')
                 a.share-cta.tw(data-share="tw") TW
                 a.share-cta.gp(data-share="gp") G+
 
-    div(data-ui-view)
+    footer
+      a.soruce(href="http://code4.ro", target="_blank")
+        img(src="images/brand-code4.png")
 
     script( type="text/ng-template" id="locationBox.html" ng-cloak)
       div
-        h2( ng-if="parameter.title && parameter.country"  ) {{parameter.title}}, {{parameter.country}}
+        h3( ng-if="parameter.title && parameter.country"  ) {{parameter.title}}, {{parameter.country}}
         div(class="box_info")
           p(class="address" ng-if="parameter.adr")
             span(class="label") Adresa:

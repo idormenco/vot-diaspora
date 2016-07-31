@@ -163,6 +163,7 @@
           },
           zoom: 3
         };
+        vm.map.options = { scrollwheel: false };
 
         // Load markers
         locationsService.getData()
