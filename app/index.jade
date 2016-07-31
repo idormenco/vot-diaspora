@@ -53,10 +53,11 @@ html(lang='en' data-ng-app='votDiaspora')
             | {{parameter.adr}}
           p(class="phone" ng-if="parameter.tel")
             span(class="label") Telefon:
-            | {{parameter.tel}}
+            a.info(href="tel:{{parameter.tel}}") {{parameter.tel}}
           p(class="email" ng-if="parameter.email")
             span(class="label") Email:
-            | {{parameter.email}}
+            a.info(href="mailto:{{parameter.email}}") {{parameter.email}}
+
 
     script( type="text/ng-template" id="markerWindow.html" ng-cloak)
       div(class="mapWindow" ng-cloak)

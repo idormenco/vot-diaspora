@@ -16,6 +16,17 @@ h1
   @media breakpoint-medium
     font-size: 40px;
 
+a
+  color color-primary
+
+  &:hover
+    color color-primary
+    text-decoration underline
+
+p
+  a
+    text-decoration underline
+
 button, .button
   background-color: color-primary;
   color: color-secondary;
@@ -25,6 +36,7 @@ button, .button
   &:hover
     background-color: color-primary;
     color: #fff
+    text-decoration none
 
 // TODO: design custom ones
 .field-input
@@ -51,6 +63,22 @@ button, .button
 .material-icons
   font-size: 32px;
 
+.row
+  .row
+    margin 0
+
+[class*="column"] + [class*="column"]:last-child
+  float left
+
+.places
+  display: flex;
+  flex-flow: row wrap;
+
+  .place
+    box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+
 .faded
   opacity .90
   color: color-secondary;
@@ -63,6 +91,7 @@ button, .button
 
 input[type="text"]
   padding: 26px 13px;
+  margin 0
 
 .fields
   text-align: center;
