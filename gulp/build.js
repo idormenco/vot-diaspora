@@ -62,7 +62,7 @@ module.exports = function (gulp, $, config) {
   });
 
   // compile scripts and copy into build directory
-  gulp.task('scripts', ['clean', 'analyze', 'markup'], function () {
+  gulp.task('scripts', ['clean', 'markup'], function () {
     var htmlFilter = $.filter('**/*.html', {restore: true})
       , jsFilter = $.filter('**/*.js', {restore: true});
 
