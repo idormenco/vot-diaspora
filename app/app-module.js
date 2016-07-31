@@ -21,7 +21,7 @@
       vm.markers = [];
 
       // interaction steps
-      vm.debugSteps = 1;
+      vm.debugSteps = 0;
       vm.step = {
         1: {
           visible: true
@@ -54,6 +54,27 @@
         vm.step[step].secondChoice = choice === 2 ? 'chosen' : 'faded';
         vm.step[step].choice = choice;
       };
+
+      $scope.$watch(function () {
+        return !_.isNull(vm.step['2'].choice) && !_.isNull(vm.step['3'].choice) ? vm.step['2'].choice.toString() + vm.step['3'].choice.toString() : null;
+      }, function (value) {
+        switch (value) {
+          case '11':
+            $state.go('home.rezident-corespondenta');
+            break;
+          case '12':
+            $state.go('home.rezident-sectie');
+            break;
+          case '21':
+            $state.go('home.domiciliat-corespondenta');
+            break;
+          case '22':
+            $state.go('home.domiciliat-sectie');
+            break;
+          default:
+            break;
+        }
+      });
 
       vm.city = {
         // city name as autocompleted by Google Places

@@ -47,23 +47,23 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
         | Esti rezident sau domicilat?
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
-          .field-input
+          .field-input(ng-class="vm.step['2'].firstChoice")
             a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice") Rezident
-          .field-input
+          .field-input(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
-        .small-12.medium-6.columns
+        .small-12.medium-6.columns(ng-class="vm.step['2'].firstChoice")
           .field-input.hide-for-small-only
             a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice") Rezident
-          .step-info(ng-class="vm.step['2'].firstChoice")
+          .step-info
             h2.show-for-small-only Ca rezident
-            p(ng-class="vm.step['2'].firstChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
-        .small-12.medium-6.columns
+            p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+        .small-12.medium-6.columns(ng-class="vm.step['2'].secondChoice")
           .field-input.hide-for-small-only
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
-          .step-info(ng-class="vm.step['2'].secondChoice")
+          .step-info
             h2.show-for-small-only Ca domicilat
-            p(ng-class="vm.step['2'].secondChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
-      .step-actions(ng-if="!vm.step['3'].visible")
+            p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+      .step-actions(ng-if="vm.step['2'].choice && !vm.step['3'].visible")
         a.button.large(ng-click="vm.activateStep(3)")
           | Urmatorul pas
 
@@ -75,17 +75,14 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
         | Prin corespondenta sau la o sectie?
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
-          .field-input
-            input(type="radio", name="user-vote", require, id="radio-corespondenta")
-            label(for="radio-corespondenta") Prin corespondenta
-          .field-input
-            input(type="radio", name="user-vote", require, id="radio-sectie")
-            label(for="radio-sectie") La sectie
+          .field-input(ng-class="vm.step['3'].firstChoice")
+            a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice") Prin corespondenta
+          .field-input(ng-class="vm.step['3'].secondChoice")
+            a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].firstChoice")  La sectie
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            input(type="radio", name="user-vote", require, id="radio-corespondenta")
-            label(for="radio-corespondenta") Prin corespondenta
-          .step-info.faded
+            a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice") Prin corespondenta
+          .step-info(ng-class="vm.step['3'].firstChoice")
             h2.show-for-small-only Prin corespondenta
             ul.compare.listing
               li
@@ -106,10 +103,9 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
               li
                 i.material-icons &#xE86C;
                 p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-        .small-12.medium-6.columns
+        .small-12.medium-6.columns(ng-class="vm.step['3'].secondChoice")
           .field-input.hide-for-small-only
-            input(type="radio", name="user-vote", require, id="radio-sectie")
-            label(for="radio-sectie") La sectie
+            a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].firstChoice")  La sectie
           .step-info
             h2.show-for-small-only La sectie
             ul.compare.listing
@@ -135,7 +131,7 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
                 i.material-icons &#xE86C;
                 p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
 
-      .step-actions(ng-if="!vm.step['4'].visible")
+      .step-actions(ng-if="vm.step['2'].choice && !vm.step['4'].visible")
         a.button.large(ng-click="vm.activateStep(4)")
           | Urmatorul pas
 
@@ -146,22 +142,8 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
         span 4
         | Strange actele si depune-le
       .step-content.row
-        ul.info.listing.medium-offset-2.medium-8.columns
-          li
-            i.material-icons &#xE88E;
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-          li
-            i.material-icons &#xE88E;
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-          li
-            i.material-icons &#xE88E;
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-          li
-            i.material-icons &#xE88E;
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-          li
-            i.material-icons &#xE88E;
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+        div(data-ui-view="")
+
       .step-actions(ng-if="!vm.step['5'].visible")
         a.button.large(ng-click="vm.activateStep(5)")
           | Afla mai multe
