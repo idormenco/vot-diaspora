@@ -37,12 +37,13 @@ button, .button
 
     &:checked
       + label
+      .chosen
         opacity 1
         color color-primary
 
     + label
-      opacity .31
-      color: color-secondary;
+      opacity .90
+      color: color-primary;
       font-size: 22px;
       margin: 0 16px;
 
@@ -50,9 +51,12 @@ button, .button
   font-size: 32px;
 
 .faded
-  opacity .31
+  opacity .90
   color: color-secondary;
-
+  h2
+    color: color-secondary;
+.chosen
+  font-size: 1.2em;
   h2
     color: color-secondary;
 

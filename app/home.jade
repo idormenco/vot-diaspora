@@ -1,4 +1,8 @@
-section.step.step-user-location
+div
+    input(type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
+    | Arata toti pasii #debug
+
+section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
@@ -22,11 +26,11 @@ section.step.step-user-location
             ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
         div Sursa:
           a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
-      .step-actions
-        a.button.large
+      .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible) ")
+        a.button.large(ng-click="vm.activateStep(2)")
           | Inregistreaza-te la vot
 
-section.step.step-user-type
+section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
@@ -35,30 +39,26 @@ section.step.step-user-type
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input
-            input(type="radio", name="user-type", require, id="radio-rezident", checked="checked")
-            label(for="radio-rezident") Rezident
+            a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice") Rezident
           .field-input
-            input(type="radio", name="user-type", require, id="radio-domicilat")
-            label(for="radio-domicilat") Domicilat
+            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            input(type="radio", name="user-type", require, id="radio-rezident", checked="checked")
-            label(for="radio-rezident") Rezident
-          .step-info.faded
+            a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice") Rezident
+          .step-info(ng-class="vm.step['2'].firstChoice")
             h2.show-for-small-only Ca rezident
-            p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            p(ng-class="vm.step['2'].firstChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            input(type="radio", name="user-type", require, id="radio-domicilat")
-            label(for="radio-domicilat") Domicilat
-          .step-info
+            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
+          .step-info(ng-class="vm.step['2'].secondChoice")
             h2.show-for-small-only Ca domicilat
-            p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
-      .step-actions
-        a.button.large
+            p(ng-class="vm.step['2'].secondChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+      .step-actions(ng-if="!vm.step['3'].visible")
+        a.button.large(ng-click="vm.activateStep(3)")
           | Urmatorul pas
 
-section.step.step-user-vote
+section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
@@ -126,11 +126,11 @@ section.step.step-user-vote
                 i.material-icons &#xE86C;
                 p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
 
-      .step-actions
-        a.button.large
+      .step-actions(ng-if="!vm.step['4'].visible")
+        a.button.large(ng-click="vm.activateStep(4)")
           | Urmatorul pas
 
-section.step.step-user-action
+section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
@@ -153,11 +153,11 @@ section.step.step-user-action
           li
             i.material-icons &#xE88E;
             p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-      .step-actions
-        a.button.large
+      .step-actions(ng-if="!vm.step['5'].visible")
+        a.button.large(ng-click="vm.activateStep(5)")
           | Afla mai multe
 
-section.step.step-user-vote
+section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['5'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title

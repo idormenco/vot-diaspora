@@ -14,23 +14,67 @@
     ])
     .controller('DiasporaCtrl', function ($scope, $state, uiGmapGoogleMapApi, locationsService) {
       var vm = this,
+          // functions
           prepareMarkers;
+
+      // all markers for the map
       vm.markers = [];
 
+      // interaction steps
+      vm.debugSteps = 1;
+      vm.step = {
+        1: {
+          visible: true
+        },
+        2: {
+          visible: false,
+          choice: null,
+          firstChoice: null,
+          secondChoice: null
+        },
+        3: {
+          visible: false,
+          choice: null
+        },
+        4: {
+          visible: false,
+          choice: null
+        },
+        5: {
+          visible: false,
+          choice: null
+        }
+      };
+
+      vm.activateStep = function (step) {
+        vm.step[step].visible = true;
+      };
+      vm.stepChoice = function (step, choice){
+        vm.step[step].firstChoice = choice === 1 ? 'chosen' : 'faded';
+        vm.step[step].secondChoice = choice === 2 ? 'chosen' : 'faded';
+        vm.step[step].choice = choice;
+      };
+
       vm.city = {
+        // city name as autocompleted by Google Places
         name: null,
+        // the whole response received from Google Places
         details: null,
+        // markers found around the searched city
         markers: [],
+        // search google places only for city names
         options: {
           types: '(cities)'
         }
       };
 
+      // reset user search
       vm.cityReset = function () {
         vm.city.name = vm.city.details = null;
         vm.city.markers = [];
       };
 
+      // watch city details, to launch the map reposition and the finding of closest markers
       $scope.$watch(function () {
         return vm.city.details;
       }, function (details) {
@@ -45,6 +89,8 @@
           return;
         }
         point = new GeoPoint(details.geometry.location.lat(), details.geometry.location.lng(), false);
+
+        // set new bounds on the map, a bow with 'radius' KM around the searched city
         pointBox = point.boundingCoordinates(radius, null, true);
         NE = pointBox.pop();
         SW = pointBox.pop();
