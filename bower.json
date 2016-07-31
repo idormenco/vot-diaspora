@@ -9,8 +9,6 @@
     "angular-ui-router": "~0.2.10",
     "foundation": "~5.4.0",
     "angular-google-maps": "^2.3.3",
-    "angular-google-maps-geocoder": "^0.0.2",
-    "ngGeolocation": "^0.0.8",
     "lodash": "^4.14.1"
   },
   "devDependencies": {

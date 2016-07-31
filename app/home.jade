@@ -1,8 +1,15 @@
 div
     form(name="find", action="/search", method="post", onsubmit="return false;")
-      | Search
-      input(type="text", name="location", id="locate")
-      input(type="submit", value="Search")
+        | Locuiesc in orasul ...
+        input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options")
+        input(type="button" value="Reset" ng-click="vm.cityReset()")
+
+    div(ng-if="vm.city.markers.length")
+        div(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
+            | Departare: {{parameter.distance}}Km
+            location-box
     ui-gmap-google-map( center='vm.map.center', zoom='vm.map.zoom', ng-if='vm.map.center')
         ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
             ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
+    div Sursa:
+        a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
