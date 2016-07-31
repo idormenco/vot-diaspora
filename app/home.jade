@@ -16,12 +16,12 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
 
     div.small-12.columns(ng-if="vm.city.details")
       h2.message(ng-if="!vm.city.markers.length")
-        | Pe o raza de 100KM nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
+        | Pe o raza de 100km nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
       div.places(ng-if="vm.city.markers.length")
         div.place(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
           .distance
             | Distanta:
-            strong {{parameter.distance}} Km
+            strong {{parameter.distance}} km
           location-box
 
   .content.row
@@ -29,7 +29,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       .step-content.location
         .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible) ")
           a.button.large(ng-click="vm.activateStep(2)")
-            | Inregistreaza-te la vot
+            | Înregistrează-te la vot
 
     .map.small-12.columns
       ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="true" options="vm.map.options" ng-if='vm.map.center')
@@ -44,7 +44,7 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
         span 2
-        | Esti rezident sau domicilat?
+        | Ești rezident sau domicilat?
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input
@@ -61,19 +61,20 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
               i.material-icons &#xE5CA;
               | Rezident
           .step-info(ng-class="vm.step['2'].firstChoice")
-            h2.show-for-small-only Ca rezident
-            p(ng-class="vm.step['2'].firstChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            h2.show-for-small-only Ai buletin (carte de identitate) de România?
+            p(ng-class="vm.step['2'].firstChoice") Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? Deții un ________________? Atunci, înseamnă că ești cetățean român cu rezidență în străinătate.
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
               i.material-icons &#xE5CA;
               | Domicilat
           .step-info(ng-class="vm.step['2'].secondChoice")
-            h2.show-for-small-only Ca domicilat
-            p(ng-class="vm.step['2'].secondChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
+            h2.show-for-small-only Ai pașaport românesc?
+            p(ng-class="vm.step['2'].secondChoice") Este înscris domiciliul în străinatate pe prima pagină a pașaportului? Atunci, înseamnă că ești cetățean român cu domiciliul în străinătate.
+
       .step-actions(ng-if="!vm.step['3'].visible")
         a.button.large(ng-click="vm.activateStep(3)")
-          | Urmatorul pas
+          | Următorul pas
 
 section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
   .content.row

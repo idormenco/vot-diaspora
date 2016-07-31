@@ -1,20 +1,24 @@
 @import 'variables'
 
 body
-  font: 400 1rem/1.56 'Montserrat';
+  font: 400 1rem/1.56 'Source Sans Pro';
   color: color-primary;
 
 h1, h2, h3, h4, h5, h6
   color: color-primary;
-  font-family: 'Montserrat';
+  font-family: 'Source Sans Pro';
   line-height 1.17
 
 h1
   font-size: 30px;
   margin-bottom: (distance/2);
+  font-weight 700
 
   @media breakpoint-medium
     font-size: 40px;
+
+h2
+  font-weight 700
 
 a
   color color-primary
@@ -30,10 +34,12 @@ p
 button, .button
   background-color: color-primary;
   color: color-secondary;
-  font-family: 'Montserrat';
+  font-family: 'Source Sans Pro';
   font-weight: 700;
 
-  &:hover
+  &:hover,
+  &:focus,
+  &:active
     background-color: color-primary;
     color: #fff
     text-decoration none
@@ -53,23 +59,6 @@ button, .button
     top: 6px;
     position: relative;
     margin-right: 10px;
-
-  input[type="radio"]
-    margin: 0;
-    position: relative;
-    top: -4px;
-
-    &:checked
-      + label
-      .chosen
-        opacity 1
-        color color-primary
-
-    + label
-      opacity .90
-      color: color-primary;
-      font-size: 22px;
-      margin: 0 16px;
 
 .material-icons
   font-size: 32px;
@@ -99,7 +88,6 @@ input[type="text"]
   margin: -20px 0 20px 0;
 
   .field-input
-    // margin: (distance/6) 0;
     text-align center
     width: 50%
     float left
