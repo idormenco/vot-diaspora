@@ -28,7 +28,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
             div.place.small-6.large-4.columns(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
               | Departare: {{parameter.distance}} Km
               location-box
-        ui-gmap-google-map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom', ng-if='vm.map.center')
+        ui-gmap-google-map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="true" options="vm.map.options" ng-if='vm.map.center')
           ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
             ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
         div Sursa:

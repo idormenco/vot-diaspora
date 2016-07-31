@@ -127,6 +127,7 @@
           marker.showWindow = false;
           marker.coords = {latitude: marker.la, longitude: marker.lo};
           marker.templateUrl = 'markerWindow.html';
+          marker.icon = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
           marker.texts = {
             title: marker.m,
             country: marker.co,
@@ -161,7 +162,10 @@
             latitude: 16.943161,
             longitude: 24.96676
           },
-          zoom: 3
+          zoom: 3,
+          options: {
+            scrollwheel: false
+          }
         };
         vm.map.options = { scrollwheel: false };
 
