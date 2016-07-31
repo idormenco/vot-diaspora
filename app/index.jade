@@ -22,13 +22,21 @@ html(lang='en' data-ng-app='votDiaspora')
 
     section.share
       .content.row
-        .small-12.medium-offset-1.medium-10.columns(data-equalizer, data-equalize-on="medium")
-          .box.box-light.small-12.medium-6.columns
-            h2 Ce pot face in comunitatea mea?
+        .small-12.medium-offset-1.medium-10.columns
+          .row(data-equalizer, data-equalize-on="medium")
+            .box.box-light.small-12.medium-6.columns
+              h2 Ce pot face in comunitatea mea?
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+              .share-actions
+                a.button(ui-sref="community") Vezi materialele
 
-          .box.box-dark.small-12.medium-6.columns
-            h2 Informeaza-ti prietenii
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+            .box.box-dark.small-12.medium-6.columns
+              h2 Informeaza-ti prietenii
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+              .share-actions
+                a.share-cta.fb(data-share="fb") FB
+                a.share-cta.tw(data-share="tw") TW
+                a.share-cta.gp(data-share="gp") G+
 
     div(data-ui-view)
 
