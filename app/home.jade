@@ -62,7 +62,8 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
               | Rezident
           .step-info(ng-class="vm.step['2'].firstChoice")
             h2.show-for-small-only Ai buletin (carte de identitate) de România?
-            p(ng-class="vm.step['2'].firstChoice") Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? Deții un ________________? Atunci, înseamnă că ești cetățean român cu rezidență în străinătate.
+            p(ng-class="vm.step['2'].firstChoice")
+              | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank"> Verifică aici</a>, în dreptul statului în care locuiești dacă ai actele care fac dovada resedintei? Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
@@ -81,96 +82,103 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
         span 3
-        | Prin corespondenta sau la o sectie?
+        | Prin corespondență sau la o secție de votare?
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['3'].firstChoice")
             a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
               i.material-icons &#xE5CA;
-              | Prin corespondenta
+              | Prin corespondență
           .field-input(ng-class="vm.step['3'].secondChoice")
             a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
               i.material-icons &#xE5CA;
-              | La sectie
+              | La secția de votare
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['3'].firstChoice")
             a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
               i.material-icons &#xE5CA;
-              | Prin corespondenta
+              | Prin corespondență
           .step-info(ng-class="vm.step['3'].firstChoice")
-            h2.show-for-small-only Prin corespondenta
+            h2.show-for-small-only Prin corespondență
             ul.compare.listing
               li
                 i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Nu trebuie să te deplasezi în ziua votului la secția de votare de care aparții
               li
                 i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Nu trebuie să stai la coadă pentru a vota în ziua alegerilor
+              li
+                i.material-icons &#xE86C;
+                p Votezi din localitatea în care locuiești
               li
                 i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-              li
-                i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Trebuie să te ASIGURI că ai completat corect adresa de email și numărul de telefon pe cererea trimisă la Registrul Electoral. În acest fel, vei putea afla în timp util dacă documentele și votul tău au ajuns la destinație
               li
                 i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Trebuie să verifici, printr-un telefon/email la Autoritatea Electorală Permanentă(AEP), dacă cererea/documentele tale au ajuns la destinație
               li
-                i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                i.material-icons &#xE000;
+                p
+                  | Trebuie să verifici dacă ai fost înscris pe listele electorale la <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a> la 5 zile după închiderea perioadei de înscriere.
+              li
+                i.material-icons &#xE000;
+                p Dacă nu ai fost înscris, vei vota la consulatul, ambasada sau institutul cultural din țara în care te afli.
+              li
+                i.material-icons &#xE000;
+                p Dacă totul a mers strună până aici, nu uita că, după ce ai votat prin corespondență, trebuie să verifici la Autoritatea Electorală Permanentă(AEP) cu trei zile înainte de data alegerilor că votul tău a ajuns la destinație.
         .small-12.medium-6.columns(ng-class="vm.step['3'].secondChoice")
           .field-input.hide-for-small-only(ng-class="vm.step['3'].secondChoice")
             a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
               i.material-icons &#xE5CA;
-              | La sectie
+              | La secția de votare
           .step-info(ng-class="vm.step['3'].secondChoice")
-            h2.show-for-small-only La sectie
+            h2.show-for-small-only La secția de votare
             ul.compare.listing
               li
                 i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Trebuie să completezi mai puține cereri/acte și să trimiți mai puține documente către Registrul electoral
+              li
+                i.material-icons &#xE86C;
+                p Ai posibilitatea de a înființa o secție de votare într-o localitate apropiată ție, fără a te deplasa la ambasadă. Ghidul electoral spună că, dacă se înregistrează în Registrul Electoral peste 100 de persoane din aceeași localitate se deschide o nouă secție de votare pentru aceștia.
               li
                 i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Anul acesta, MAE a pus la dispoziție doar jumătate din numărul secțiilor de votare din 2014, așa că există posibilitatea să stai la coadă ore în șir pentru a putea vota.
+              li
+                i.material-icons &#xE000;
+                p Dacă nu te mobilizezi pentru a înființa o secție de votare aproape de tine, te vei deplasa la consulatul, ambasada sau institutul cultural din țara în care te afli, ceea ce înseamnă costuri ridicate și timp consumat, dar și șanse mai mici de a reuși să votezi.
+              li
+                i.material-icons &#xE000;
+                p Dacă reușești să informezi cel puțin 100 de români cu privire la beneficiile înregistrării în Registrul Electoral sunt șanse foarte mari să se inființeze o secție de votare pentru voi, în regiunea în care vă aflați pentru a vă putea exprima votul.
               li
                 i.material-icons &#xE000;
                 p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
               li
                 i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-              li
-                i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-              li
-                i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-              li
-                i.material-icons &#xE86C;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
+                p Dacă te înscrii în Registrul Electoral, trebuie să verifici dacă apari pe listele electorale și la ce secție ai fost arondat. Poți face asta pe <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a>.
 
       .step-actions(ng-if="vm.step['2'].choice && !vm.step['4'].visible")
         a.button.large(ng-click="vm.activateStep(4)")
-          | Urmatorul pas
+          | Următorul pas
 
 section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
         span 4
-        | Strange actele si depune-le
+        | Strânge actele și depune-le
       .step-content.row
         div(data-ui-view="")
 
       .step-actions(ng-if="!vm.step['5'].visible")
         a.button.large(ng-click="vm.activateStep(5)")
-          | Afla mai multe
+          | Află mai multe
 
 section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['5'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
         span 5
-        | Pana sa ajungi la urne
+        | Până să ajungi la urne
       .step-content.row
         .more.medium-offset-2.medium-8.columns
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.

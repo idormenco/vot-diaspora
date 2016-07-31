@@ -28,14 +28,14 @@ html(lang='en' data-ng-app='votDiaspora')
         .small-12.medium-offset-1.medium-10.columns
           .row.eq
             .box.box-light.small-12.medium-6.columns
-              h2 Ce pot face in comunitatea mea?
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+              h2 Ce pot face în comunitatea mea??
+              p Am pregătit pentru tine o serie de postere si stickere pe care le poți descărca de aici și distribui în locurile în care știi că românii le pot vedea (la magazinele românești din localitate, la biserica la care mergi de obicei, la universitate, în locurile în care te întâlnești cu alți români cel mai des etc. ) și se pot informa corect despre modul în care pot vota în 2016.
               .share-actions
                 a.button(ui-sref="community") Vezi materialele
 
             .box.box-dark.small-12.medium-6.columns
-              h2 Informeaza-ti prietenii
-              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+              h2 Informează-ți prietenii
+              p Distribuie aceste informații în social media pentru a ajunge la cât mai mulți români din diaspora. Timpul până la închiderea perioadei de înregistrare în Registrul Electoral este scurt. Urmărește-ne pe pagina de facebook Vot Diaspora și descarcă de acolo imagini de cover pe care să le pui și pe profilul tău sau în grupurile din care faci parte. Dă share informației chiar acum.
               .share-actions
                 a.share-cta.fb(data-share="fb") FB
                 a.share-cta.tw(data-share="tw") TW
@@ -51,7 +51,7 @@ html(lang='en' data-ng-app='votDiaspora')
         div(class="box_info")
           p(class="address" ng-if="parameter.adr")
             span(class="label") Adresa:
-            | {{parameter.adr}}
+            a.info(href="https://maps.google.com?daddr={{parameter.adr}}" target="_blank") {{parameter.adr}}
           p(class="phone" ng-if="parameter.tel")
             span(class="label") Telefon:
             a.info(href="tel:{{parameter.tel}}") {{parameter.tel}}
