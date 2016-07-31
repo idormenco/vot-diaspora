@@ -38,10 +38,12 @@ button, .button
     color: #fff
     text-decoration none
 
-// TODO: design custom ones
 .field-input
-  display: block;
   position: relative;
+
+  a
+    display: block;
+    padding (distance/2) (distance/3)
 
   input[type="radio"]
     margin: 0;
@@ -70,15 +72,6 @@ button, .button
 [class*="column"] + [class*="column"]:last-child
   float left
 
-.places
-  display: flex;
-  flex-flow: row wrap;
-
-  .place
-    box-flex: 0;
-    flex: 0 0 50%;
-    max-width: 50%;
-
 .faded
   opacity .90
   color: color-secondary;
@@ -94,11 +87,10 @@ input[type="text"]
   margin 0
 
 .fields
-  text-align: center;
-
   .field-input
-    display: inline-block;
     margin: (distance/6) 0;
+    width: 50%
+    float left
 
 [data-ui-view]
   min-height 600px;

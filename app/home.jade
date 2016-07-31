@@ -30,6 +30,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
         .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible) ")
           a.button.large(ng-click="vm.activateStep(2)")
             | Inregistreaza-te la vot
+
     .map.small-12.columns
       ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="true" options="vm.map.options" ng-if='vm.map.center')
         ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )

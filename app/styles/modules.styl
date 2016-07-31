@@ -27,7 +27,7 @@
   span
     color: color-secondary;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto (distance/6);
     width: 30px;
     height: 30px;
     line-height: 30px;
@@ -37,7 +37,7 @@
     text-align: center;
 
     @media breakpoint-medium
-      margin-right: 20px;
+      margin 0 20px 0 0;
       display: inline-block;
       width: 40px;
       height: 40px;
@@ -115,12 +115,14 @@
     margin-left 5px
 
 .eq
-  display flex
+  @media breakpoint-medium
+    display flex
 
 .box
   padding: (distance/2);
   box-sizing: border-box;
-  flex: 1;
+  @media breakpoint-medium
+    flex: 1;
 
   .button
     margin: 0;
@@ -173,6 +175,14 @@ h2
 
 .places
   margin-bottom distance
+  @media breakpoint-medium
+    display: flex;
+    flex-flow: row wrap;
+
+    .place
+      box-flex: 0;
+      flex: 0 0 50%;
+      max-width: 50%;
 
 .place
   background: color-primary;
