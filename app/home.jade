@@ -48,18 +48,26 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input
-            a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice") Rezident
+            a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice")
+              i.material-icons &#xE5CA;
+              | Rezident
           .field-input
-            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
+            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
+              i.material-icons &#xE5CA;
+              | Domicilat
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice") Rezident
+            a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice")
+              i.material-icons &#xE5CA;
+              | Rezident
           .step-info(ng-class="vm.step['2'].firstChoice")
             h2.show-for-small-only Ca rezident
             p(ng-class="vm.step['2'].firstChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number
         .small-12.medium-6.columns
           .field-input.hide-for-small-only
-            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice") Domicilat
+            a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
+              i.material-icons &#xE5CA;
+              | Domicilat
           .step-info(ng-class="vm.step['2'].secondChoice")
             h2.show-for-small-only Ca domicilat
             p(ng-class="vm.step['2'].secondChoice") Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number

@@ -44,6 +44,15 @@ button, .button
   a
     display: block;
     padding (distance/2) (distance/3)
+    font-size 24px
+
+    @media breakpoint-medium
+      display inline-block
+
+  .material-icons
+    top: 6px;
+    position: relative;
+    margin-right: 10px;
 
   input[type="radio"]
     margin: 0;
@@ -73,22 +82,25 @@ button, .button
   float left
 
 .faded
-  opacity .90
-  color: color-secondary;
+  opacity .30
+  color: color-primary;
   h2
-    color: color-secondary;
+    color: color-primary;
 .chosen
   font-size: 1.2em;
   h2
-    color: color-secondary;
+    color: color-primary;
 
 input[type="text"]
   padding: 26px 13px;
   margin 0
 
 .fields
+  margin: -20px 0 20px 0;
+
   .field-input
-    margin: (distance/6) 0;
+    // margin: (distance/6) 0;
+    text-align center
     width: 50%
     float left
 
