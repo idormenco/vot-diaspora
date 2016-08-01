@@ -10,9 +10,10 @@
     .module('votDiaspora', [
       'ui.router',
       'mm.foundation',
-      'uiGmapgoogle-maps'
+      'uiGmapgoogle-maps',
+      'duScroll'
     ])
-    .controller('DiasporaCtrl', function ($scope, $state, uiGmapGoogleMapApi, locationsService) {
+    .controller('DiasporaCtrl', function ($scope, $state, $document, $timeout, uiGmapGoogleMapApi, locationsService) {
       var vm = this,
           // functions
           prepareMarkers;
@@ -48,8 +49,28 @@
 
       vm.activateStep = function (step) {
         vm.step[step].visible = true;
+        if (step === 2) {
+          $timeout(function () {
+            $document.scrollToElementAnimated(angular.element('.step-user-type'));
+          }, 100);
+        }
+        if (step === 3) {
+          $timeout(function () {
+            $document.scrollToElementAnimated(angular.element('.step-user-vote'));
+          }, 100);
+        }
+        if (step === 4) {
+          $timeout(function () {
+            $document.scrollToElementAnimated(angular.element('.step-user-action'));
+          }, 100);
+        }
+        if (step === 5) {
+          $timeout(function () {
+            $document.scrollToElementAnimated(angular.element('.step-user-final'));
+          }, 100);
+        }
       };
-      vm.stepChoice = function (step, choice){
+      vm.stepChoice = function (step, choice) {
         vm.step[step].firstChoice = choice === 1 ? 'chosen' : 'faded';
         vm.step[step].secondChoice = choice === 2 ? 'chosen' : 'faded';
         vm.step[step].choice = choice;
