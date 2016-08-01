@@ -61,17 +61,18 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
               i.material-icons &#xE5CA;
               | Rezident
           .step-info(ng-class="vm.step['2'].firstChoice")
-            h2.show-for-small-only Ai buletin (carte de identitate) de România?
+            h2 Ai buletin (carte de identitate) de România?
             p(ng-class="vm.step['2'].firstChoice")
-              | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank"> Verifică aici</a>, în dreptul statului în care locuiești dacă ai actele care fac dovada resedintei? Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
+              | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank">Verifică aici</a>, în dreptul statului în care locuiești dacă ai actele care fac dovada reședinței. Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
               i.material-icons &#xE5CA;
               | Domicilat
           .step-info(ng-class="vm.step['2'].secondChoice")
-            h2.show-for-small-only Ai pașaport românesc?
-            p(ng-class="vm.step['2'].secondChoice") Este înscris domiciliul în străinatate pe prima pagină a pașaportului? Atunci, înseamnă că ești cetățean român cu domiciliul în străinătate.
+            h2 Ai pașaport românesc?
+            p(ng-class="vm.step['2'].secondChoice")
+              | Este înscris domiciliul în străinatate pe prima pagină a pașaportului? Atunci, înseamnă că ești cetățean român cu domiciliul în străinătate.
 
       .step-actions(ng-if="vm.step['2'].choice && !vm.step['3'].visible")
         a.button.large(ng-click="vm.activateStep(3)")
@@ -103,23 +104,23 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
             ul.compare.listing
               li
                 i.material-icons &#xE86C;
-                p Nu trebuie să te deplasezi în ziua votului la secția de votare de care aparții
+                p Timp economisit. Nu trebuie să te deplasezi în ziua votului la secția de votare de care aparții
               li
                 i.material-icons &#xE86C;
-                p Nu trebuie să stai la coadă pentru a vota în ziua alegerilor
+                p Fără stres. Nu stai la coadă pentru a vota în ziua alegerilor.
               li
                 i.material-icons &#xE86C;
-                p Votezi din localitatea în care locuiești
+                p Bani de transport economisiți. Votezi din localitatea în care locuiești.
               li
                 i.material-icons &#xE000;
-                p Trebuie să te ASIGURI că ai completat corect adresa de email și numărul de telefon pe cererea trimisă la Registrul Electoral. În acest fel, vei putea afla în timp util dacă documentele și votul tău au ajuns la destinație
+                p În primul rând,  asigură-te că ai completat corect adresa de e-mail și numărul de telefon pe cererea trimisă la Registrul Electoral. În acest fel, vei putea afla în timp util dacă documentele și votul tău au ajuns la destinație
               li
                 i.material-icons &#xE000;
-                p Trebuie să verifici, printr-un telefon/email la Autoritatea Electorală Permanentă(AEP), dacă cererea/documentele tale au ajuns la destinație
+                p Dă un telefon/e-mail la Autoritatea Electorală Permanentă(AEP), să afli dacă cererea/documentele tale au ajuns la destinație
               li
                 i.material-icons &#xE000;
                 p
-                  | Trebuie să verifici dacă ai fost înscris pe listele electorale la <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a> la 5 zile după închiderea perioadei de înscriere.
+                  | Nu uita să verifici dacă ai fost înscris pe listele electorale la <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a> la 5 zile după închiderea perioadei de înscriere. (Completează adresa de e-mail la ultimul pas și noi îți trimitem un reminder la închiderea acestei perioade pentru a-ți aminti să verifici dacă ai fost înscris).
               li
                 i.material-icons &#xE000;
                 p Dacă nu ai fost înscris, vei vota la consulatul, ambasada sau institutul cultural din țara în care te afli.
@@ -136,10 +137,10 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
             ul.compare.listing
               li
                 i.material-icons &#xE86C;
-                p Trebuie să completezi mai puține cereri/acte și să trimiți mai puține documente către Registrul electoral
+                p Mai puțin stres. Completezi mai puține cereri/acte și trimiți mai puține documente către Registrul electoral.
               li
                 i.material-icons &#xE86C;
-                p Ai posibilitatea de a înființa o secție de votare într-o localitate apropiată ție, fără a te deplasa la ambasadă. Ghidul electoral spună că, dacă se înregistrează în Registrul Electoral peste 100 de persoane din aceeași localitate se deschide o nouă secție de votare pentru aceștia.
+                p Economie de timp și bani. Ai posibilitatea de a înființa o secție de votare într-o localitate apropiată ție, fără a te deplasa la ambasadă. La peste 100 de persoane înregistrate în Registrul Electoral din aceeași localitate se va deschide o nouă secție de votare.
               li
                 i.material-icons &#xE000;
                 p Anul acesta, MAE a pus la dispoziție doar jumătate din numărul secțiilor de votare din 2014, așa că există posibilitatea să stai la coadă ore în șir pentru a putea vota.
@@ -151,10 +152,7 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
                 p Dacă reușești să informezi cel puțin 100 de români cu privire la beneficiile înregistrării în Registrul Electoral sunt șanse foarte mari să se inființeze o secție de votare pentru voi, în regiunea în care vă aflați pentru a vă putea exprima votul.
               li
                 i.material-icons &#xE000;
-                p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of
-              li
-                i.material-icons &#xE86C;
-                p Dacă te înscrii în Registrul Electoral, trebuie să verifici dacă apari pe listele electorale și la ce secție ai fost arondat. Poți face asta pe <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a>.
+                p Dacă te înscrii în Registrul Electoral, verifică dacă apari pe listele electorale și la ce secție ai fost arondat. Poți face asta pe <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a>. (Completează adresa de e-mail la la ultimul pas și noi îți trimitem un reminder la închiderea perioadei de înregistrare în Registrul Electoral pentru a-ți aminti să verifici dacă ai fost înscris).
 
       .step-actions(ng-if="vm.step['2'].choice && !vm.step['4'].visible")
         a.button.large(ng-click="vm.activateStep(4)")
@@ -181,5 +179,6 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
         | Până să ajungi la urne
       .step-content.row
         .more.medium-offset-2.medium-8.columns
+          .fb-page(data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="320" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.

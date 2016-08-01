@@ -17,8 +17,8 @@ html(lang='en' data-ng-app='votDiaspora')
     section.hero-info
       .content.row
         .small-12.medium-offset-1.medium-10.columns
-          a(ui-sref="home")
-            img.brand(src="images/brand.png")
+          a.brand(ui-sref="home")
+            img(src="images/brand.png")
           p Orion's sword decipherment of brilliant syntheses cosmic fugue not a sunrise but a galaxyrise are creatures of the cosmos extraordinary claims require extraordinary evidence paroxysm of global death, tingling of the spine ship of the imagination Sea of Tranquility, star stuff harvesting star light rings of Uranus concept of the number one brain is the seed of intelligence, paroxysm of global death, take root and flourish, the ash of stellar alchem
 
     div(data-ui-view)
@@ -28,8 +28,8 @@ html(lang='en' data-ng-app='votDiaspora')
         .small-12.medium-offset-1.medium-10.columns
           .row.eq
             .box.box-light.small-12.medium-6.columns
-              h2 Ce pot face în comunitatea mea??
-              p Am pregătit pentru tine o serie de postere si stickere pe care le poți descărca de aici și distribui în locurile în care știi că românii le pot vedea (la magazinele românești din localitate, la biserica la care mergi de obicei, la universitate, în locurile în care te întâlnești cu alți români cel mai des etc. ) și se pot informa corect despre modul în care pot vota în 2016.
+              h2 Ce pot face în comunitatea mea?
+              p Am pregătit pentru tine o serie de postere si stickere pe care le poți descărca de aici și distribui în locurile în care știi că românii le pot vedea (la magazinele românești din localitate, la universitatea la care mergi, în locurile în care te întâlnești cu alți români cel mai des etc. ) și se pot informa corect despre modul în care pot vota în 2016.
               .share-actions
                 a.button(ui-sref="community") Vezi materialele
 
@@ -56,13 +56,23 @@ html(lang='en' data-ng-app='votDiaspora')
             span(class="label") Telefon:
             a.info(href="tel:{{parameter.tel}}") {{parameter.tel}}
           p(class="email" ng-if="parameter.email")
-            span(class="label") Email:
+            span(class="label") E-mail:
             a.info(href="mailto:{{parameter.email}}") {{parameter.email}}
 
 
     script( type="text/ng-template" id="markerWindow.html" ng-cloak)
       div(class="mapWindow" ng-cloak)
         location-box
+
+    #fb-root
+    script.
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=724152821037227";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
 
     |<!-- bower:js -->
     |<!-- endbower -->

@@ -22,14 +22,20 @@ h2
 
 a
   color color-primary
+  padding 4px
 
-  &:hover
+  &:hover,
+  &:focus
     color color-primary
     text-decoration underline
 
 p
   a
     text-decoration underline
+
+    &:hover,
+    &focus
+      text-decoration none
 
 button, .button
   background-color: color-primary;
@@ -73,15 +79,20 @@ button, .button
 .faded
   opacity .30
   color: color-primary;
+
   h2
+    opacity .30
     color: color-primary;
+
 .chosen
   font-size: 1.2em;
+
   h2
     color: color-primary;
 
 input[type="text"]
-  padding: 26px 13px;
+  height 60px
+  padding: 0 20px;
   margin 0
 
 .fields
