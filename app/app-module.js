@@ -8,6 +8,7 @@
    */
   angular
     .module('votDiaspora', [
+      '720kb.socialshare',
       'ui.router',
       'mm.foundation',
       'uiGmapgoogle-maps',

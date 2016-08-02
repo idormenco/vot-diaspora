@@ -32,7 +32,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
             | Înregistrează-te la vot
 
     .map.small-12.columns
-      ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="true" options="vm.map.options" ng-if='vm.map.center')
+      ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="false" options="vm.map.options" ng-if='vm.map.center')
         ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
           ui-gmap-windows( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
       p.source
@@ -179,6 +179,6 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
         | Până să ajungi la urne
       .step-content.row
         .more.medium-offset-2.medium-8.columns
-          .fb-page(data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="320" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
+          .fb-page(data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="320" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true") | cum il fac sa mearga? :)
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.

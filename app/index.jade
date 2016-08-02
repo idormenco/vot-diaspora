@@ -1,9 +1,24 @@
 doctype html
 html(lang='en' data-ng-app='votDiaspora')
   head
+    meta(charset="utf-8")
+    meta(robots="index,follow")
+    meta(name='viewport' content='width=device-width,initial-scale=1')
+
     title Vot Diaspora
-    meta(name='viewport' content='width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes')
-    script(src='//maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places,visualization&key=AIzaSyCmgEeIhijJe689d_bpjPX9Sf1Bsm5fidU')
+
+    link(rel="shortcut icon" href="favico.png")
+
+    meta(property="og:type" content="article")
+    meta(property="og:url" content="http://www.votdiaspora.ro/")
+    meta(property="og:title" content="Vot Diaspora")
+    meta(property="og:description" content="bla bla need content here")
+    meta(property="og:site_name" content="Vot Diaspora")
+    meta(property="og:image" content="http://www.votdiaspora.ro/images/share.png")
+    meta(property="fb:app_id" content="724152821037227")
+    meta(property="article:author" content="Code for Romania")
+
+    script(src="//maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places,visualization&key=AIzaSyCmgEeIhijJe689d_bpjPX9Sf1Bsm5fidU")
     |<!-- inject:head:js -->
     |<!-- endinject -->
     |<!-- inject:html -->
@@ -37,9 +52,11 @@ html(lang='en' data-ng-app='votDiaspora')
               h2 Informează-ți prietenii
               p Distribuie aceste informații în social media pentru a ajunge la cât mai mulți români din diaspora. Timpul până la închiderea perioadei de înregistrare în Registrul Electoral este scurt. Urmărește-ne pe pagina de facebook Vot Diaspora și descarcă de acolo imagini de cover pe care să le pui și pe profilul tău sau în grupurile din care faci parte. Dă share informației chiar acum.
               .share-actions
-                a.share-cta.fb(data-share="fb") FB
-                a.share-cta.tw(data-share="tw") TW
-                a.share-cta.gp(data-share="gp") G+
+                a.share-cta.email(href="#" socialshare socialshare-provider="email" socialshare-subject="subiect aici" socialshare-body="ceva body aici")
+                  i.material-icons &#xE0E1;
+                a.share-cta.fb(href="#" socialshare socialshare-provider="facebook" socialshare-text="Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-description="bla bla" socialshare-type="feed" socialshare-via="724152821037227") FB
+                a.share-cta.tw(href="#" socialshare socialshare-provider="twitter" socialshare-text="bla bla Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-hashtags="vot,diaspora,parlamentare2016") TW
+                a.share-cta.gp(href="#" socialshare socialshare-provider="google" socialshare-url="http://www.votdiaspora.ro") G+
 
     footer
       a.soruce(href="http://code4.ro", target="_blank")
