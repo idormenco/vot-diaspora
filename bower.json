@@ -11,7 +11,8 @@
     "angular-google-maps": "^2.3.3",
     "lodash": "^4.14.1",
     "angular-scroll": "^1.0.0",
-    "angular-socialshare": "angularjs-socialshare#^2.2.3"
+    "angular-socialshare": "angularjs-socialshare#^2.2.3",
+    "angular-easyfb": "^1.5.1"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.*"
