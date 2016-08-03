@@ -241,8 +241,8 @@ h2
     display: flex;
     flex-flow: row wrap;
 
-    .place
-      box-flex: 0;
+  .place
+    @media breakpoint-medium
       flex: 0 0 50%;
       max-width: 50%;
 
@@ -251,17 +251,28 @@ h2
         flex: 0 0 100%
 
   .location
-    font-size: 20px;
-    color:red;
+    font-size: 14px;
+    color: color-secondary;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    line-height: 1;
+    opacity: 1;
+    font-family: monospace;
+
+    &:hover
+      text-decoration none
 
     &.selected
-      font-weight: bold
-      font-size: 26px;
+      color: #fff;
+      font-weight: 700;
 
 .place
   background: color-primary;
   color: #fff;
   padding: (distance/3);
+  position relative;
 
   h3
     color color-secondary;
