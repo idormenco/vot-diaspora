@@ -30,6 +30,7 @@ $(document).on({
       // all markers for the map
       vm.markers = [];
       vm.selectedMarker = null;
+      vm.selectedLocation = null;
 
       // interaction steps
       vm.debugSteps = 0;
@@ -167,6 +168,7 @@ $(document).on({
           if (distance < radius) {
             selected = marker.texts;
             selected.distance = (Math.round(distance * 2) / 2).toFixed(1);
+            selected.id = marker.n;
             vm.city.markers.push(selected);
           }
         });

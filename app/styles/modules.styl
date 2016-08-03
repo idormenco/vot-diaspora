@@ -212,15 +212,26 @@ h2
     max-width width-medium
 
 .places
+  h3
+    width: 100%
   margin-bottom distance
   @media breakpoint-medium
     display: flex;
     flex-flow: row wrap;
 
     .place
+      &.final
+        width: 100%
+        flex: none
       box-flex: 0;
       flex: 0 0 50%;
       max-width: 50%;
+      a
+        font-size: 20px;
+        color:red;
+        &.selected
+          font-weight: bold
+          font-size: 26px;
 
 .place
   background: color-primary;

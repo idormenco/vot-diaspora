@@ -22,10 +22,13 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       h2.message(ng-if="!vm.city.markers.length ")
         | Pe o raza de 100km nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
       div.places(ng-if="vm.city.markers.length")
+        h3 Alege locatia care iti place:
         div.place(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
           .distance
             | Distanta:
             strong {{parameter.distance}} km
+          a(ng-if="vm.selectedLocation !== parameter.id" ng-click="vm.selectedLocation = parameter.id" ng-class="{'selected': vm.selectedLocation === parameter.id}") Alege aceasta locatie
+          a.selected(ng-if="vm.selectedLocation === parameter.id") Vei regasi aceasta locatie in pasul 4
           location-box
 
   .content.row
@@ -174,7 +177,7 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
                 i.material-icons &#xE000;
                 p Dacă te înscrii în Registrul Electoral, verifică dacă apari pe listele electorale și la ce secție ai fost arondat. Poți face asta pe <a href="http://www.registrulelectoral.ro" target="_blank">www.registrulelectoral.ro</a>. (Completează adresa de e-mail la la ultimul pas și noi îți trimitem un reminder la închiderea perioadei de înregistrare în Registrul Electoral pentru a-ți aminti să verifici dacă ai fost înscris).
 
-      .step-actions(ng-if="vm.step['2'].choice && !vm.step['4'].visible")
+      .step-actions(ng-if="vm.step['3'].choice && !vm.step['4'].visible")
         a.button.large(ng-click="vm.activateStep(4)")
           | Următorul pas
 
@@ -186,6 +189,14 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
         | Strânge actele și depune-le
       .step-content.row
         div(data-ui-view="")
+
+       h3(ng-if='vm.selectedLocation === null') -- selecteaza locatia favorita in pasul 1 --
+       div.places(ng-if="vm.selectedLocation")
+        div.place.final(ng-repeat="parameter in vm.city.markers | filter:{id: vm.selectedLocation}" class="locationBox")
+          .distance
+            | Distanta:
+            strong {{parameter.distance}} km
+          location-box
 
       .step-actions(ng-if="!vm.step['5'].visible")
         a.button.large(ng-click="vm.activateStep(5)")
