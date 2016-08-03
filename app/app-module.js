@@ -8,12 +8,18 @@
    */
   angular
     .module('votDiaspora', [
-      '720kb.socialshare',
       'ui.router',
-      'mm.foundation',
       'uiGmapgoogle-maps',
-      'duScroll'
+      'duScroll',
+      '720kb.socialshare',
+      'ezfb'
     ])
+    .config(function (ezfbProvider) {
+      ezfbProvider.setInitParams({
+        appId: '319583755047031',
+        version: 'v2.7'
+      });
+    })
     .controller('DiasporaCtrl', function ($scope, $state, $document, $timeout, uiGmapGoogleMapApi, locationsService) {
       var vm = this,
           // functions

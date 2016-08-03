@@ -186,12 +186,13 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
 
 section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
   .content.row
-    .small-12.medium-offset-1.medium-10.columns
+    .small-12.columns
       h1.step-title
         span 5
         | Până să ajungi la urne
       .step-content.row
-        .more.medium-offset-2.medium-8.columns
-          .fb-page(data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="320" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
+        .more.small-12.medium-offset-1.medium-5.columns
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+        .small-12.medium-5.columns
+          .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="370" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
