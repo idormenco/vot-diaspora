@@ -29,7 +29,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       .step-content.location
         .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible) ")
           a.button.large(ng-click="vm.activateStep(2)")
-            | Înregistrează-te la vot
+            | Află cum votezi în străinatate!
 
     .map.small-12.columns
       ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="false" options="vm.map.options" ng-if='vm.map.center')
@@ -63,7 +63,7 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
           .step-info(ng-class="vm.step['2'].firstChoice")
             h2 Ai buletin (carte de identitate) de România?
             p(ng-class="vm.step['2'].firstChoice")
-              | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank">Verifică aici</a>, în dreptul statului în care locuiești dacă ai actele care fac dovada reședinței. Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
+              | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
@@ -83,7 +83,9 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
         span 3
-        | Prin corespondență sau la o secție de votare?
+        | Ai două opțiuni de vot:
+      p
+        | Verifică mai jos ce înseamnă fiecare și alege varianta potrivită pentru tine.
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['3'].firstChoice")
@@ -102,6 +104,9 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
           .step-info(ng-class="vm.step['3'].firstChoice")
             h2.show-for-small-only Prin corespondență
             ul.compare.listing
+              li
+                i.material-icons &#xE86C;
+                p Trimiți votul prin poștă.
               li
                 i.material-icons &#xE86C;
                 p Timp economisit. Nu trebuie să te deplasezi în ziua votului la secția de votare de care aparții
@@ -140,7 +145,7 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
                 p Mai puțin stres. Completezi mai puține cereri/acte și trimiți mai puține documente către Registrul electoral.
               li
                 i.material-icons &#xE86C;
-                p Economie de timp și bani. Ai posibilitatea de a înființa o secție de votare într-o localitate apropiată ție, fără a te deplasa la ambasadă. La peste 100 de persoane înregistrate în Registrul Electoral din aceeași localitate se va deschide o nouă secție de votare.
+                p O copie a paginilor cu informații personale și următoarea pagină- unde se menționează țara de domiciliu.
               li
                 i.material-icons &#xE000;
                 p Anul acesta, MAE a pus la dispoziție doar jumătate din numărul secțiilor de votare din 2014, așa că există posibilitatea să stai la coadă ore în șir pentru a putea vota.
