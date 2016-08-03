@@ -55,16 +55,41 @@ button, .button
 
   a
     display: block;
-    padding (distance/2) (distance/3)
+    padding (distance/2) (distance/12)
     font-size 24px
+
+    &:hover
+      text-decoration none
+
+    @media breakpoint-medium
+      padding (distance/2) (distance/6)
+      display inline-block
+
+    .step-user-vote &
+      font-size 18px
+
+  .material-icons
+    margin-bottom 5px
+    display block
+
+    &.checked
+      display: none
 
     @media breakpoint-medium
       display inline-block
+      top: 6px;
+      position: relative;
+      margin 0 10px 0 0
 
-  .material-icons
-    top: 6px;
-    position: relative;
-    margin-right: 10px;
+  &.chosen
+    .material-icons
+      display none
+
+      &.checked
+        display block
+
+        @media breakpoint-medium
+          display inline-block
 
 .material-icons
   font-size: 32px;
@@ -75,20 +100,6 @@ button, .button
 
 [class*="column"] + [class*="column"]:last-child
   float left
-
-.faded
-  opacity .30
-  color: color-primary;
-
-  h2
-    opacity .30
-    color: color-primary;
-
-.chosen
-  font-size: 1.2em;
-
-  h2
-    color: color-primary;
 
 input[type="text"]
   height 60px
