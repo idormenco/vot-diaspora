@@ -69,7 +69,7 @@ html(lang='en' data-ng-app='votDiaspora')
         div(class="box_info")
           p(class="address" ng-if="parameter.adr")
             span(class="label") Adresa:
-            a.info(href="https://maps.google.com?daddr={{parameter.adr}}" target="_blank") {{parameter.adr}}
+            a.info(href="https://www.google.com/maps/dir/Current+Location/{{parameter.adr}}" target="_blank") {{parameter.adr}}
           p(class="phone" ng-if="parameter.tel")
             span(class="label") Telefon:
             a.info(href="tel:{{parameter.tel}}") {{parameter.tel}}
@@ -81,16 +81,6 @@ html(lang='en' data-ng-app='votDiaspora')
     script( type="text/ng-template" id="markerWindow.html" ng-cloak)
       div(class="mapWindow" ng-cloak)
         location-box
-
-    #fb-root
-    script.
-      (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=724152821037227";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
 
     |<!-- bower:js -->
     |<!-- endbower -->
