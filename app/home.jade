@@ -27,8 +27,8 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
           .distance
             | Distanta:
             strong {{parameter.distance}} km
-          a.location(ng-if="vm.selectedLocation !== parameter.id" ng-click="vm.selectedLocation = parameter.id" ng-class="{'selected': vm.selectedLocation === parameter.id}") Alege aceasta locatie
-          a.location.selected(ng-if="vm.selectedLocation === parameter.id") Vei regasi aceasta locatie in pasul 4
+          a.location(ng-if="vm.selectedLocation !== parameter.id" ng-click="vm.selectedLocation = parameter.id" ng-class="{'selected': vm.selectedLocation === parameter.id}") Votez aici
+          a.location.selected(ng-if="vm.selectedLocation === parameter.id") Votez aici
           location-box
 
   .content.row

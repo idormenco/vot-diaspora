@@ -235,26 +235,28 @@ h2
     max-width width-medium
 
 .places
-  h3
-    width: 100%
   margin-bottom distance
+
   @media breakpoint-medium
     display: flex;
     flex-flow: row wrap;
 
     .place
-      &.final
-        max-width: 100%
-        flex: 0 0 100%
       box-flex: 0;
       flex: 0 0 50%;
       max-width: 50%;
-      a.location
-        font-size: 20px;
-        color:red;
-        &.selected
-          font-weight: bold
-          font-size: 26px;
+
+      &.final
+        max-width: 100%
+        flex: 0 0 100%
+
+  .location
+    font-size: 20px;
+    color:red;
+
+    &.selected
+      font-weight: bold
+      font-size: 26px;
 
 .place
   background: color-primary;
@@ -270,6 +272,10 @@ h2
   .info
     color color-secondary
     text-decoration none
+
+.pick
+  &.selected
+    color: #f00;
 
 .label
   background color-secondary
