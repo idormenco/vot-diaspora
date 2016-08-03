@@ -50,9 +50,12 @@
       position relative
       top -5px
 
+  + .text-center
+    font-size: 18px
+
 .step-info
   h2
-    font-size 26px
+    font-size 22px
 
 .location
   form
@@ -79,6 +82,21 @@
       + .reset
         opacity 1
 
+.faded
+  opacity .30
+  color: color-primary;
+
+  h2
+    opacity .30
+    color: color-primary;
+
+.chosen
+  font-size: 24px
+
+  h2
+    color: color-primary;
+    font-size: 26px
+
 .reset
   opacity 0
   position: absolute;
@@ -103,11 +121,16 @@
 
   .material-icons
     position: absolute;
-    top: 4px;
+    top: -3px;
     left: 0;
 
   p
     padding-left: (distance * 2/3);
+
+.info
+  .material-icons
+    top: 4px
+
 
 .map
   padding 0
@@ -244,16 +267,16 @@ h2
   p
     margin-bottom 10px
 
-  .label
-    background color-secondary
-    color color-primary
-    position: relative;
-    top: -2px;
-    margin: 0 10px 0 0;
-
   .info
     color color-secondary
     text-decoration none
+
+.label
+  background color-secondary
+  color color-primary
+  position: relative;
+  top: -2px;
+  margin: 0 10px 0 0;
 
 .distance
   opacity .71

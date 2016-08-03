@@ -67,16 +67,19 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['2'].firstChoice")
             a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Rezident
           .field-input(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Domicilat
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].firstChoice")
             a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Rezident
           .step-info(ng-class="vm.step['2'].firstChoice")
             h2 Ai buletin (carte de identitate) de România?
@@ -85,7 +88,8 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Domicilat
           .step-info(ng-class="vm.step['2'].secondChoice")
             h2 Ai pașaport românesc?
@@ -102,22 +106,25 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
       h1.step-title
         span 3
         | Ai două opțiuni de vot:
-      p
+      p.text-center
         | Verifică mai jos ce înseamnă fiecare și alege varianta potrivită pentru tine.
       .step-content.row.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['3'].firstChoice")
             a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Prin corespondență
           .field-input(ng-class="vm.step['3'].secondChoice")
             a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | La secția de votare
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['3'].firstChoice")
             a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | Prin corespondență
           .step-info(ng-class="vm.step['3'].firstChoice")
             h2.show-for-small-only Prin corespondență
@@ -153,7 +160,8 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
         .small-12.medium-6.columns(ng-class="vm.step['3'].secondChoice")
           .field-input.hide-for-small-only(ng-class="vm.step['3'].secondChoice")
             a(ng-click="vm.stepChoice(3,2)" ng-class="vm.step['3'].secondChoice")
-              i.material-icons &#xE5CA;
+              i.material-icons &#xE835;
+              i.material-icons.checked &#xE834;
               | La secția de votare
           .step-info(ng-class="vm.step['3'].secondChoice")
             h2.show-for-small-only La secția de votare
@@ -204,12 +212,13 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
 
 section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
   .content.row
-    .small-12.medium-offset-1.medium-10.columns
+    .small-12.columns
       h1.step-title
         span 5
         | Până să ajungi la urne
       .step-content.row
-        .more.medium-offset-2.medium-8.columns
-          .fb-page(data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="320" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true") | cum il fac sa mearga? :)
+        .more.small-12.medium-offset-1.medium-5.columns
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
+        .small-12.medium-5.columns
+          .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="370" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
