@@ -1,4 +1,4 @@
-div
+//- div
   input(type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
   | Arata toti pasii #debug
 
@@ -14,8 +14,12 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
         a(ng-click="vm.cityReset()").reset
           i.material-icons &#xE14C;
 
-    div.small-12.columns(ng-if="vm.city.details")
-      h2.message(ng-if="!vm.city.markers.length")
+    div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) ==='Romania'")
+      h2.message(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
+        | Esti in Romania, recomanda acest site prietenilor ce locuiesc in strainatate.
+
+    div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) !=='Romania'")
+      h2.message(ng-if="!vm.city.markers.length ")
         | Pe o raza de 100km nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
       div.places(ng-if="vm.city.markers.length")
         div.place(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
@@ -27,7 +31,11 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
     .small-12.columns
       .step-content.location
-        .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible) ")
+        .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) ==='Romania') ")
+          a.button.large(ng-click="vm.activateStep(5)")
+            | Ajuta prietenii din străinatate sa voteze!
+      .step-content.location
+        .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) !=='Romania') ")
           a.button.large(ng-click="vm.activateStep(2)")
             | Află cum votezi în străinatate!
 
