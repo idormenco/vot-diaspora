@@ -29,6 +29,7 @@ $(document).on({
 
       // all markers for the map
       vm.markers = [];
+      vm.selectedMarker = null;
 
       // interaction steps
       vm.debugSteps = 0;
@@ -186,9 +187,14 @@ $(document).on({
             tel: marker.t,
             email: marker.em
           };
-          marker.onClicked = function () {
+          marker.onClicked = function (selected) {
+            // console.log(selected.key);
             _.each(vm.markers, function (item) {
-              item.showWindow = item.id === marker.id ? true : false;
+              var sameMarker = item.n === selected.key ? true : false;
+              item.showWindow = sameMarker;
+              if (sameMarker) {
+                vm.selectedMarker = item;
+              }
             });
             $scope.$apply();
           };
@@ -204,6 +210,10 @@ $(document).on({
         });
         // vm.markers = temp.splice(0, 3);
         vm.markers = temp;
+      };
+
+      vm.closeWindow = function () {
+        vm.selectedMarker = null;
       };
 
       vm.isDevice = (/iphone|iod|android|(?=.*\bandroid\b)(?=.*\bmobile\b)|iemobile|(?=.*\bwindows\b)(?=.*\barm\b)|(crios|chrome)(?=.*\bmobile\b)|opera mini/i).test(navigator.userAgent.toLowerCase());
