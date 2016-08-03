@@ -86,6 +86,12 @@
   opacity .30
   color: color-primary;
 
+  &.step-info
+    display: none
+
+    @media breakpoint-medium
+      display block
+
   h2
     opacity .30
     color: color-primary;
@@ -278,7 +284,8 @@ h2
   position relative;
 
   h3
-    color color-secondary;
+    color #fff;
+    margin-top (distance/6)
 
   p
     margin-bottom 10px
@@ -314,6 +321,9 @@ h2
   text-align center
   .material-icons
     display: block
+
+.graphic
+  margin-bottom (distance/2)
 
 footer
   margin: distance 0;

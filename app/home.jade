@@ -216,9 +216,13 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
         span 5
         | Până să ajungi la urne
       .step-content.row(ng-if="vm.step['3'].choice === 1")
-        | Paragraf "Corespondenta"
+        .small-12.medium-offset-1.medium-10.columns
+          .graphic
+            img(src="http://www.fillmurray.com/1600/2840")
       .step-content.row(ng-if="vm.step['3'].choice === 2")
-        | Paragraf "Sectie"
+        .small-12.medium-offset-1.medium-10.columns
+          .graphic
+            img(src="http://www.fillmurray.com/1600/2840")
       .step-content.row
         .more.small-12.medium-offset-1.medium-5.columns
           p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
