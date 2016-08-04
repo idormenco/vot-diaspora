@@ -1,6 +1,6 @@
 - div
-  input(type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
-  | Arata toti pasii #debug
+  input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
+  label(for="debug" style="padding: 10px;") Arata toti pasii #debug
 
 section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
@@ -68,20 +68,20 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
             a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice")
               i.material-icons &#xE835;
               i.material-icons.checked &#xE834;
-              | Rezident
+              | Ai buletin (carte de identitate) de România?
           .field-input(ng-class="vm.step['2'].secondChoice")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
               i.material-icons &#xE835;
               i.material-icons.checked &#xE834;
-              | Domicilat
+              | Ai pașaport românesc?
         .small-12.medium-6.columns
           .field-input.hide-for-small-only(ng-class="vm.step['2'].firstChoice")
             a(ng-click="vm.stepChoice(2,1)"  ng-class="vm.step['2'].firstChoice")
               i.material-icons &#xE835;
               i.material-icons.checked &#xE834;
-              | Rezident
+              | Ai buletin (carte de identitate) de România?
           .step-info(ng-class="vm.step['2'].firstChoice")
-            h2 Ai buletin (carte de identitate) de România?
+            h3 Rezident
             p(ng-class="vm.step['2'].firstChoice")
               | Locuiești în străinătate și ești înscris ca rezident în țara în care locuiești? Dacă da, înseamnă că ești cetățean român cu rezidență în străinătate.
         .small-12.medium-6.columns
@@ -89,9 +89,9 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
             a(ng-click="vm.stepChoice(2,2)" ng-class="vm.step['2'].secondChoice")
               i.material-icons &#xE835;
               i.material-icons.checked &#xE834;
-              | Domicilat
+              | Ai pașaport românesc?
           .step-info(ng-class="vm.step['2'].secondChoice")
-            h2 Ai pașaport românesc?
+            h3 Domiciliat
             p(ng-class="vm.step['2'].secondChoice")
               | Este înscris domiciliul în străinatate pe prima pagină a pașaportului? Atunci, înseamnă că ești cetățean român cu domiciliul în străinătate.
 
