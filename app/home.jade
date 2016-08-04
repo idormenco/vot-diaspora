@@ -62,7 +62,7 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
       h1.step-title
         span 2
         | Ești rezident sau domicilat?
-      .step-content.row.content
+      .step-content.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['2'].firstChoice")
             a(ng-click="vm.stepChoice(2,1)" ng-class="vm.step['2'].firstChoice")
@@ -121,7 +121,7 @@ section.step.step-user-vote(ng-if="vm.debugSteps || vm.step['3'].visible")
         | Ai două opțiuni de vot:
       p.text-center
         | Verifică mai jos ce înseamnă fiecare și alege varianta potrivită pentru tine.
-      .step-content.row.content
+      .step-content.content
         .fields.small-12.medium-6.columns.show-for-small-only
           .field-input(ng-class="vm.step['3'].firstChoice")
             a(ng-click="vm.stepChoice(3,1)" ng-class="vm.step['3'].firstChoice")
@@ -208,7 +208,7 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
       h1.step-title
         span 4
         | Strânge actele și depune-le
-      .step-content.row
+      .step-content
         div(data-ui-view="")
         .small-12.medium-offset-2.medium-8.columns
           h3(ng-if='vm.selectedLocation === null') selecteaza locatia favorita in pasul 1
@@ -225,21 +225,17 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
 
 section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
   .content.row
-    .small-12.columns
-      h1.step-title
-        span 5
-        | Până să ajungi la urne
-      .step-content.row(ng-if="vm.step['3'].choice === 1")
-        .small-12.medium-offset-1.medium-10.columns
-          .graphic
-            img(src="http://www.fillmurray.com/1600/2840")
-      .step-content.row(ng-if="vm.step['3'].choice === 2")
-        .small-12.medium-offset-1.medium-10.columns
-          .graphic
-            img(src="http://www.fillmurray.com/1600/2840")
-      .step-content.row
-        .more.small-12.medium-offset-1.medium-5.columns
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-          p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit amet, consectetur adipiscing elit. Nulla quam velit.
-        .small-12.medium-5.columns
-          .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="370" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
+    h1.step-title
+      span 5
+      | Până să ajungi la urne
+    .step-content
+      .small-12.medium-offset-1.medium-10.columns
+        .graphic(ng-if="vm.step['3'].choice === 1")
+          a(href="images/infografic_vot_corespondenta.jpg" target="_blank")
+            img(src="images/infografic_vot_corespondenta.jpg")
+      .small-12.medium-offset-1.medium-10.columns
+        .graphic(ng-if="vm.step['3'].choice === 2")
+          a(href="images/infografic_sectia_de_votare.jpg" target="_blank")
+            img(src="images/infografic_sectia_de_votare.jpg")
+      .small-12.medium-offset-1.medium-5.columns
+        .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="387" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
