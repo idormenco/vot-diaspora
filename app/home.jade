@@ -20,7 +20,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
 
     div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) !=='Romania'")
       h2.message(ng-if="!vm.city.markers.length ")
-        | Pe o raza de 100km nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
+        | In aceasta tara nu am gasit sectii de votare. Folositi harta pentru a vedea care e cea mai apropiata ambasada in tarile invecinate.
       div.places(ng-if="vm.city.markers.length")
         div.place(ng-repeat="parameter in vm.city.markers | orderBy: 'distance'" class="locationBox")
           .distance
