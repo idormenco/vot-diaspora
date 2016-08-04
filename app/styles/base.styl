@@ -56,32 +56,27 @@ button, .button
   a
     display: block;
     padding (distance/2) (distance/12)
-    font-size 24px
+    font-size 18px
 
     &:hover
       text-decoration none
 
     @media breakpoint-medium
-      padding (distance/2) (distance/6)
+      padding (distance/2) (distance/6) (distance/2) (distance * 2/3)
       display inline-block
-
-    .step-user-vote &
-      font-size 18px
 
   .material-icons
     margin-bottom 5px
     display block
-
-    .step-user-vote &
-      top 10px
 
     &.checked
       display: none
 
     @media breakpoint-medium
       display inline-block
-      top: 6px;
-      position: relative;
+      top 28px
+      position: absolute;
+      left 0
       margin 0 10px 0 0
 
   &.chosen
@@ -113,7 +108,7 @@ input[type="text"]
     box-shadow none
 
 .fields
-  margin: -20px 0 20px 0;
+  margin: -20px 0 0 0;
 
   .field-input
     text-align center

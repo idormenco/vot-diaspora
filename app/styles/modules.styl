@@ -92,16 +92,15 @@
     @media breakpoint-medium
       display block
 
-  h2
+  h3
     opacity .30
     color: color-primary;
 
 .chosen
   font-size: 24px
 
-  h2
+  h3
     color: color-primary;
-    font-size: 26px
 
 .reset
   opacity 0
@@ -125,6 +124,10 @@
     list-style: inside none;
     margin-bottom: (distance/4);
 
+    &.spacer
+      margin -6px 0 15px 0
+      padding: 0 0 0 40px
+
   .material-icons
     position: absolute;
     top: -3px;
@@ -132,6 +135,13 @@
 
   p
     padding-left: (distance * 2/3);
+
+  .and
+    display: block;
+    font-weight: 400;
+    font-size: 20px;
+
+
 
 .info
   .material-icons
