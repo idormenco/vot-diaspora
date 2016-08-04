@@ -265,7 +265,7 @@ $(document).on({
           distance = point.distanceTo(localPoint, true);
           if (marker.co === countryRO) {
             selected = marker.texts;
-            selected.distance = (Math.round(distance * 2) / 2).toFixed(1);
+            selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
             selected.id = marker.n;
             vm.city.markers.push(selected);
           }
