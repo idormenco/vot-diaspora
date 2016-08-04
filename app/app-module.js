@@ -251,6 +251,8 @@ $(document).on({
 
         bounds = new google.maps.LatLngBounds();
 
+        bounds.extend(new google.maps.LatLng(details.geometry.location.lat(), details.geometry.location.lng()));
+
         _.each(vm.markers, function (marker) {
           var localPoint,
               distance,
