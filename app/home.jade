@@ -26,8 +26,6 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
           .distance
             | Distanta:
             strong {{parameter.distance}} km
-          a.location(ng-if="vm.selectedLocation !== parameter.id" ng-click="vm.selectedLocation = parameter.id" ng-class="{'selected': vm.selectedLocation === parameter.id}") Votez aici!
-          a.location.selected(ng-if="vm.selectedLocation === parameter.id") Votez aici!
           location-box
 
   .content.row
@@ -218,14 +216,14 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
         | Strânge actele și depune-le
       .step-content.content.row
         div(data-ui-view="")
-        .small-12.medium-offset-2.medium-8.columns
-          h3(ng-if='vm.selectedLocation === null') selecteaza locatia favorita in pasul 1
-          .places(ng-if="vm.city.markers.length")
-            div.place.final(ng-repeat="parameter in vm.city.markers | filter:{id: vm.selectedLocation}" class="locationBox")
-              .distance
-                | Distanta:
-                strong {{parameter.distance}} km
-              location-box
+        //- .small-12.medium-offset-2.medium-8.columns
+        //-   h3(ng-if='vm.selectedLocation === null') selecteaza locatia favorita in pasul 1
+        //-   .places(ng-if="vm.city.markers.length")
+        //-     div.place.final(ng-repeat="parameter in vm.city.markers | filter:{id: vm.selectedLocation}" class="locationBox")
+        //-       .distance
+        //-         | Distanta:
+        //-         strong {{parameter.distance}} km
+        //-       location-box
 
       .step-actions(ng-if="!vm.step['5'].visible")
         a.button.large(ng-click="vm.activateStep(5)")
