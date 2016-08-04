@@ -22,7 +22,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       h2.message(ng-if="!vm.city.markers.length ")
         | Pe o raza de 100km nu am gasit sectii de votare inregistrate. Folositi harta pentru a vedea care e cea mai apropiata ambasada.
       div.places(ng-if="vm.city.markers.length")
-        div.place(ng-repeat="parameter in vm.city.markers | orderBy: distance" class="locationBox")
+        div.place(ng-repeat="parameter in vm.city.markers | orderBy: 'distance'" class="locationBox")
           .distance
             | Distanta:
             strong {{parameter.distance}} km
