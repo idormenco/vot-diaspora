@@ -37,6 +37,103 @@ $(document).on({
       vm.markers = [];
       vm.selectedMarker = null;
       vm.selectedLocation = null;
+      vm.countries = {
+        'South Africa': 'Africa De Sud',
+        'Albania': 'Albania',
+        'Algeria': 'Algeria',
+        'Angola': 'Angola',
+        'Saudi Arabia': 'Arabia Saudită',
+        'Argentina': 'Argentina',
+        'Armenia': 'Armenia',
+        'Australia': 'Australia',
+        'Austria': 'Austria',
+        'Azerbaijan': 'Azerbaidjan',
+        'Belarus': 'Belarus',
+        'Belgium': 'Belgia',
+        'Bosnia and Herzegovina': 'Bosnia-herţegovina',
+        'Brazil': 'Brazilia',
+        'Bulgaria': 'Bulgaria',
+        'Canada': 'Canada',
+        'Chile': 'Chile',
+        'China': 'China',
+        'Cyprus': 'Cipru',
+        'Colombia': 'Columbia',
+        'North Korea': 'Coreea De Nord',
+        'South Korea': 'Coreea De Sud',
+        'Croatia': 'Croaţia',
+        'Cuba': 'Cuba',
+        'Denmark': 'Danemarca',
+        'Ecuador': 'Ecuador',
+        'Egypt': 'Egipt',
+        'Switzerland': 'Elveţia',
+        'United Arab Emirates': 'Emiratele Arabe Unite',
+        'Ethiopia': 'Etiopia',
+        'Russia': 'Federaţia Rusă',
+        'Philippines': 'Filipine',
+        'Finland': 'Finlanda',
+        'France': 'Franţa',
+        'Georgia': 'Georgia',
+        'Germany': 'Germania',
+        'Greece': 'Grecia',
+        'Honduras': 'Honduras',
+        'India': 'India',
+        'Indonesia': 'Indonezia',
+        'Jordan': 'Iordania',
+        'Iraq': 'Irak',
+        'Iran': 'Iran',
+        'Ireland': 'Irlanda',
+        'Israel': 'Israel',
+        'Italy': 'Italia',
+        'Japan': 'Japonia',
+        'Kazakhstan': 'Kazakhstan',
+        'Kenya': 'Kenya',
+        'Kuwait': 'Kuwait',
+        'Lebanon': 'Liban',
+        'Libya': 'Libia',
+        'Lithuania': 'Lituania',
+        'Luxembourg': 'Luxemburg',
+        'Macedonia (FYROM)': 'Macedonia',
+        'Malaysia': 'Malaysia',
+        'United Kingdom': 'Marea Britanie',
+        'Morocco': 'Maroc',
+        'Mexico': 'Mexic',
+        'Montenegro': 'Muntenegru',
+        'Nigeria': 'Nigeria',
+        'Norway': 'Norvegia',
+        'Netherlands': 'Olanda',
+        'Pakistan': 'Pakistan',
+        'Palestine': 'Palestina',
+        'Peru': 'Peru',
+        'Poland': 'Polonia',
+        'Portugal': 'Portugalia',
+        'Qatar': 'Qatar',
+        'Czech Republic': 'Rep. Cehă',
+        'Moldova': 'Rep. Moldova',
+        'San Marino': 'San Marino',
+        'Senegal': 'Senegal',
+        'Serbia': 'Serbia',
+        'Vatican': 'Sfântul Scaun',
+        'Singapore': 'Singapore',
+        'Syria': 'Siria',
+        'Slovakia': 'Slovacia',
+        'Slovenia': 'Slovenia',
+        'Spain': 'Spania',
+        'Sri Lanka': 'Sri Lanka',
+        'United States': 'Sua',
+        'Sudan': 'Sudan',
+        'Sweden': 'Suedia',
+        'Thailand': 'Thailanda',
+        'Tunisia': 'Tunisia',
+        'Turkey': 'Turcia',
+        'Turkmenistan': 'Turkmenistan',
+        'Ukraine': 'Ucraina',
+        'Hungary': 'Ungaria',
+        'Uruguay': 'Uruguay',
+        'Uzbekistan': 'Uzbekistan',
+        'Venezuela': 'Venezuela',
+        'Vietnam': 'Vietnam',
+        'Zimbabwe': 'Zimbabwe'
+      };
 
       // interaction steps
       vm.debugSteps = 0;
@@ -138,32 +235,27 @@ $(document).on({
         return vm.city.details;
       }, function (details) {
         var point,
-            pointBox,
-            bounds,
-            NE,
-            SW,
-            radius = 100;
+            countryEN,
+            countryRO
+            // pointBox,
+            // bounds,
+            // NE,
+            // SW,
+            // radius = 100;
+            ;
         if (_.isNull(details)) {
           vm.city.markers = [];
           return;
         }
         point = new GeoPoint(details.geometry.location.lat(), details.geometry.location.lng(), false);
+        countryEN = _.filter(details.address_components, function (loc) {
+          return !loc.types.indexOf('country');
+        })[0].long_name;
+        // console.log(countryEN);
+        countryRO = vm.countries[countryEN];
+        // console.log(countryRO);
 
-        // set new bounds on the map, a bow with 'radius' KM around the searched city
-        pointBox = point.boundingCoordinates(radius, null, true);
-        NE = pointBox.pop();
-        SW = pointBox.pop();
-        bounds = {
-          northeast: {
-            latitude: NE.latitude(),
-            longitude: NE.longitude()
-          },
-          southwest: {
-            latitude: SW.latitude(),
-            longitude: SW.longitude()
-          }
-        };
-        vm.map.bounds = bounds;
+        // vm.map.bounds = bounds;
 
         _.each(vm.markers, function (marker) {
           var localPoint,
@@ -171,7 +263,7 @@ $(document).on({
               selected;
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
-          if (distance < radius) {
+          if (marker.co === countryRO) {
             selected = marker.texts;
             selected.distance = (Math.round(distance * 2) / 2).toFixed(1);
             selected.id = marker.n;
