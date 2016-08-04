@@ -235,13 +235,9 @@ $(document).on({
         return vm.city.details;
       }, function (details) {
         var point,
+            bounds,
             countryEN,
             countryRO
-            // pointBox,
-            // bounds,
-            // NE,
-            // SW,
-            // radius = 100;
             ;
         if (_.isNull(details)) {
           vm.city.markers = [];
@@ -251,11 +247,9 @@ $(document).on({
         countryEN = _.filter(details.address_components, function (loc) {
           return !loc.types.indexOf('country');
         })[0].long_name;
-        // console.log(countryEN);
         countryRO = vm.countries[countryEN];
-        // console.log(countryRO);
 
-        // vm.map.bounds = bounds;
+        bounds = new google.maps.LatLngBounds();
 
         _.each(vm.markers, function (marker) {
           var localPoint,
@@ -268,8 +262,22 @@ $(document).on({
             selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
             selected.id = marker.n;
             vm.city.markers.push(selected);
+            bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
           }
         });
+
+        if (vm.city.markers.length) {
+          vm.map.bounds = {
+            northeast: {
+              latitude: bounds.getNorthEast().lat(),
+              longitude: bounds.getNorthEast().lng()
+            },
+            southwest: {
+              latitude: bounds.getSouthWest().lat(),
+              longitude: bounds.getSouthWest().lng()
+            }
+          };
+        }
       });
 
       prepareMarkers = function (response) {
