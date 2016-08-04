@@ -252,7 +252,6 @@ $(document).on({
         bounds = new google.maps.LatLngBounds();
 
         bounds.extend(new google.maps.LatLng(details.geometry.location.lat(), details.geometry.location.lng()));
-
         _.each(vm.markers, function (marker) {
           var localPoint,
               distance,
@@ -268,17 +267,18 @@ $(document).on({
           }
         });
 
-        if (vm.city.markers.length) {
-          vm.map.bounds = {
-            northeast: {
-              latitude: bounds.getNorthEast().lat(),
-              longitude: bounds.getNorthEast().lng()
-            },
-            southwest: {
-              latitude: bounds.getSouthWest().lat(),
-              longitude: bounds.getSouthWest().lng()
-            }
-          };
+        vm.map.bounds = {
+          northeast: {
+            latitude: bounds.getNorthEast().lat(),
+            longitude: bounds.getNorthEast().lng()
+          },
+          southwest: {
+            latitude: bounds.getSouthWest().lat(),
+            longitude: bounds.getSouthWest().lng()
+          }
+        };
+        if (!vm.city.markers.length) {
+          vm.map.zoom = 14;
         }
       });
 
