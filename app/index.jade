@@ -89,8 +89,6 @@ html(lang='en' data-ng-app='votDiaspora')
 
     script( type="text/ng-template" id="markerWindow.html" ng-cloak)
       div(class="mapWindow" ng-cloak)
-        a.location(ng-if="vm.selectedLocation !== parameter.id" ng-click="vm.selectedLocation = parameter.id" ng-class="{'selected': vm.selectedLocation === parameter.id}") Votez aici!
-        a.location.selected(ng-if="vm.selectedLocation === parameter.id") Votez aici!
         location-box
 
     |<!-- bower:js -->
