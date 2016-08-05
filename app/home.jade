@@ -16,11 +16,11 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
 
     div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) ==='Romania'")
       h2.message(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
-        | Esti in Romania, recomanda acest site prietenilor ce locuiesc in strainatate.
+        | Ești în România, recomandă acest site prietenilor care locuiesc în străinătate.
 
     div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) !=='Romania'")
-      h2.message(ng-if="!vm.city.markers.length ")
-        | In aceasta tara nu am gasit sectii de votare. Folositi harta pentru a vedea care e cea mai apropiata ambasada in tarile invecinate.
+      h2.message(ng-if="!vm.city.markers.length")
+        | În această țara nu am găsit secții de votare. Folosiți hartă pentru a vedea care e cea mai apropiată ambasadă în țările învecinate.
       div.places(ng-if="vm.city.markers.length")
         div.place(ng-repeat="parameter in vm.city.markers | orderBy: 'distance'" class="locationBox")
           .distance
@@ -33,7 +33,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       .step-content.location
         .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) ==='Romania') ")
           a.button.large(ng-click="vm.activateStep(5)")
-            | Ajuta prietenii din străinatate sa voteze!
+            | Ajută-ți prietenii din străinatate să voteze!
       .step-content.location
         .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) !=='Romania') ")
           a.button.large(ng-click="vm.activateStep(2)")
@@ -216,8 +216,7 @@ section.step.step-user-action(ng-if="vm.debugSteps || vm.step['4'].visible")
         | Strânge actele și depune-le
       .step-content.content.row
         div(data-ui-view="")
-        .small-12.medium-offset-2.medium-8.columns
-          h3(ng-if='vm.selectedLocation === null') selecteaza locatia favorita in pasul 1
+        .small-12.columns.user-places
           .places(ng-if="vm.city.markers.length")
             div.place.final(ng-repeat="parameter in vm.city.markers" class="locationBox")
               .distance
@@ -235,14 +234,22 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
       span 5
       | Până să ajungi la urne
     .step-content
-      .small-12.medium-offset-1.medium-10.columns(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
+      .small-12.medium-offset-1.medium-10.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) ==='Romania'")
+        div(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
+          .graphic
+            a(href="images/poster_corespondenta.jpg" target="_blank")
+              img(src="images/poster_corespondenta.jpg")
+          .graphic
+            a(href="images/poster_sectie.jpg" target="_blank")
+              img(src="images/poster_sectie.jpg")
+      .small-12.medium-offset-1.medium-10.columns
         .graphic(ng-if="vm.step['3'].choice === 1")
           a(href="images/poster_corespondenta.jpg" target="_blank")
             img(src="images/poster_corespondenta.jpg")
-      .small-12.medium-offset-1.medium-10.columns(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
+      .small-12.medium-offset-1.medium-10.columns
         .graphic(ng-if="vm.step['3'].choice === 2")
           a(href="images/poster_sectie.jpg" target="_blank")
             img(src="images/poster_sectie.jpg")
-      .small-12.medium-offset-1.medium-10.columns
-        h3 Urmareste-ne pe facebook si te tinem la curent cu orice informatie legata de votul din diaspor
-        .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-tabs="timeline" data-width="804" data-height="400" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true")
+      .small-12.medium-offset-1.medium-10.columns.face
+        h4 Urmărește-ne pe Facebook
+        .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true")
