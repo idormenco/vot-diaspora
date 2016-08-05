@@ -234,7 +234,7 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
       span 5
       | Până să ajungi la urne
     .step-content
-      .small-12.medium-offset-1.medium-10.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) ==='Romania'")
+      .small-12.medium-offset-1.medium-10.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) ==='Romania' && vm.step['3'].choice !== 1 && vm.step['3'].choice !== 2")
         div(ng-if="vm.city.details.formatted_address.substr(-7)==='Romania'")
           .graphic
             a(href="images/poster_corespondenta.jpg" target="_blank")
