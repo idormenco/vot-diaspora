@@ -5,7 +5,7 @@
   color: color-secondary;
   text-align: center;
   padding: (distance/2) 0 distance;
-  margin-bottom: (distance/2);
+  margin-bottom: distance;
 
   h1
     color: color-secondary;
@@ -153,18 +153,12 @@
     font-size: 20px;
     opacity .7
 
-
-
 .info
   .material-icons
     top: 4px
 
-
 .map
   padding 0
-
-  @media breakpoint-large
-    padding 0 15px
 
 .source
   font-family monospace
@@ -353,6 +347,15 @@ h2
 
 .user-places
   padding 0
+
+.poster
+  a
+    display block
+    padding 0
+    margin-bottom (distance/4)
+
+    img
+      width 100%
 
 footer
   margin: distance 0
