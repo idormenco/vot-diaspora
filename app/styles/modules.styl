@@ -69,8 +69,9 @@
   text-align center
   margin-top distance
   margin-bottom distance
+
   h4
-    margin-bottom 10px
+    margin-bottom (distance/4)
 
 .step-actions
   text-align: center;
@@ -354,8 +355,16 @@ h2
   padding 0
 
 footer
-  margin: distance 0;
-  padding: distance 0;
+  margin: distance 0
+  padding: distance (distance/4)
+  text-align center
+
+  .copy
+    color: #c5c5c5;
+    font-size: 12px;
+    font-weight 400;
+    font-family monospace
+    margin 0 0 (distance/2)
 
   .soruce
     display block;
