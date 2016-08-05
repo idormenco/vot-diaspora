@@ -251,5 +251,25 @@ section.step.step-user-final(ng-if="vm.debugSteps || vm.step['5'].visible")
           a(href="images/poster_sectie.jpg" target="_blank")
             img(src="images/poster_sectie.jpg")
       .small-12.medium-offset-1.medium-10.columns.face
-        h4 Urmărește-ne pe Facebook
+        h4 Rămâi informat, dă-ne un like:
         .fb-page(onrender="fbLikeRendered()" data-href="https://www.facebook.com/Vot-diaspora-301975473481850/" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true")
+
+section.share
+  .content.row
+    .small-12.medium-offset-1.medium-10.columns
+      .row.eq
+        .box.box-light.small-12.medium-6.columns
+          h2 Ce pot face în comunitatea mea?
+          p Am pregătit pentru tine o serie de postere și cover photos pe care le poți descărca de aici și distribui în locurile în care știi că românii le pot vedea (la magazinele românești din localitate, la universitatea la care mergi, în locurile în care te întâlnești cu alți români cel mai des etc. ) și se pot informa corect despre modul în care pot vota în 2016.
+          .share-actions
+            a.button(du-smooth-scroll du-scrollspy ng-href="#community") Vezi materialele
+
+        .box.box-dark.small-12.medium-6.columns
+          h2 Informează-ți prietenii
+          p Distribuie aceste informații în social media pentru a ajunge la cât mai mulți români din diaspora. Timpul până la închiderea perioadei de înregistrare în Registrul Electoral este scurt. Urmărește-ne pe pagina de facebook Vot Diaspora și descarcă de acolo imagini de cover pe care să le pui și pe profilul tău sau în grupurile din care faci parte. Dă share informației chiar acum.
+          .share-actions
+            a.share-cta.email(href="#" socialshare socialshare-provider="email" socialshare-subject="subiect aici" socialshare-body="Îți mai aduci aminte de cozile de la vot la care am stat în 2014? http://www.votdiaspora.ro")
+              i.material-icons &#xE0E1;
+            a.share-cta.fb(href="#" socialshare socialshare-provider="facebook" socialshare-text="Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-description="Cum votezi în diaspora în 2016: Află aici cum poți sa te înregistrezi, de ce documente ai nevoie și cum poți proceda pentru a deschide o secție de votare în orașul tău." socialshare-type="feed" socialshare-via="319583755047031") FB
+            a.share-cta.tw(href="#" socialshare socialshare-provider="twitter" socialshare-text="Îți mai aduci aminte de cozile de la vot la care am stat în 2014?" socialshare-url="http://www.votdiaspora.ro" socialshare-hashtags="vot,diaspora,expat,parlamentare2016") TW
+            a.share-cta.gp(href="#" socialshare socialshare-provider="google" socialshare-url="http://www.votdiaspora.ro") G+
