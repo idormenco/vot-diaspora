@@ -262,6 +262,7 @@ $(document).on({
             selected = marker.texts;
             selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
             selected.id = marker.n;
+            vm.city.markers = [];
             vm.city.markers.push(selected);
             bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
           }

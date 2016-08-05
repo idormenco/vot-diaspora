@@ -4,7 +4,6 @@
   "dependencies": {
     "angular": "~1.4.*",
     "angular-cookies": "~1.4.*",
-    "angular-foundation": "~0.3.0",
     "angular-touch": "~1.4.*",
     "angular-ui-router": "~0.2.10",
     "foundation": "~5.4.0",
