@@ -229,8 +229,14 @@ module.exports = function (gulp, $, config) {
 
   // copy files
   gulp.task('files', ['clean'], function () {
-    return gulp.src(config.appFiles)
+    return gulp.src(config.appStaticFiles)
       .pipe(gulp.dest(config.buildFiles));
+  });
+
+  // copy htaccess
+  gulp.task('htaccess', function () {
+    return gulp.src(config.appHAccess)
+      .pipe(gulp.dest(config.buildDir));
   });
 
   gulp.task('copyTemplates', ['bowerInject'], function () {
@@ -268,5 +274,5 @@ module.exports = function (gulp, $, config) {
       });
   });
 
-  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'files', 'favicon', 'jsonFiles', 'fonts']);
+  gulp.task('build', ['deleteTemplates', 'bowerAssets', 'images', 'files', 'jsonFiles', 'htaccess']);
 };
