@@ -234,7 +234,7 @@ module.exports = function (gulp, $, config) {
   });
 
   // copy htaccess
-  gulp.task('htaccess', function () {
+  gulp.task('htaccess', ['clean'], function () {
     return gulp.src(config.appHAccess)
       .pipe(gulp.dest(config.buildDir));
   });
