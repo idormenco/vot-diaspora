@@ -1,6 +1,6 @@
-//- div
-//-   input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
-//-   label(for="debug" style="padding: 10px;") Arata toti pasii #debug
+div
+  input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
+  label(for="debug" style="padding: 10px;") Arata toti pasii #debug
 
 section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
@@ -8,6 +8,8 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
       h1.step-title
         span 1
         | Unde stai?
+      p.text-center
+        | Caută orașul în care locuiești ca să vezi de ce acte ai nevoie pentru a vota de acum înainte.
 
       form.search(name="find", action="/search", method="post", onsubmit="return false;")
         input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options" placeholder="Locuiesc in orasul ...")
@@ -114,6 +116,14 @@ section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
                 li
                   i.material-icons &#xE154;
                   p Atunci, înseamnă că ești cetățean român cu domiciliul în străinătate.
+
+      .step-content.content.row
+        .small-12.columns.notes
+          h2 Unde votează militarii români din afara granițelor?
+          p Pentru militarii români din afara granițelor se vor amenaja secții de votare în bazele militare NATO sau în teatrele de operațiuni unde activează.
+        .small-12.columns.notes
+          h2 Unde votează turiștii români din străinătate?
+          p Cetățenii români aflați în călătorii în străinătate în ziua alegerilor nu vor putea vota.
 
       .step-actions(ng-if="vm.step['2'].choice && !vm.step['3'].visible")
         a.button.large(ng-click="vm.activateStep(3)")

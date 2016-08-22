@@ -65,6 +65,18 @@
     @media breakpoint-medium
       width: 300px;
 
+.step-content
+  &.content
+    margin-bottom (distance/2)
+
+    &:last-child
+      margin-bottom 0
+
+.notes
+  h2
+    font-weight 700
+    font-size 18px
+
 .face
   text-align center
   margin-top distance
@@ -79,6 +91,18 @@
 
   button, .button
     margin: 0;
+    box-shadow 5px 5px 0 darken(color-secondary, 10)
+    transition none
+
+    &:hover
+      box-shadow 5px 5px 0 darken(color-primary, 10)
+
+    &:focus,
+    &:active
+      top 5px
+      left 5px
+      box-shadow none
+
 
   .location &
     padding-top 0
