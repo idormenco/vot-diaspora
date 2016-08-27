@@ -311,6 +311,7 @@
       });
 
       vm.city = {
+        exception: false,
         // city name as autocompleted by Google Places
         name: null,
         // the whole response received from Google Places
@@ -325,6 +326,7 @@
 
       // reset user search
       vm.cityReset = function () {
+        vm.city.exception = false;
         vm.city.name = vm.city.details = null;
         vm.city.markers = [];
       };
@@ -349,25 +351,39 @@
         countryRO = vm.countries[countryEN];
 
         bounds = new google.maps.LatLngBounds();
-
         bounds.extend(new google.maps.LatLng(details.geometry.location.lat(), details.geometry.location.lng()));
 
         vm.city.markers = [];
 
-        _.each(vm.markers, function (marker) {
+        vm.city.exception = angular.isDefined(vm.exceptions[countryEN]);
+        if (vm.city.exception) {
+          var marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
           var localPoint,
-              distance,
-              selected;
+                distance,
+                selected;
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
-          if (marker.co === countryRO) {
-            selected = marker.texts;
-            selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
-            selected.id = marker.n;
-            vm.city.markers.push(selected);
-            bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
-          }
-        });
+          selected = marker.texts;
+          selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
+          selected.id = marker.n;
+          vm.city.markers.push(selected);
+          bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
+        } else {
+          _.each(vm.markers, function (marker) {
+            var localPoint,
+                distance,
+                selected;
+            localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
+            distance = point.distanceTo(localPoint, true);
+            if (marker.co === countryRO) {
+              selected = marker.texts;
+              selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
+              selected.id = marker.n;
+              vm.city.markers.push(selected);
+              bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
+            }
+          });
+        }
 
         vm.map.bounds = {
           northeast: {
