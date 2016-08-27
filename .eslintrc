@@ -8,8 +8,10 @@
     "consistent-this": 0
   },
   "globals": {
+    "$": true,
     "_": true,
     "google": true,
+    "navigator": true,
     "GeoPoint": true
   }
 }
