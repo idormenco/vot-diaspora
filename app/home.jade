@@ -21,6 +21,8 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
         | Ești în România, recomandă acest site prietenilor care locuiesc în străinătate.
 
     div.small-12.columns(ng-if="vm.city.details && vm.city.details.formatted_address.substr(-7) !=='Romania'")
+      h2.message(ng-if="vm.city.exception")
+        | Pentru a vă înscrie la vot trebuie să luați legătura cu ambasada României dintr-o țară învecinată.
       h2.message(ng-if="!vm.city.markers.length")
         | În această țara nu am găsit secții de votare. Folosiți hartă pentru a vedea care e cea mai apropiată ambasadă în țările învecinate.
       div.places(ng-if="vm.city.markers.length")

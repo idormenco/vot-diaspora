@@ -23,6 +23,7 @@
     "angular": false,
     "google": false,
     "GeoPoint": false,
+    "$": false,
     "_": false
   }
 }

@@ -3,11 +3,11 @@
 
 // fixes broken iphone autocomplete field for location searching
 // https://forum.ionicframework.com/t/google-maps-address-autocomplete-inside-slide-box/5278/25
-$(document).on({
-  'DOMNodeInserted': function () {
-    $('.pac-item, .pac-item span', this).addClass('needsclick');
-  }
-}, '.pac-container');
+  $().on({
+    DOMNodeInserted: function () {
+      $('.pac-item, .pac-item span', this).addClass('needsclick');
+    }
+  }, '.pac-container');
 
   /* @ngdoc object
    * @name votDiaspora
@@ -38,101 +38,200 @@ $(document).on({
       vm.selectedMarker = null;
       vm.selectedLocation = null;
       vm.countries = {
-        'South Africa': 'Africa De Sud',
-        'Albania': 'Albania',
-        'Algeria': 'Algeria',
-        'Angola': 'Angola',
-        'Saudi Arabia': 'Arabia Saudită',
-        'Argentina': 'Argentina',
-        'Armenia': 'Armenia',
-        'Australia': 'Australia',
-        'Austria': 'Austria',
-        'Azerbaijan': 'Azerbaidjan',
-        'Belarus': 'Belarus',
-        'Belgium': 'Belgia',
+        Albania: 'Albania',
+        Algeria: 'Algeria',
+        Argentina: 'Argentina',
+        Angola: 'Angola',
+        Armenia: 'Armenia',
+        Australia: 'Australia',
+        Austria: 'Austria',
+        Azerbaijan: 'Azerbaidjan',
+        Belarus: 'Belarus',
+        Belgium: 'Belgia',
+        Brazil: 'Brazilia',
         'Bosnia and Herzegovina': 'Bosnia-herţegovina',
-        'Brazil': 'Brazilia',
-        'Bulgaria': 'Bulgaria',
-        'Canada': 'Canada',
-        'Chile': 'Chile',
-        'China': 'China',
-        'Cyprus': 'Cipru',
-        'Colombia': 'Columbia',
-        'North Korea': 'Coreea De Nord',
-        'South Korea': 'Coreea De Sud',
-        'Croatia': 'Croaţia',
-        'Cuba': 'Cuba',
-        'Denmark': 'Danemarca',
-        'Ecuador': 'Ecuador',
-        'Egypt': 'Egipt',
-        'Switzerland': 'Elveţia',
-        'United Arab Emirates': 'Emiratele Arabe Unite',
-        'Ethiopia': 'Etiopia',
-        'Russia': 'Federaţia Rusă',
-        'Philippines': 'Filipine',
-        'Finland': 'Finlanda',
-        'France': 'Franţa',
-        'Georgia': 'Georgia',
-        'Germany': 'Germania',
-        'Greece': 'Grecia',
-        'Honduras': 'Honduras',
-        'India': 'India',
-        'Indonesia': 'Indonezia',
-        'Jordan': 'Iordania',
-        'Iraq': 'Irak',
-        'Iran': 'Iran',
-        'Ireland': 'Irlanda',
-        'Israel': 'Israel',
-        'Italy': 'Italia',
-        'Japan': 'Japonia',
-        'Kazakhstan': 'Kazakhstan',
-        'Kenya': 'Kenya',
-        'Kuwait': 'Kuwait',
-        'Lebanon': 'Liban',
-        'Libya': 'Libia',
-        'Lithuania': 'Lituania',
-        'Luxembourg': 'Luxemburg',
-        'Macedonia (FYROM)': 'Macedonia',
-        'Malaysia': 'Malaysia',
-        'United Kingdom': 'Marea Britanie',
-        'Morocco': 'Maroc',
-        'Mexico': 'Mexic',
-        'Montenegro': 'Muntenegru',
-        'Nigeria': 'Nigeria',
-        'Norway': 'Norvegia',
-        'Netherlands': 'Olanda',
-        'Pakistan': 'Pakistan',
-        'Palestine': 'Palestina',
-        'Peru': 'Peru',
-        'Poland': 'Polonia',
-        'Portugal': 'Portugalia',
-        'Qatar': 'Qatar',
+        Bulgaria: 'Bulgaria',
+        Canada: 'Canada',
+        Chile: 'Chile',
+        China: 'China',
+        Colombia: 'Columbia',
+        Croatia: 'Croaţia',
+        Cuba: 'Cuba',
+        Cyprus: 'Cipru',
         'Czech Republic': 'Rep. Cehă',
-        'Moldova': 'Rep. Moldova',
+        Denmark: 'Danemarca',
+        Ecuador: 'Ecuador',
+        Egypt: 'Egipt',
+        Ethiopia: 'Etiopia',
+        Finland: 'Finlanda',
+        France: 'Franţa',
+        Georgia: 'Georgia',
+        Germany: 'Germania',
+        Greece: 'Grecia',
+        Honduras: 'Honduras',
+        Hungary: 'Ungaria',
+        India: 'India',
+        Indonesia: 'Indonezia',
+        Iran: 'Iran',
+        Iraq: 'Irak',
+        Ireland: 'Irlanda',
+        Israel: 'Israel',
+        Italy: 'Italia',
+        Japan: 'Japonia',
+        Jordan: 'Iordania',
+        Kazakhstan: 'Kazakhstan',
+        Kenya: 'Kenya',
+        Kuwait: 'Kuwait',
+        Lebanon: 'Liban',
+        Libya: 'Libia',
+        Lithuania: 'Lituania',
+        Luxembourg: 'Luxemburg',
+        'Macedonia (FYROM)': 'Macedonia',
+        Malaysia: 'Malaysia',
+        Mexico: 'Mexic',
+        Moldova: 'Rep. Moldova',
+        Montenegro: 'Muntenegru',
+        Morocco: 'Maroc',
+        Netherlands: 'Olanda',
+        Nigeria: 'Nigeria',
+        'North Korea': 'Coreea De Nord',
+        Norway: 'Norvegia',
+        Pakistan: 'Pakistan',
+        Palestine: 'Palestina',
+        Peru: 'Peru',
+        Philippines: 'Filipine',
+        Poland: 'Polonia',
+        Portugal: 'Portugalia',
+        Qatar: 'Qatar',
+        Russia: 'Federaţia Rusă',
         'San Marino': 'San Marino',
-        'Senegal': 'Senegal',
-        'Serbia': 'Serbia',
-        'Vatican': 'Sfântul Scaun',
-        'Singapore': 'Singapore',
-        'Syria': 'Siria',
-        'Slovakia': 'Slovacia',
-        'Slovenia': 'Slovenia',
-        'Spain': 'Spania',
+        'Saudi Arabia': 'Arabia Saudită',
+        Senegal: 'Senegal',
+        Serbia: 'Serbia',
+        Singapore: 'Singapore',
+        Slovakia: 'Slovacia',
+        Slovenia: 'Slovenia',
+        Spain: 'Spania',
         'Sri Lanka': 'Sri Lanka',
+        'South Africa': 'Africa De Sud',
+        'South Korea': 'Coreea De Sud',
+        Sudan: 'Sudan',
+        Sweden: 'Suedia',
+        Switzerland: 'Elveţia',
+        Syria: 'Siria',
+        Thailand: 'Thailanda',
+        Tunisia: 'Tunisia',
+        Turkey: 'Turcia',
+        Turkmenistan: 'Turkmenistan',
+        Ukraine: 'Ucraina',
+        'United Arab Emirates': 'Emiratele Arabe Unite',
+        'United Kingdom': 'Marea Britanie',
         'United States': 'Sua',
-        'Sudan': 'Sudan',
-        'Sweden': 'Suedia',
-        'Thailand': 'Thailanda',
-        'Tunisia': 'Tunisia',
-        'Turkey': 'Turcia',
-        'Turkmenistan': 'Turkmenistan',
-        'Ukraine': 'Ucraina',
-        'Hungary': 'Ungaria',
-        'Uruguay': 'Uruguay',
-        'Uzbekistan': 'Uzbekistan',
-        'Venezuela': 'Venezuela',
-        'Vietnam': 'Vietnam',
-        'Zimbabwe': 'Zimbabwe'
+        Uruguay: 'Uruguay',
+        Uzbekistan: 'Uzbekistan',
+        Vatican: 'Sfântul Scaun',
+        Venezuela: 'Venezuela',
+        Vietnam: 'Vietnam',
+        Zimbabwe: 'Zimbabwe'
+      };
+
+      vm.exceptions = {
+        Andorra: 3189,
+        'Antigua and Barbuda': 3243,
+        Bahrain: 3160,
+        Barbados: 3243,
+        Bangladesh: 3192,
+        Belize: 3212,
+        Benin: 3215,
+        Bhutan: 3192,
+        Bolivia: 3218,
+        Botswana: 3155,
+        Brunei: 3209,
+        'Burkina Faso': 3223,
+        Burundi: 3202,
+        Cambodia: 3244,
+        Cameroon: 3215,
+        'Cape Verde': 3223,
+        'Central African Republic': 3232,
+        Chad: 3205,
+        Comoros: 3155,
+        'Costa Rica': 3212,
+        'Côte d\'Ivoire': 3223,
+        Djibouti: 3182,
+        Dominica: 3243,
+        'Dominican Republic': 3176,
+        Ecuador: 3218,
+        'El Salvador': 3212,
+        'Equatorial Guinea': 3215,
+        Eritrea: 3182,
+        'Federated States of Micronesia': 3163,
+        Fiji: 3163,
+        Gabon: 3215,
+        Ghana: 3215,
+        Grenada: 3243,
+        Guatemala: 3212,
+        Guinea: 3223,
+        'Guinea-Bissau': 3223,
+        Guyana: 3243,
+        Haiti: 3180,
+        Honduras: 3212,
+        Iceland: 3181,
+        Jamaica: 3180,
+        Kyrgyzstan: 3201,
+        Kiribati: 3163,
+        Laos: 3234,
+        Lesotho: 3155,
+        Liberia: 3215,
+        Madagascar: 3155,
+        Malawi: 3245,
+        Maldives: 3192,
+        Mali: 3223,
+        Malta: 3199,
+        'Marshall Islands': 3187,
+        Mauritania: 3211,
+        Mauritius: 3155,
+        Monaco: 3189,
+        Mongolia: 3174,
+        Mozambique: 3155,
+        'Myanmar (Burma)': 3234,
+        Namibia: 3155,
+        Nauru: 3163,
+        'New Zealand': 3163,
+        Nicaragua: 3212,
+        Niger: 3215,
+        Oman: 3185,
+        Palau: 3187,
+        Panama: 3176,
+        'Papua New Guinea': 3193,
+        Paraguay: 3161,
+        'Republic of the Congo': 3159,
+        Rwanda: 3202,
+        'San Marino': 3199,
+        'Saint Kitts and Nevis': 3243,
+        'Saint Lucia': 3243,
+        Samoa: 3163,
+        'São Tomé and Príncipe': 3159,
+        Seychelles: 3155,
+        'Sierra Leone': 3215,
+        'Solomon Islands': 3163,
+        Somalia: 3232,
+        'South Sudan': 3232,
+        Suriname: 3243,
+        'St Vincent and the Grenadines': 3243,
+        Swaziland: 3155,
+        Tajikistan: 3201,
+        Tanzania: 3202,
+        'Timor-Leste': 3193,
+        'The Bahamas': 3243,
+        'The Gambia': 3223,
+        Tonga: 3163,
+        Togo: 3215,
+        'Trinidad and Tobago': 3243,
+        Tuvalu: 3163,
+        Uganda: 3202,
+        Vanuatu: 3163,
+        Yemen: 3185,
+        Zambia: 3155
       };
 
       // interaction steps
@@ -212,6 +311,7 @@ $(document).on({
       });
 
       vm.city = {
+        exception: false,
         // city name as autocompleted by Google Places
         name: null,
         // the whole response received from Google Places
@@ -226,6 +326,7 @@ $(document).on({
 
       // reset user search
       vm.cityReset = function () {
+        vm.city.exception = false;
         vm.city.name = vm.city.details = null;
         vm.city.markers = [];
       };
@@ -250,25 +351,39 @@ $(document).on({
         countryRO = vm.countries[countryEN];
 
         bounds = new google.maps.LatLngBounds();
-
         bounds.extend(new google.maps.LatLng(details.geometry.location.lat(), details.geometry.location.lng()));
 
         vm.city.markers = [];
 
-        _.each(vm.markers, function (marker) {
+        vm.city.exception = angular.isDefined(vm.exceptions[countryEN]);
+        if (vm.city.exception) {
+          var marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
           var localPoint,
-              distance,
-              selected;
+                distance,
+                selected;
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
-          if (marker.co === countryRO) {
-            selected = marker.texts;
-            selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
-            selected.id = marker.n;
-            vm.city.markers.push(selected);
-            bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
-          }
-        });
+          selected = marker.texts;
+          selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
+          selected.id = marker.n;
+          vm.city.markers.push(selected);
+          bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
+        } else {
+          _.each(vm.markers, function (marker) {
+            var localPoint,
+                distance,
+                selected;
+            localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
+            distance = point.distanceTo(localPoint, true);
+            if (marker.co === countryRO) {
+              selected = marker.texts;
+              selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
+              selected.id = marker.n;
+              vm.city.markers.push(selected);
+              bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
+            }
+          });
+        }
 
         vm.map.bounds = {
           northeast: {
