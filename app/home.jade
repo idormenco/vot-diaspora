@@ -2,6 +2,47 @@
 //-   input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
 //-   label(for="debug" style="padding: 10px;") Arata toti pasii #debug
 
+section.step.step-registration-info
+  content.row
+    div.text-center
+      h2
+        span
+        | Te-ai inregistrat?
+  content.row
+    div.columns.medium-6.text-center 
+      h3(ng-click="activeTab = 1", style="cursor:pointer") Da
+    div.columns.medium-6.text-center
+      h3(ng-click="activeTab = 2", style="cursor:pointer") Nu
+  div.row(ng-if="activeTab") &nbsp;
+    
+
+  content.row(ng-if="activeTab === 1")
+    div.columns.medium-6.text-center
+        h3 PRIN CORESPONDENȚĂ
+        span Dacă ai optat pentru votul prin corespondență și te-ai înregistrat deja în Registrul Electoral cu această opțiune atunci asigură-te ca ai fost introdus în registru și, mai apoi, că votul tău a ajuns la destinație.
+        br
+        br
+        span Iată mai jos un infografic cu pașii de urmat în cazul în care ai ales să votezi prin corespondență.
+    div.columns.medium-6.text-center
+        h3 VOT LA SECȚIE
+        span Dacă ai optat pentru vot la secția de votare și te-ai înscris în Registrul Electoral atunci vei putea vota cu un act românesc de identitate la cea mai apropiată secție de votare.
+        br
+        br
+        span Află mai jos care sunt cele mai apropiate secții de votare la care te poți duce pe 11 decembrie să votezi. 
+  content.row(ng-if="activeTab === 2") 
+      div.columns.medium-6.text-center
+          h3 EȘTI REZIDENT?
+          span Să fii rezident înseamnă că ai buletin (carte de identitate) de România și că locuiești în străinătate și ești înscris ca rezident în țara în care locuiești.
+          br
+          br
+          span Dacă ești rezident atunci trebuie ca în ziua votului să ai la tine buletinul și dovada rezidenței. Consultă aici ce acte reprezintă dovada rezidenței și apoi află mai jos care sunt cele mai apropiate secții de votare de tine.
+      div.columns.medium-6.text-center
+        h3 EȘTI DOMICILIAT?
+        span Să fii domiciliat înseamnă că ai pașaport românesc și că ai înscris domiciliul în străinatate pe prima pagină a pașaportului.
+        br
+        br
+        span Dacă ești domiciliat trebuie să ai la tine pașaportul valid în ziua votării. Află mai jos care este cea mai apropiată secție de votare de tine.
+    
 section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
@@ -9,7 +50,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
         span 1
         | Unde stai?
       p.text-center
-        | Caută orașul în care locuiești ca să vezi de ce acte ai nevoie pentru a vota de acum înainte.
+        | Caută orașul în care locuiești pentru a afla care sunt cele mai apropiate secții de votare.
 
       form.search(name="find", action="/search", method="post", onsubmit="return false;")
         input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options" placeholder="Locuiesc in orasul ...")
