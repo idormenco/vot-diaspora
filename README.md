@@ -1,23 +1,19 @@
 # Vot Diaspora
 
-*Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.13.0) version 0.13.0*
+Vot Diaspora este un tutorial online de informare a românilor din străinătate cu privire la regulile de înscriere pentru a vota la alegerile parlamentare din 2016. www.votdiaspora.ro a apărut din dorința de a prezenta într-o formă simplă și interactivă pașii pe care trebuie să îi urmeze românii pentru a putea vota din străinătate. Proiectul poate fi utilizat, pe viitor, și pentru alte runde de alegeri.
 
-## Setup
-1. Install [Node.js](http://nodejs.org/)
- - This will also install npm.
-1. Run `npm install -g bower gulp yo generator-ng-poly@0.13.0`
- - This enables Bower, Gulp, and Yeoman generators to be used from command line.
-1. Run `npm install` to install this project's dependencies
-1. Run `bower install` to install client-side dependencies
-1. Use [generator-ng-poly](https://github.com/dustinspecker/generator-ng-poly) to create additional components
-=======
-# Kanban Dashboard
- https://waffle.io/code4romania/diaspora-vote
+## Tech
+Este un simplu tutorial cu 5 pasi informativi construit in Gulp, Angular 1 si Stylus.
+
+*[ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.13.0) 0.13.0 generat cu [Yeoman](http://yeoman.io/).*
+
+```
+npm install
+bower install
+```
 
 ## Gulp tasks
-- Run `gulp build` to compile assets
-- Run `gulp dev` to run the build task and setup the development environment
-- Run `gulp unitTest` to run unit tests via Karma and to create code coverage reports
-- Run `gulp webdriverUpdate` to download Selenium server standalone and Chrome driver for e2e testing
-- Run `gulp e2eTest` to run e2e tests via Protractor
- - **A localhost must be running** - `gulp dev`
+```
+gulp build
+gulp dev
+```
