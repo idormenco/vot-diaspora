@@ -109,7 +109,7 @@
 
 .search
   max-width 400px;
-  margin 0 auto distance
+  margin 0 auto
   position relative
 
   input
@@ -131,11 +131,38 @@
     opacity .30
     color: color-primary;
 
-.chosen
-  font-size: 24px
+.options
+  padding: (distance/2) 0 distance
+  font-size 0
 
-  h3
-    color: color-primary;
+.choice
+  display: inline-block;
+  width 50%
+
+  @media breakpoint-medium
+    width auto
+
+  a
+    padding: (distance/2) distance;
+    background color-primary
+    color: #fff;
+    text-transform uppercase
+    font-size: 40px;
+    font-weight 700
+    display block
+    text-align center;
+    line-height 100px;
+    display block;
+
+    @media breakpoint-medium
+      display inline-block
+
+    &:hover
+      text-decoration none
+
+    &.chosen-disabled
+      color color-primary
+      background color-secondary
 
 .reset
   opacity 0
@@ -183,6 +210,9 @@
 
 .map
   padding 0
+
+.angular-google-map-container
+  height: 800px
 
 .source
   font-family monospace

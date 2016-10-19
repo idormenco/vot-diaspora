@@ -2,14 +2,47 @@
 //-   input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
 //-   label(for="debug" style="padding: 10px;") Arata toti pasii #debug
 
+section.step.step-registration-info
+  .content.row
+    div.text-center
+      h2
+        | Te-ai înregistrat?
+      .options
+        div.choice
+          a(ng-click="activeTab=1" ng-class="activeTab === 1 ? 'chosen' : 'chosen-disabled'")
+            | Da
+        div.choice
+          a(ng-click="activeTab=2" ng-class="activeTab === 2 ? 'chosen' : 'chosen-disabled'")
+            | Nu
+
+  .content.row(ng-if="activeTab === 1")
+    div.columns.medium-6
+        h2 Prin corespondență
+        p Dacă ai optat pentru votul prin corespondență și te-ai înregistrat deja în Registrul Electoral cu această opțiune atunci asigură-te ca ai fost introdus în registru și, mai apoi, că votul tău a ajuns la destinație.
+        p
+          | <a du-smooth-scroll du-scrollspy ng-href="#community">Descarca de aici</a> un infografic cu pașii de urmat în cazul în care ai ales să votezi prin corespondență.
+    div.columns.medium-6
+        h2 Vot la secție
+        p Dacă ai optat pentru vot la secția de votare și te-ai înscris în Registrul Electoral atunci vei putea vota cu un act românesc de identitate la cea mai apropiată secție de votare.
+        p Află mai jos care sunt cele mai apropiate secții de votare la care te poți duce pe 11 decembrie să votezi.
+  .content.row(ng-if="activeTab === 2")
+      div.columns.medium-6
+        h2 Ești rezident?
+        p Să fii rezident înseamnă că ai buletin (carte de identitate) de România și că locuiești în străinătate și ești înscris ca rezident în țara în care locuiești.
+        p
+         | Dacă ești rezident atunci trebuie ca în ziua votului să ai la tine buletinul și dovada rezidenței. <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank">Consultă aici</a> ce acte reprezintă dovada rezidenței și apoi află mai jos care sunt cele mai apropiate secții de votare de tine.
+      div.columns.medium-6
+        h2 Ești domiciliat?
+        p Să fii domiciliat înseamnă că ai pașaport românesc și că ai înscris domiciliul în străinatate pe prima pagină a pașaportului.
+        p Dacă ești domiciliat trebuie să ai la tine pașaportul valid în ziua votării. Află mai jos care este cea mai apropiată secție de votare de tine.
+
 section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
     .small-12.medium-offset-1.medium-10.columns
       h1.step-title
-        span 1
         | Unde stai?
       p.text-center
-        | Caută orașul în care locuiești ca să vezi de ce acte ai nevoie pentru a vota de acum înainte.
+        | Caută orașul în care locuiești pentru a afla care sunt cele mai apropiate secții de votare.
 
       form.search(name="find", action="/search", method="post", onsubmit="return false;")
         input(type="text" name="location" id="locate" ng-autocomplete ng-model="vm.city.name" details="vm.city.details" options="vm.city.options" placeholder="Locuiesc in orasul ...")
@@ -32,31 +65,30 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
             strong {{parameter.distance}} km
           location-box
 
-  .content.row
-    .small-12.columns
-      .step-content.location
-        .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) ==='Romania') ")
-          a.button.large(ng-click="vm.activateStep(5)")
-            | Ajută-ți prietenii din străinatate să voteze!
-      .step-content.location
-        .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) !=='Romania') ")
-          a.button.large(ng-click="vm.activateStep(2)")
-            | Află cum votezi în străinatate!
+.map
+  ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="false" options="vm.map.options" ng-if='vm.map.center')
+    ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
+    //- ui-gmap-window( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
+    ui-gmap-window(coords='vm.selectedMarker.coords'
+      show='vm.selectedMarker.showWindow'
+      templateUrl='vm.selectedMarker.templateUrl'
+      templateParameter='vm.selectedMarker.texts'
+      closeClick='vm.closeWindow()'
+    )
+  p.source
+    | Sursa:
+    a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
 
-    //- | {{vm.selectedMarker}}
-    .map.small-12.columns
-      ui-gmap-google-map.map( center='vm.map.center', bounds='vm.map.bounds', zoom='vm.map.zoom',  draggable="false" options="vm.map.options" ng-if='vm.map.center')
-        ui-gmap-markers( models="vm.markers" coords="'coords'" icon="'icon'" options="'options'" click="onClicked" )
-        //- ui-gmap-window( show="'showWindow'" closeClick="'onWindowClose'" templateUrl="'templateUrl'" templateParameter="'texts'" ng-cloak='ng-cloak')
-        ui-gmap-window(coords='vm.selectedMarker.coords'
-          show='vm.selectedMarker.showWindow'
-          templateUrl='vm.selectedMarker.templateUrl'
-          templateParameter='vm.selectedMarker.texts'
-          closeClick='vm.closeWindow()'
-        )
-      p.source
-        | Sursa:
-        a(href='http://www.mae.ro/maps/3068' target='_blank') http://www.mae.ro/maps/3068
+.content.row(ng-if="vm.debugSteps")
+  .small-12.columns
+    .step-content.location
+      .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) ==='Romania') ")
+        a.button.large(ng-click="vm.activateStep(5)")
+          | Ajută-ți prietenii din străinatate să voteze!
+    .step-content.location
+      .step-actions(ng-if="vm.debugSteps || (vm.city.details && !vm.step['2'].visible && vm.city.details.formatted_address.substr(-7) !=='Romania') ")
+        a.button.large(ng-click="vm.activateStep(2)")
+          | Află cum votezi în străinatate!
 
 section.step.step-user-type(ng-if="vm.debugSteps || vm.step['2'].visible")
   .content.row
