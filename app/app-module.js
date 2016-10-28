@@ -338,7 +338,11 @@
         var point,
             bounds,
             countryEN,
-            countryRO
+            countryRO,
+            marker,
+            localPoint,
+            distance,
+            selected
             ;
         if (_.isNull(details)) {
           vm.city.markers = [];
@@ -357,10 +361,7 @@
 
         vm.city.exception = angular.isDefined(vm.exceptions[countryEN]);
         if (vm.city.exception) {
-          var marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
-          var localPoint,
-                distance,
-                selected;
+          marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
           selected = marker.texts;
@@ -369,19 +370,21 @@
           vm.city.markers.push(selected);
           bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
         } else {
-          _.each(vm.markers, function (marker) {
-            var localPoint,
-                distance,
-                selected;
-            localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
-            distance = point.distanceTo(localPoint, true);
-            if (marker.co === countryRO) {
-              selected = marker.texts;
-              selected.distance = parseFloat((Math.round(distance * 2) / 2).toFixed(1));
-              selected.id = marker.n;
-              vm.city.markers.push(selected);
-              bounds.extend(new google.maps.LatLng(marker.coords.latitude, marker.coords.longitude));
-            }
+          _.each(vm.markers, function (place) {
+            var placePoint;
+            placePoint = new GeoPoint(place.coords.latitude, place.coords.longitude, false);
+            place.distance = point.distanceTo(placePoint, true);
+          });
+
+          _.each(_.sortBy(vm.markers, 'distance').splice(0, 6), function (place) {
+            var selectedPlace;
+            // if (place.co === countryRO) { // tara orasului cautat de user este acceasi cu tara in care se afla ambasada
+            selectedPlace = place.texts;
+            selectedPlace.distance = parseFloat((Math.round(place.distance * 2) / 2).toFixed(1));
+            selectedPlace.id = place.n;
+            vm.city.markers.push(selectedPlace);
+            bounds.extend(new google.maps.LatLng(place.coords.latitude, place.coords.longitude));
+            // }
           });
         }
 
