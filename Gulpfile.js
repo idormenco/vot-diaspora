@@ -13,7 +13,6 @@ $ = require('gulp-load-plugins')({
   'browser-sync',
   'del',
   'gulp-*',
-  'karma',
   'main-bower-files',
   'multi-glob',
   'nib',
