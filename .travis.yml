@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "9"
+
+cache:
+  directories:
+    - node_modules
+    - bower_components
+
+before_install:
+  - pyenv global system 3.6
+
+install:
+  - pip3 install --user awscli
+  - npm install
+  - bower install
+
+script:
+  - gulp build
+
+deploy:
+  provider: script
+  script: aws s3 sync build/app s3://$S3_BUCKET_NAME --region=$S3_BUCKET_REGION --delete
+  skip_cleanup: true
+  on:
+    branch: master
+
+after_deploy:
+  - aws configure set preview.cloudfront true
+  - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
