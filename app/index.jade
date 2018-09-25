@@ -12,7 +12,7 @@ html(lang='en' data-ng-app='votDiaspora')
 
     meta(property="og:url" content="http://www.votdiaspora.ro/")
     meta(property="og:title" content="Vot Diaspora")
-    meta(property="og:description" content="Pe 11 decembrie 2016 diaspora are un cuvânt de spus.")
+    meta(property="og:description" content="Pe 6-7 octombrie 2018 diaspora are un cuvânt de spus.")
     meta(property="og:site_name" content="Vot Diaspora")
     meta(property="og:image" content="http://www.votdiaspora.ro/images/share.png")
     meta(property="fb:app_id" content="319583755047031")
@@ -42,21 +42,31 @@ html(lang='en' data-ng-app='votDiaspora')
       ga('create', 'UA-81891329-1', 'auto');
       ga('send', 'pageview');
 
+    section.header-branding
+      span an app developed by
+      a.logo(href="https://code4.ro", target="_blank")
+        img(src="https://code4.ro/wp-content/themes/code4/dist/images/brand-logotype.png")
+
     section.hero-info
       .content.row
         .small-12.medium-offset-1.medium-10.large-offset-2.large-8.columns
           a.brand(ui-sref="home")
             img(src="images/brand.png")
           p
-            | Bine ai venit. Fie că te-ai înregistrat pentru vot prin corespondență, pentru vot la secție sau nu te-ai înregistrat în Registrul Electoral, află mai jos care sunt pașii de urmat ca să fim siguri că anul ăsta votăm cu toții.
+            | Bine ai venit. Pe 6-7 octombrie 2018 are loc referendumul pentru familie la care toți cetățenii români cu drept de vot pot să își exprime opțiunea.
+            //- | Bine ai venit. Fie că te-ai înregistrat pentru vot prin corespondență, pentru vot la secție sau nu te-ai înregistrat în Registrul Electoral, află mai jos care sunt pașii de urmat ca să fim siguri că anul ăsta votăm cu toții.
             //Îți mai aduci aminte de cozile de la vot la care am stat în 2014? În 2016 vor exista de două ori mai puține secții de votare. Anul acesta lucrurile pot fi mai simple dacă ne ajuți să mobilizăm toți locuitorii din diaspora. Dacă te înscrii din timp în Registrul Electoral vei putea vota fie la o secție de votare deschisă chiar în orașul tău, fie prin corespondență. Află mai jos care sunt pașii de urmat ca să fim siguri că anul ăsta votăm cu toții.
+          p
+            | Puteți vota la oricare dintre secțiile de votare deschise pe lângă ambasade, consulate sau institute culturale, pe liste suplimentare. Votul nu este condiționat de înscrierea în Registrul electoral și nu vor exista liste permanente.
+          p
+            | Folosește harta de mai jos pentru a vedea care este cea mai apropiată secție de votare din orașul sau țara în care locuiești.
 
     div(data-ui-view)
 
     footer.footer
       .copy
-        | &copy; 2016 Code for Society/Code for Romania. Organizație apolitică și nepartizană.
-      a.soruce(href="http://code4.ro", target="_blank")
+        | &copy; 2018 Code for Romania. Organizație neguvernamentală independentă, neafiliată politic și apolitică.
+      a.soruce(href="https://code4.ro", target="_blank")
         img(src="images/brand-code4.png")
 
     script( type="text/ng-template" id="locationBox.html" ng-cloak)

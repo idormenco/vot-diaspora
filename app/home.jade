@@ -2,39 +2,39 @@
 //-   input(id="debug" type="checkbox" ng-model="vm.debugSteps" ng-true-value="1" ng-false-value="0")
 //-   label(for="debug" style="padding: 10px;") Arata toti pasii #debug
 
-section.step.step-registration-info
-  .content.row
-    div.text-center
-      h2
-        | Te-ai înregistrat?
-      .options
-        div.choice
-          a(ng-click="activeTab=1" ng-class="activeTab === 1 ? 'chosen' : 'chosen-disabled'")
-            | Da
-        div.choice
-          a(ng-click="activeTab=2" ng-class="activeTab === 2 ? 'chosen' : 'chosen-disabled'")
-            | Nu
+//- section.step.step-registration-info
+//-   .content.row
+//-     div.text-center
+//-       h2
+//-         | Te-ai înregistrat?
+//-       .options
+//-         div.choice
+//-           a(ng-click="activeTab=1" ng-class="activeTab === 1 ? 'chosen' : 'chosen-disabled'")
+//-             | Da
+//-         div.choice
+//-           a(ng-click="activeTab=2" ng-class="activeTab === 2 ? 'chosen' : 'chosen-disabled'")
+//-             | Nu
 
-  .content.row(ng-if="activeTab === 1")
-    div.columns.medium-6
-        h2 Prin corespondență
-        p Dacă ai optat pentru votul prin corespondență și te-ai înregistrat deja în Registrul Electoral cu această opțiune atunci asigură-te ca ai fost introdus în registru și, mai apoi, că votul tău a ajuns la destinație.
-        p
-          | <a du-smooth-scroll du-scrollspy ng-href="#community">Descarca de aici</a> un infografic cu pașii de urmat în cazul în care ai ales să votezi prin corespondență.
-    div.columns.medium-6
-        h2 Vot la secție
-        p Dacă ai optat pentru vot la secția de votare și te-ai înscris în Registrul Electoral atunci vei putea vota cu un act românesc de identitate la cea mai apropiată secție de votare.
-        p Află mai jos care sunt cele mai apropiate secții de votare la care te poți duce pe 11 decembrie să votezi.
-  .content.row(ng-if="activeTab === 2")
-      div.columns.medium-6
-        h2 Ești rezident?
-        p Să fii rezident înseamnă că ai buletin (carte de identitate) de România și că locuiești în străinătate și ești înscris ca rezident în țara în care locuiești.
-        p
-         | Dacă ești rezident atunci trebuie ca în ziua votului să ai la tine buletinul și dovada rezidenței. <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank">Consultă aici</a> ce acte reprezintă dovada rezidenței și apoi află mai jos care sunt cele mai apropiate secții de votare de tine.
-      div.columns.medium-6
-        h2 Ești domiciliat?
-        p Să fii domiciliat înseamnă că ai pașaport românesc și că ai înscris domiciliul în străinatate pe prima pagină a pașaportului.
-        p Dacă ești domiciliat trebuie să ai la tine pașaportul valid în ziua votării. Află mai jos care este cea mai apropiată secție de votare de tine.
+//-   .content.row(ng-if="activeTab === 1")
+//-     div.columns.medium-6
+//-         h2 Prin corespondență
+//-         p Dacă ai optat pentru votul prin corespondență și te-ai înregistrat deja în Registrul Electoral cu această opțiune atunci asigură-te ca ai fost introdus în registru și, mai apoi, că votul tău a ajuns la destinație.
+//-         p
+//-           | <a du-smooth-scroll du-scrollspy ng-href="#community">Descarca de aici</a> un infografic cu pașii de urmat în cazul în care ai ales să votezi prin corespondență.
+//-     div.columns.medium-6
+//-         h2 Vot la secție
+//-         p Dacă ai optat pentru vot la secția de votare și te-ai înscris în Registrul Electoral atunci vei putea vota cu un act românesc de identitate la cea mai apropiată secție de votare.
+//-         p Află mai jos care sunt cele mai apropiate secții de votare la care te poți duce pe 11 decembrie să votezi.
+//-   .content.row(ng-if="activeTab === 2")
+//-       div.columns.medium-6
+//-         h2 Ești rezident?
+//-         p Să fii rezident înseamnă că ai buletin (carte de identitate) de România și că locuiești în străinătate și ești înscris ca rezident în țara în care locuiești.
+//-         p
+//-          | Dacă ești rezident atunci trebuie ca în ziua votului să ai la tine buletinul și dovada rezidenței. <a href="https://drive.google.com/open?id=0B7vuLTTUsubxTWZEaUxPR1dpNTA" target="_blank">Consultă aici</a> ce acte reprezintă dovada rezidenței și apoi află mai jos care sunt cele mai apropiate secții de votare de tine.
+//-       div.columns.medium-6
+//-         h2 Ești domiciliat?
+//-         p Să fii domiciliat înseamnă că ai pașaport românesc și că ai înscris domiciliul în străinatate pe prima pagină a pașaportului.
+//-         p Dacă ești domiciliat trebuie să ai la tine pașaportul valid în ziua votării. Află mai jos care este cea mai apropiată secție de votare de tine.
 
 section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   .content.row
@@ -303,10 +303,19 @@ section.share
     .small-12.medium-offset-1.medium-10.columns
       .box.box-dark
         h2 Informează-ți prietenii
-        p Pe 11 decembrie 2016 diaspora are un cuvânt de spus. Distribuie aceste informații în social media pentru a ajunge la cât mai mulți români din străinătate.
+        p Pe 6 și 7 octombrie 2018 diaspora are un cuvânt de spus. Distribuie aceste informații în social media pentru a ajuta cât mai mulți români să afle unde pot vota la referendum.
         .share-actions
           a.share-cta.email(href="#" socialshare socialshare-provider="email" socialshare-subject="subiect aici" socialshare-body="Îți mai aduci aminte de cozile de la vot la care am stat în 2014? http://www.votdiaspora.ro")
             i.material-icons &#xE0E1;
           a.share-cta.fb(href="#" socialshare socialshare-provider="facebook" socialshare-text="Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-description="Pe 11 decembrie 2016 diaspora are un cuvânt de spus." socialshare-type="feed" socialshare-via="319583755047031") FB
           a.share-cta.tw(href="#" socialshare socialshare-provider="twitter" socialshare-text="Îți mai aduci aminte de cozile de la vot la care am stat în 2014?" socialshare-url="http://www.votdiaspora.ro" socialshare-hashtags="vot,diaspora,expat,parlamentare2016") TW
           a.share-cta.gp(href="#" socialshare socialshare-provider="google" socialshare-url="http://www.votdiaspora.ro") G+
+
+section.share
+  .content.row
+    .small-12.medium-offset-1.medium-10.columns
+      .box.box-dark
+        h2 Susține-ne
+        p Vot Diaspora este un proiect dezvoltat pro-bono de o echipă de voluntari Code for Romania. În fiecare zi, sute dintre prietenii si colegii tăi lucrează pentru a construi intrumente digitale utile pentru a ne face viața mai ușoară și pentru a aduce România mai aproape de progresul tehnologic. Ajută-ne să mergem mai departe.
+
+        a.button.donate(href="https://code4.ro/doneaza/") DONEAZĂ

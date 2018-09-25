@@ -372,7 +372,7 @@
         } else {
           _.each(vm.markers, function (place) {
             var placePoint;
-            placePoint = new GeoPoint(place.coords.latitude, place.coords.longitude, false);
+            placePoint = new GeoPoint(parseFloat(place.coords.latitude), parseFloat(place.coords.longitude), false);
             place.distance = point.distanceTo(placePoint, true);
           });
 
