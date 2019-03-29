@@ -3,7 +3,7 @@
 
 // fixes broken iphone autocomplete field for location searching
 // https://forum.ionicframework.com/t/google-maps-address-autocomplete-inside-slide-box/5278/25
-  $().on({
+  $(document).on({
     DOMNodeInserted: function () {
       $('.pac-item, .pac-item span', this).addClass('needsclick');
     }
