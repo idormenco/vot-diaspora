@@ -78,6 +78,10 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
   p.source
     | Sursa:
     a(href='http://www.mae.ro/locatiile_sec%C5%A3iilor_de_votare' target='_blank') MAE
+  .content.row
+    .small-12.medium-offset-1.medium-10.columns
+      .box.box-dark
+        | Această vă indică lista de secții de votare disponibile la alegerile anterioare și este harta oficială prezentă pe website-ul MAE. Pe 27 aprilie se vor anunța listele finale cu secțiile de votare din țară și diaspora.
 
 .content.row(ng-if="vm.debugSteps")
   .small-12.columns
@@ -307,7 +311,7 @@ section.share
         p
           | Poți cere înființarea unei secții de votare mai aproape de tine. Apasă butonul de mai jos și vei fi direcționat(ă) către un formular tip pe care îl poți completa cu datele tale și trimite către AEP și MAE cu un singur click.
         p
-          | După ce vei trimite cererea, un e-mail de confirmare te va ghida pentru trimiterea acesteia și către Ambasada României din țara unde locuiești.
+          | E-mailul pe care îl trimiți nu garantează înființarea unei noi secții de votare, acest lucru nefiind obligatoriu prin lege în ceea ce privește alegerile europarlamentare, dar poate informa autoritățile cu privire la necesitatea mai multor secții în diaspora.
         div.text-center
           a.button(href="https://facem.declic.ro/campaigns/trimite-email-aep-mae", target="_blank")
             | Cere secție de votare acum
