@@ -418,6 +418,7 @@
           marker.texts = {
             title: "Secţia de votare nr. " + marker.nr,
             country: marker.stat,
+            city: marker.localitate,
             adr: marker.adresa,
             // tel: marker.t,
             // email: marker.em
@@ -476,7 +477,7 @@
     })
     .service('locationsService', function ($http) {
       this.getData = function () {
-        return $http.get('locations-2019.json')
+        return $http.get('locations.json')
           .then(function (response) {
             var filteredresponse = _.filter(response.data.markers, function (item) {
               return !_.isNull(item.la) && !_.isNull(item.lo);
