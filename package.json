@@ -1,6 +1,8 @@
 {
-  "name": "diaspora-vote",
-  "version": "0.0.1",
+  "name": "vot-diaspora",
+  "author": "Code for Romania",
+  "license": "MPL-2.0",
+  "private": true,
   "scripts": {
     "test": "gulp test"
   },
