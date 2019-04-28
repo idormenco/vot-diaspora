@@ -406,17 +406,21 @@
       prepareMarkers = function (response) {
         var temp = [];
         _.each(response, function (marker) {
+          marker.n = marker.nr;
           marker.id = marker.n;
           marker.showWindow = false;
-          marker.coords = {latitude: marker.la, longitude: marker.lo};
+          marker.coords = {
+            latitude: marker.lat,
+            longitude: marker.lng
+          };
           marker.templateUrl = 'markerWindow.html';
           marker.icon = 'images/pin.png';
           marker.texts = {
-            title: marker.m,
-            country: marker.co,
-            adr: marker.a,
-            tel: marker.t,
-            email: marker.em
+            title: "Secţia de votare nr. " + marker.nr,
+            country: marker.stat,
+            adr: marker.adresa,
+            // tel: marker.t,
+            // email: marker.em
           };
           marker.onClicked = function (selected) {
             // console.log(selected.key);
@@ -472,7 +476,7 @@
     })
     .service('locationsService', function ($http) {
       this.getData = function () {
-        return $http.get('locations.json')
+        return $http.get('locations-2019.json')
           .then(function (response) {
             var filteredresponse = _.filter(response.data.markers, function (item) {
               return !_.isNull(item.la) && !_.isNull(item.lo);
