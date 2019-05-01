@@ -406,22 +406,15 @@
       prepareMarkers = function (response) {
         var temp = [];
         _.each(response, function (marker) {
-          marker.n = marker.nr;
           marker.id = marker.n;
           marker.showWindow = false;
-          marker.coords = {
-            latitude: marker.lat,
-            longitude: marker.lng
-          };
+          marker.coords = {latitude: marker.la, longitude: marker.lo};
           marker.templateUrl = 'markerWindow.html';
           marker.icon = 'images/pin.png';
           marker.texts = {
-            title: "Secţia de votare nr. " + marker.nr,
-            country: marker.stat,
-            city: marker.localitate,
-            adr: marker.adresa,
-            // tel: marker.t,
-            // email: marker.em
+            title: marker.m,
+            country: marker.co,
+            adr: marker.a,
           };
           marker.onClicked = function (selected) {
             // console.log(selected.key);
