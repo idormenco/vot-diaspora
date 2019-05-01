@@ -699,8 +699,8 @@
             "tip": "Ambasadă",
             "localitate": "Addis Abeba",
             "stat": "Etiopia",
-            "lat": 8.9959528,
-            "lng": 38.7765616
+            "lat": 8.995832,
+            "lng": 38.7757347
         },
         {
             "nr": 79,
@@ -1572,8 +1572,8 @@
             "tip": "Consulat General",
             "localitate": "Bologna 1",
             "stat": "Italia",
-            "lat": 43.457023,
-            "lng": 11.873846
+            "lat": 44.491076,
+            "lng": 11.387322
         },
         {
             "nr": 176,
@@ -1581,8 +1581,8 @@
             "tip": "Consulat General",
             "localitate": "Bologna 2",
             "stat": "Italia",
-            "lat": 43.457023,
-            "lng": 11.873846
+            "lat": 44.491076,
+            "lng": 11.387322
         },
         {
             "nr": 177,
@@ -2486,7 +2486,7 @@
         },
         {
             "nr": 277,
-            "adresa": "Castheuvel 55, 2517 KA, Haga",
+            "adresa": "Catsheuvel 55, 2517 KA, Haga",
             "tip": "Ambasadă",
             "localitate": "Haga 1",
             "stat": "Olanda",
@@ -2495,7 +2495,7 @@
         },
         {
             "nr": 278,
-            "adresa": "Castheuvel 55, 2517 KA, Haga",
+            "adresa": "Catsheuvel 55, 2517 KA, Haga",
             "tip": "Ambasadă",
             "localitate": "Haga 2",
             "stat": "Olanda",
