@@ -445,8 +445,6 @@
         vm.selectedMarker = null;
       };
 
-      vm.isDevice = (/iphone|iod|android|(?=.*\bandroid\b)(?=.*\bmobile\b)|iemobile|(?=.*\bwindows\b)(?=.*\barm\b)|(crios|chrome)(?=.*\bmobile\b)|opera mini/i).test(navigator.userAgent.toLowerCase());
-
       uiGmapGoogleMapApi.then(function (maps) {
         maps.visualRefresh = true;
         vm.map = {
@@ -457,7 +455,6 @@
           zoom: 3,
           options: {
             scrollwheel: false,
-            draggable: !vm.isDevice
           }
         };
 
