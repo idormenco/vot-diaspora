@@ -420,7 +420,7 @@
           marker.onClicked = function (selected) {
             // console.log(selected.key);
             _.each(vm.markers, function (item) {
-              var sameMarker = item.n === selected.key ? true : false;
+              var sameMarker = item.id === selected.key ? true : false;
               item.showWindow = sameMarker;
               if (sameMarker) {
                 vm.selectedMarker = item;

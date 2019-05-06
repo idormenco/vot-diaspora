@@ -33,7 +33,7 @@ function save(data) {
     if (err) {
       console.log(err);
     } else {
-      console.log(`Successfuly saved data in ${jsonfile}`);
+      console.log(`Successfully saved data in ${jsonfile}`);
     }
   });
 }
