@@ -34,6 +34,8 @@
           prepareMarkers;
 
       // all markers for the map
+      vm.source = '';
+      vm.updated = '';
       vm.markers = [];
       vm.selectedMarker = null;
       vm.selectedLocation = null;
@@ -406,15 +408,14 @@
       prepareMarkers = function (response) {
         var temp = [];
         _.each(response, function (marker) {
-          marker.id = marker.n;
           marker.showWindow = false;
-          marker.coords = {latitude: marker.la, longitude: marker.lo};
+          marker.coords = {latitude: marker.lat, longitude: marker.lng};
           marker.templateUrl = 'markerWindow.html';
           marker.icon = 'images/pin.png';
           marker.texts = {
-            title: marker.m,
-            country: marker.co,
-            adr: marker.a,
+            title: marker.title,
+            country: marker.country,
+            adr: marker.adr,
           };
           marker.onClicked = function (selected) {
             // console.log(selected.key);
@@ -461,7 +462,10 @@
         // Load markers
         locationsService.getData()
           .then(function (response) {
-            prepareMarkers(response);
+            prepareMarkers(response.markers);
+
+            vm.source  = response.source;
+            vm.updated = response.updated;
           });
       });
     })
@@ -469,10 +473,7 @@
       this.getData = function () {
         return $http.get('locations.json')
           .then(function (response) {
-            var filteredresponse = _.filter(response.data.markers, function (item) {
-              return !_.isNull(item.la) && !_.isNull(item.lo);
-            });
-            return filteredresponse;
+            return response.data;
           });
       };
     })

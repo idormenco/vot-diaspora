@@ -77,7 +77,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
     )
   p.source
     | Sursa:
-    a(href='http://www.mae.ro/maps/3789' target='_blank') MAE 04.05.2019
+    a(ng-href='{{vm.source}}' target='_blank') MAE {{vm.updated}}
 
 .content.row(ng-if="vm.debugSteps")
   .small-12.columns
