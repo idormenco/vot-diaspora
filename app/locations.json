@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-05",
+    "updated": "2019-05-06",
     "markers": [
         {
             "id": 17363,
@@ -142,7 +142,7 @@
             "id": 28562,
             "title": "Secţia de votare Nr. 149",
             "country": "Italia",
-            "adr": "Via Yvon De Begnac, 0005,  Ladispoli",
+            "adr": "Via Yvon De Begnac, 00055,  Ladispoli",
             "lat": 41.955963,
             "lng": 12.071557
         },
@@ -679,8 +679,8 @@
             "title": "Secţia de votare Nr. 400",
             "country": "Sua",
             "adr": "Arizona State University - Downtown Phoenix Campus Mercado, 502 E Monroe Street Bldg. C, Room 145, Phoenix, AZ 85004",
-            "lat": 33.45283,
-            "lng": -112.069
+            "lat": 33.45077,
+            "lng": -112.067124
         },
         {
             "id": 28630,
@@ -697,6 +697,14 @@
             "adr": "Fadingerstrasse 1a, 5020 Salzburg",
             "lat": 47.8018,
             "lng": 13.067773
+        },
+        {
+            "id": 28632,
+            "title": "Secţia de votare Nr. 336",
+            "country": "Spania",
+            "adr": "Consulatul României la Zaragoza, Calle Camino de Las Torres 24, 50008 (intrare din strada Glorieta Esperanto)",
+            "lat": 41.645875,
+            "lng": -0.876373
         },
         {
             "id": 28633,
@@ -806,9 +814,9 @@
             "id": 28646,
             "title": "Secţia de votare Nr. 96",
             "country": "Franţa",
-            "adr": "Salle \"Gravaud\"-Maison des Familles 21, rue Jean Zay – 78190 Trappes-en Yvelines",
-            "lat": 48.772155,
-            "lng": 1.988255
+            "adr": "Salle \"Gravaud\" - Maison des Familles 21, rue Jean Zay – 78190 Trappes-en Yvelines",
+            "lat": 48.772474,
+            "lng": 2.000976
         },
         {
             "id": 28647,
@@ -878,7 +886,7 @@
             "id": 28655,
             "title": "Secţia de votare Nr. 97",
             "country": "Franţa",
-            "adr": "Hotel IBIS Gare St Jean, salon MEDOC, 68-70 rue de Tauzia, 33800 Bordeaux",
+            "adr": "Hotel Ibis Style Gare Saint Jean, salon Médoc, 68-78 Rue de Tauzia, 33800 Bordeaux",
             "lat": 44.828053,
             "lng": -0.556598
         },
@@ -886,7 +894,7 @@
             "id": 28656,
             "title": "Secţia de votare Nr. 98",
             "country": "Franţa",
-            "adr": "Chambre de Commerce et de l'Industrie Lille - Boulevard de Leeds 59000 Lille",
+            "adr": "Chambre de Commerce et de l’Industrie de région Hauts-de-France, 299 Boulevard de Leeds 59000, Lille",
             "lat": 50.640374,
             "lng": 3.075365
         },
@@ -942,9 +950,9 @@
             "id": 28663,
             "title": "Secţia de votare Nr. 94",
             "country": "Franţa",
-            "adr": "L'Auberge du Cheval Noir 2, Route de Noisy, 93500 Pantin",
-            "lat": 48.895605,
-            "lng": 2.426194
+            "adr": "Le Cheval Noir : 2, avenue Gaston Roussel, 93500 Pantin",
+            "lat": 48.895416,
+            "lng": 2.426227
         },
         {
             "id": 28664,
@@ -989,7 +997,7 @@
         {
             "id": 28670,
             "title": "Secţia de votare Nr. 54",
-            "country": "China",
+            "country": "Chile",
             "adr": "Sala consiliu Magnetita, Hotel Atacama Suites, Colipi 794, Copiapo, Region de Atacama",
             "lat": -26.902501,
             "lng": -70.3705
@@ -1879,8 +1887,8 @@
             "title": "Secţia de votare Nr. 99",
             "country": "Franţa",
             "adr": "Salle Mairie de Doulon, 35 boulevard Louis Millet, Nantes -Spatiu oferit de Primarie localitate",
-            "lat": 47.227683,
-            "lng": -1.518877
+            "lat": 47.227458,
+            "lng": -1.518892
         },
         {
             "id": 48808,
@@ -2550,9 +2558,9 @@
             "id": 3217,
             "title": "Secţia de votare Nr. 282",
             "country": "Pakistan",
-            "adr": "Ambasada României în Republica Islamică Pakistan\nCasa nr. 5-A, Strada Nr. 30, Sector F-7/1, Islamabad 44000",
-            "lat": 33.721698,
-            "lng": 73.090324
+            "adr": "Ambasada României în Republica Islamică Pakistan\nCasa nr. 5, Strada Nr. 30, Sector F-7/1, Islamabad 44000",
+            "lat": 33.714245,
+            "lng": 73.051849
         },
         {
             "id": 3218,
@@ -2777,6 +2785,14 @@
             "adr": "Ambasada României în Republica Estonia\nRävala puiestee 5, 10143 Tallinn, Estonia ​",
             "lat": 59.4335,
             "lng": 24.7571
+        },
+        {
+            "id": 47737,
+            "title": "Secţia de votare Nr. 281",
+            "country": "Oman",
+            "adr": "Ambasada României în Sultanatul Oman\nVilla 2990, way 2840, Shatti Al-Qurum, Muscat",
+            "lat": 23.612402,
+            "lng": 58.458362
         },
         {
             "id": 3257,
@@ -3108,7 +3124,7 @@
         },
         {
             "id": 3294,
-            "title": "Secţiile de votare Nr. 335 şi 336",
+            "title": "Secţia de votare Nr. 335",
             "country": "Spania",
             "adr": "Consulatul României la Zaragoza\nCalle Camino de Las Torres 24, 50008, Zaragoza",
             "lat": 41.6455928,
