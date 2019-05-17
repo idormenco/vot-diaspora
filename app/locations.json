@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-06",
+    "updated": "2019-05-17",
     "markers": [
         {
             "id": 17363,
@@ -1399,8 +1399,8 @@
             "title": "Secţia de votare Nr. 312",
             "country": "Marea Britanie",
             "adr": "Venture Place, Sir Thomas St, Liverpool L1 6BW",
-            "lat": 53.407297,
-            "lng": -2.985117
+            "lat": 53.80214,
+            "lng": 1.5485
         },
         {
             "id": 39277,
@@ -1414,9 +1414,9 @@
             "id": 39278,
             "title": "Secţia de votare Nr. 275",
             "country": "Norvegia",
-            "adr": "UiA campus Kristiansand, 25f Universitetsveien 2630 Kristiansand",
-            "lat": 58.16377,
-            "lng": 8.002097
+            "adr": "UiA (University of Agder - Global Lounge), Campus Kristiansand; Universitetsveien 25F, 4630 Kristiansand",
+            "lat": 58.163525,
+            "lng": 8.00363
         },
         {
             "id": 39279,
@@ -1446,7 +1446,7 @@
             "id": 39282,
             "title": "Secţia de votare Nr. 273",
             "country": "Norvegia",
-            "adr": "Nøstegaten 32, 5010 Bergen",
+            "adr": "Nøsteboden selskapslokaler  Adresa: Nøstegaten 32, 5010 Bergen",
             "lat": 60.391841,
             "lng": 5.314601
         },
@@ -1454,7 +1454,7 @@
             "id": 39283,
             "title": "Secţia de votare Nr. 274",
             "country": "Norvegia",
-            "adr": "Eidet Kulturhall, Vatneeidet, 6265 Vatne",
+            "adr": "Eidet Kulturhall  – Bygdestova hall  - Vatnevegen 39, 6265 Vatne",
             "lat": 62.547164,
             "lng": 6.597879
         },
@@ -2550,7 +2550,7 @@
             "id": 3216,
             "title": "Secţia de votare Nr. 272",
             "country": "Norvegia",
-            "adr": "Ambasada României în Regatul Norvegiei\nOscars Gate 51, 0244 Oslo, Norway",
+            "adr": "Ambasada României în Regatul Norvegiei\nOscars Gate 51, 0258 Oslo, Norway",
             "lat": 59.919796,
             "lng": 10.722308
         },
@@ -2758,7 +2758,7 @@
             "id": 3244,
             "title": "Secţia de votare Nr. 440",
             "country": "Vietnam",
-            "adr": "Ambasada României în Republica Socialistă Vietnam\n5 Le Hong Phong Street, Hanoi",
+            "adr": "Ambasada României în Republica Socialistă Vietnam\n5 Le Hong Phong Street, Ba Dinh District, Hanoi",
             "lat": 21.005982,
             "lng": 105.81653
         },
