@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-17",
+    "updated": "2019-05-18",
     "markers": [
         {
             "id": 17363,
@@ -502,9 +502,9 @@
             "id": 28607,
             "title": "Secţia de votare Nr. 379",
             "country": "Spania",
-            "adr": "Calle Labradores, nr. 6, 03002 Alicante",
-            "lat": 38.345719,
-            "lng": -0.483185
+            "adr": "Avda Elche 3, 03008 Alicante",
+            "lat": 38.338625,
+            "lng": -0.494853
         },
         {
             "id": 28608,
@@ -1814,7 +1814,7 @@
             "id": 48797,
             "title": "Secția de votare Nr. 44",
             "country": "Canada",
-            "adr": "1015-73rd Avenue SW, Calgary, Alberta, T2V 0R9 (CKE Community Hall Consulat Onorific), Calgary",
+            "adr": "Old Y Center Aw SW, Suite 203 Calgary, Alberta, T2V 0R9",
             "lat": 50.987794,
             "lng": -114.0849
         },
@@ -1950,7 +1950,7 @@
             "id": 48818,
             "title": "Secţia de votare Nr. 117",
             "country": "Germania",
-            "adr": " Michaelisstraße 42, 20459 Hamburg ( accesul se face prin Michaelishof)",
+            "adr": " Michaelisstraße 24, 20459 Hamburg",
             "lat": 53.549623,
             "lng": 9.981366
         },
@@ -1998,7 +1998,7 @@
             "id": 48828,
             "title": "Secţia de votare Nr. 185",
             "country": "Italia",
-            "adr": "Via Tolomei nr 5, Siena",
+            "adr": "Via Tolomei nr 7, Siena",
             "lat": 43.336892,
             "lng": 11.300944
         },
@@ -2062,7 +2062,7 @@
             "id": 48836,
             "title": "Secţia de votare Nr. 232",
             "country": "Malta",
-            "adr": "Tigne Palace, Office M4, Mezzanine Floor, Tigne Street, Sliema SLM3173, Malta",
+            "adr": "12 Tigne Palace, Office M4, Mezzanine Floor, Triq Tigne, Sliema SLM3173, Malta",
             "lat": 35.911109,
             "lng": 14.502906
         },
@@ -2078,7 +2078,7 @@
             "id": 48843,
             "title": "Secţia de votare Nr. 413",
             "country": "Sua",
-            "adr": "500 Grand Avenue, etaj 2 Englewood, NJ 07631",
+            "adr": "Hotel Crowne Plaza Englewood 401 South Van Brunt Street, Englewood, NJ 07631",
             "lat": 40.877858,
             "lng": -73.98284
         },
