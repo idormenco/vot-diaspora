@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-21",
+    "updated": "2019-05-22",
     "markers": [
         {
             "id": 17363,
@@ -167,8 +167,8 @@
             "title": "Secţia de votare Nr. 314",
             "country": "Marea Britanie",
             "adr": "The Junction, Community Advice and Drop-In Centre, 28 Hexthorpe Road, Doncaster DN4 0BG",
-            "lat": 53.518675,
-            "lng": -1.144926
+            "lat": 53.518645,
+            "lng": -1.145066
         },
         {
             "id": 28566,
@@ -318,9 +318,9 @@
             "id": 28584,
             "title": "Secţia de votare Nr. 341",
             "country": "Spania",
-            "adr": "Paseo Maritimo, 11, 07014 Palma de Mallorca",
-            "lat": 39.569501,
-            "lng": 2.637091
+            "adr": "Avinguda de Gabriel Roca, nr. 11, 07014 Palma de Mallorca",
+            "lat": 39.568705,
+            "lng": 2.630897
         },
         {
             "id": 28585,
