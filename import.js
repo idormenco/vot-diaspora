@@ -1,4 +1,5 @@
 const sourceUrl = 'http://www.mae.ro/maps/3789/',
+  overrides = require('./location-overrides.json'),
   jsonfile = 'app/locations.json';
 
 let puppeteer = require('puppeteer'),
@@ -9,14 +10,34 @@ function parse(data) {
   let markers = [];
 
   data.markers.forEach((marker) => {
-    markers.push({
+    let markerObj = {
       id: parseInt(marker.n),
       title: marker.m,
       country: marker.co,
       adr: marker.a.replace('<br>', '\n').replace(/\s+$/, ''),
       lat: parseFloat(marker.la),
       lng: parseFloat(marker.lo),
-    })
+    };
+
+    if (markerObj.id in overrides) {
+      let changes = {};
+      console.log(`Found overrides for id ${markerObj.id}:`);
+
+      for (let prop in markerObj) {
+        changes[prop] = {
+          original: markerObj[prop],
+        };
+
+        if ((prop in overrides[markerObj.id]) && markerObj[prop] != overrides[markerObj.id][prop]) {
+          changes[prop].override = overrides[markerObj.id][prop];
+          markerObj[prop] = overrides[markerObj.id][prop];
+        }
+      }
+
+      console.table(changes);
+    }
+
+    markers.push(markerObj);
   });
 
   save({
