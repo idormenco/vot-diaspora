@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-22",
+    "updated": "2019-05-23",
     "markers": [
         {
             "id": 17363,
@@ -1373,7 +1373,7 @@
         {
             "id": 39273,
             "title": "Secţia de votare Nr. 215",
-            "country": "Malta",
+            "country": "Italia",
             "adr": "Via Accademia, nr.6 (Via Vittorio Emanuele nr. 19), parter, Alba",
             "lat": 44.699331,
             "lng": 8.03498

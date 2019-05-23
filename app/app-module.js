@@ -188,7 +188,7 @@
         Malawi: 3245,
         Maldives: 3192,
         Mali: 3223,
-        Malta: 3199,
+        Malta: 48836,
         'Marshall Islands': 3187,
         Mauritania: 3211,
         Mauritius: 3155,
@@ -363,7 +363,7 @@
 
         vm.city.exception = angular.isDefined(vm.exceptions[countryEN]);
         if (vm.city.exception) {
-          marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
+          marker = _.find(vm.markers, {id: vm.exceptions[countryEN]});
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
           selected = marker.texts;
