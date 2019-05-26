@@ -1,6 +1,6 @@
 {
     "source": "http://www.mae.ro/maps/3789/",
-    "updated": "2019-05-23",
+    "updated": "2019-05-26",
     "markers": [
         {
             "id": 17363,
@@ -3286,7 +3286,7 @@
             "id": 3469,
             "title": "Secţia de votare Nr. 345",
             "country": "Spania",
-            "adr": "Institutul Cultural Român - Madrid\nPlaza de la Lealtad, 3, entreplanta dcha. 28014 Madrid",
+            "adr": "Institutul Cultural Român - Madrid\nPlaza del Cordón, nº1, bajo dcha., 28005, Madrid",
             "lat": 40.414191,
             "lng": -3.710274
         },
