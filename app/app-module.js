@@ -34,6 +34,8 @@
           prepareMarkers;
 
       // all markers for the map
+      vm.source = '';
+      vm.updated = '';
       vm.markers = [];
       vm.selectedMarker = null;
       vm.selectedLocation = null;
@@ -186,7 +188,7 @@
         Malawi: 3245,
         Maldives: 3192,
         Mali: 3223,
-        Malta: 3199,
+        Malta: 48836,
         'Marshall Islands': 3187,
         Mauritania: 3211,
         Mauritius: 3155,
@@ -361,7 +363,7 @@
 
         vm.city.exception = angular.isDefined(vm.exceptions[countryEN]);
         if (vm.city.exception) {
-          marker = _.find(vm.markers, {n: String(vm.exceptions[countryEN])});
+          marker = _.find(vm.markers, {id: vm.exceptions[countryEN]});
           localPoint = new GeoPoint(marker.coords.latitude, marker.coords.longitude, false);
           distance = point.distanceTo(localPoint, true);
           selected = marker.texts;
@@ -406,22 +408,19 @@
       prepareMarkers = function (response) {
         var temp = [];
         _.each(response, function (marker) {
-          marker.id = marker.n;
           marker.showWindow = false;
-          marker.coords = {latitude: marker.la, longitude: marker.lo};
+          marker.coords = {latitude: marker.lat, longitude: marker.lng};
           marker.templateUrl = 'markerWindow.html';
           marker.icon = 'images/pin.png';
           marker.texts = {
-            title: marker.m,
-            country: marker.co,
-            adr: marker.a,
-            tel: marker.t,
-            email: marker.em
+            title: marker.title,
+            country: marker.country,
+            adr: marker.adr,
           };
           marker.onClicked = function (selected) {
             // console.log(selected.key);
             _.each(vm.markers, function (item) {
-              var sameMarker = item.n === selected.key ? true : false;
+              var sameMarker = item.id === selected.key ? true : false;
               item.showWindow = sameMarker;
               if (sameMarker) {
                 vm.selectedMarker = item;
@@ -447,8 +446,6 @@
         vm.selectedMarker = null;
       };
 
-      vm.isDevice = (/iphone|iod|android|(?=.*\bandroid\b)(?=.*\bmobile\b)|iemobile|(?=.*\bwindows\b)(?=.*\barm\b)|(crios|chrome)(?=.*\bmobile\b)|opera mini/i).test(navigator.userAgent.toLowerCase());
-
       uiGmapGoogleMapApi.then(function (maps) {
         maps.visualRefresh = true;
         vm.map = {
@@ -459,14 +456,16 @@
           zoom: 3,
           options: {
             scrollwheel: false,
-            draggable: !vm.isDevice
           }
         };
 
         // Load markers
         locationsService.getData()
           .then(function (response) {
-            prepareMarkers(response);
+            prepareMarkers(response.markers);
+
+            vm.source  = response.source;
+            vm.updated = response.updated;
           });
       });
     })
@@ -474,10 +473,7 @@
       this.getData = function () {
         return $http.get('locations.json')
           .then(function (response) {
-            var filteredresponse = _.filter(response.data.markers, function (item) {
-              return !_.isNull(item.la) && !_.isNull(item.lo);
-            });
-            return filteredresponse;
+            return response.data;
           });
       };
     })

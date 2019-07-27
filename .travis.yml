@@ -1,4 +1,5 @@
 language: node_js
+dist: trusty
 node_js:
   - "9"
 
@@ -12,7 +13,7 @@ before_install:
 
 install:
   - pip3 install --user awscli
-  - npm install
+  - npm install --only=production
   - bower install
 
 script:

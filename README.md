@@ -6,7 +6,13 @@
 
 Vot Diaspora is an online tutorial that guides Romanians living abroad through the registering process so that they can vote in the 2016 parliamentary elections. The project can be used in the future for further rounds of elections.
 
-[Built with](#built-with) | [Contributing](#contributing) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
+[Contributing](#contributing) | [Built with](#built-with) | [Feedback](#feedback) | [License](#license) | [About Code4Ro](#about-code4ro)
+
+## Contributing
+
+This project is built by amazing volunteers and you can be one of them! Here's a list of ways in [which you can contribute to this project](.github/CONTRIBUTING.MD).
+
+You can also list any pending features and planned improvements for the project here.
 
 ## Built With
 
@@ -24,18 +30,6 @@ bower install
 gulp build
 gulp dev
 ```
-
-## Contributing
-
-If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
-
-* Fork it (https://github.com/code4romania/vot-diaspora/fork)
-* Create your feature branch (git checkout -b feature/fooBar)
-* Commit your changes (git commit -am 'Add some fooBar')
-* Push to the branch (git push origin feature/fooBar)
-* Create a new Pull Request
-
-[Pending issues](https://github.com/code4romania/vot-diaspora/issues)
 
 ## Feedback
 

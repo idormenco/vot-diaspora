@@ -21,7 +21,7 @@ html(lang='en' data-ng-app='votDiaspora')
     //- script(src="//maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places,visualization&key=AIzaSyCmgEeIhijJe689d_bpjPX9Sf1Bsm5fidU")
 
     //- live - // FOR LIVE USE
-    script(src="//maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places,visualization&key=AIzaSyDKKW7B-nvqzb7fr6yiK71X7AsNm0fmIa0")
+    script(src="//maps.googleapis.com/maps/api/js?libraries=drawing,geometry,places,visualization&language=ro&key=AIzaSyAwamdKiRfPlx-YxBOMkbJrLQ8eJeiX5Ak")
 
     |<!-- inject:head:js -->
     |<!-- endinject -->
@@ -53,7 +53,7 @@ html(lang='en' data-ng-app='votDiaspora')
           a.brand(ui-sref="home")
             img(src="images/brand.png")
           p
-            | Pe 26 mai 2019 au loc alegerile europarlamentare. Românii de pretutindeni au dreptul de a-și alege reprezentanții în Parlamentul European. 
+            | Pe 26 mai 2019 au loc alegerile europarlamentare și referendumul național pe justiție. Românii de pretutindeni au dreptul de a-și alege reprezentanții în Parlamentul European și a-și exprima voința cu privire la problemele de interes național pe tema justiției.
           p
             | Dacă locuiești peste hotare, ai două opțiuni: fie te înscrii pe listele electorale ale statului de rezidență și alegi dintre candidații statului respectiv, fie votezi candidații României. Pentru cea de-a doua opțiune, ai nevoie de un pașaport valid (chiar și cel temporar), carte de identitate (chiar și provizorie) sau buletin.
           p
@@ -73,7 +73,7 @@ html(lang='en' data-ng-app='votDiaspora')
         div(class="box_info")
           p(class="address" ng-if="parameter.adr")
             span(class="label") Adresa:
-            a.info(href="https://www.google.com/maps/dir/Current+Location/{{parameter.adr}}" target="_blank") {{parameter.adr}}
+            a.info(href="https://www.google.com/maps/dir/Current+Location/{{parameter.adr}}, {{parameter.country}}" target="_blank") {{parameter.adr}}
           p(class="phone" ng-if="parameter.tel")
             span(class="label") Telefon:
             a.info(href="tel:{{parameter.tel}}") {{parameter.tel}}

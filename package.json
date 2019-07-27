@@ -1,11 +1,13 @@
 {
-  "name": "diaspora-vote",
-  "version": "0.0.1",
+  "name": "vot-diaspora",
+  "author": "Code for Romania",
+  "license": "MPL-2.0",
+  "private": true,
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "import": "node import.js"
   },
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "bower": "^1.8.4",
     "browser-sync": "^2.2.3",
     "del": "^3.0.0",
@@ -14,7 +16,7 @@
     "eslint-path-formatter": "^0.1.1",
     "eslint-plugin-angular": "^3.1.1",
     "find-up": "^2.1.0",
-    "glob": "^7.1.2",
+    "glob": "^7.1.4",
     "gulp": "^3.8.7",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-autoprefixer": "^4.1.0",
@@ -42,7 +44,6 @@
     "gulp-rev": "^8.1.1",
     "gulp-sourcemaps": "^2.6.3",
     "gulp-stylus": "^2.0.0",
-    "gulp-tslint": "^8.1.2",
     "gulp-uglify": "^3.0.0",
     "jshint-stylish": "^2.0.1",
     "lodash": "^4.17.4",
@@ -59,5 +60,8 @@
     "underscore.string": "^3.0.1",
     "wiredep": "^4.0.0",
     "yargs": "^10.0.3"
+  },
+  "devDependencies": {
+    "puppeteer": "^1.17.0"
   }
 }

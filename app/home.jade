@@ -77,7 +77,7 @@ section.step.step-user-location(ng-if="vm.debugSteps || vm.step['1'].visible")
     )
   p.source
     | Sursa:
-    a(href='http://www.mae.ro/locatiile_sec%C5%A3iilor_de_votare' target='_blank') MAE
+    a(ng-href='{{vm.source}}' target='_blank') MAE {{vm.updated}}
 
 .content.row(ng-if="vm.debugSteps")
   .small-12.columns
@@ -307,7 +307,7 @@ section.share
         p
           | Poți cere înființarea unei secții de votare mai aproape de tine. Apasă butonul de mai jos și vei fi direcționat(ă) către un formular tip pe care îl poți completa cu datele tale și trimite către AEP și MAE cu un singur click.
         p
-          | După ce vei trimite cererea, un e-mail de confirmare te va ghida pentru trimiterea acesteia și către Ambasada României din țara unde locuiești.
+          | E-mailul pe care îl trimiți nu garantează înființarea unei noi secții de votare, acest lucru nefiind obligatoriu prin lege în ceea ce privește alegerile europarlamentare, dar poate informa autoritățile cu privire la necesitatea mai multor secții în diaspora.
         div.text-center
           a.button(href="https://facem.declic.ro/campaigns/trimite-email-aep-mae", target="_blank")
             | Cere secție de votare acum
@@ -321,9 +321,8 @@ section.share
         .share-actions
           a.share-cta.email(href="#" socialshare socialshare-provider="email" socialshare-subject="subiect aici" socialshare-body="Îți mai aduci aminte de cozile de la vot la care am stat în 2014? http://www.votdiaspora.ro")
             i.material-icons &#xE0E1;
-          a.share-cta.fb(href="#" socialshare socialshare-provider="facebook" socialshare-text="Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-description="Pe 11 decembrie 2016 diaspora are un cuvânt de spus." socialshare-type="feed" socialshare-via="319583755047031") FB
-          a.share-cta.tw(href="#" socialshare socialshare-provider="twitter" socialshare-text="Îți mai aduci aminte de cozile de la vot la care am stat în 2014?" socialshare-url="http://www.votdiaspora.ro" socialshare-hashtags="vot,diaspora,expat,parlamentare2016") TW
-          a.share-cta.gp(href="#" socialshare socialshare-provider="google" socialshare-url="http://www.votdiaspora.ro") G+
+          a.share-cta.fb(href="#" socialshare socialshare-provider="facebook" socialshare-text="Vot Diaspora" socialshare-url="http://www.votdiaspora.ro" socialshare-description="Pe 26 mai 2019 diaspora are un cuvânt de spus. Românii de pretutindeni au dreptul de a-și alege reprezentanții în Parlamentul European." socialshare-type="feed" socialshare-via="319583755047031") FB
+          a.share-cta.tw(href="#" socialshare socialshare-provider="twitter" socialshare-text="Îți mai aduci aminte de cozile de la vot la care am stat în 2014?" socialshare-url="http://www.votdiaspora.ro" socialshare-hashtags="vot,diaspora,expat,euelections2019,referendum2019,alegerieuroparlamentare2019") TW
 
 section.share
   .content.row
