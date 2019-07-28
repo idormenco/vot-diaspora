@@ -3,7 +3,6 @@
 .hero-info
   background: color-primary;
   color: color-secondary;
-  text-align: center;
   padding: (distance/2) 0 distance;
   margin-bottom: distance;
 
@@ -137,22 +136,19 @@
 
 .choice
   display: inline-block;
-  width 50%
 
   @media breakpoint-medium
     width auto
 
   a
-    padding: (distance/2) distance;
     background color-primary
-    color: #fff;
     text-transform uppercase
-    font-size: 40px;
-    font-weight 700
+    font-size: 20px
     display block
-    text-align center;
-    line-height 100px;
-    display block;
+    margin: 5px
+    font-weight: bold
+    padding: 10px 20px
+    min-width: 25ch
 
     @media breakpoint-medium
       display inline-block
@@ -163,6 +159,9 @@
     &.chosen-disabled
       color color-primary
       background color-secondary
+
+    &.chosen
+      color color-secondary
 
 .reset
   opacity 0
